@@ -1,4 +1,4 @@
-import type { Category, TransactionType } from '../types'
+import type { Category } from '../types'
 
 export const EXPENSE_CATEGORIES: Category[] = [
   { id: 'market-gida', name: 'Market/Gıda', type: 'expense' },
@@ -25,11 +25,3 @@ export const DEFAULT_CATEGORIES: Category[] = [
   ...INCOME_CATEGORIES,
   ...EXPENSE_CATEGORIES,
 ]
-
-export function getCategoriesByType(type: TransactionType): Category[] {
-  return type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES
-}
-
-export function getCategoryById(id: string): Category | undefined {
-  return DEFAULT_CATEGORIES.find((category) => category.id === id)
-}

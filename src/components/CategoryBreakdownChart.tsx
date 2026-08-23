@@ -8,16 +8,18 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { Transaction } from '../types'
-import { getCategoryById } from '../constants/categories'
+import type { Category, Transaction } from '../types'
+import { getCategoryById } from '../utils/categoryHelpers'
 import { formatCurrency } from '../utils/format'
 import { useThemeColors } from '../hooks/useThemeColors'
 
 interface CategoryBreakdownChartProps {
+  categories: Category[]
   transactions: Transaction[]
 }
 
 export function CategoryBreakdownChart({
+  categories,
   transactions,
 }: CategoryBreakdownChartProps) {
   const colors = useThemeColors()
@@ -33,7 +35,7 @@ export function CategoryBreakdownChart({
 
   const data = [...totals.entries()]
     .map(([categoryId, amount]) => ({
-      name: getCategoryById(categoryId)?.name ?? 'Diğer',
+      name: getCategoryById(categories, categoryId)?.name ?? 'Diğer',
       amount,
     }))
     .sort((a, b) => b.amount - a.amount)

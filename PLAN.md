@@ -23,10 +23,12 @@ ayrıca not edilecek.
 - **Bütçe/Hedef (Budget)** *(ileri aşama)*: kategori bazlı aylık limit.
 - **Kullanıcı (User)** *(ileri aşama, çoklu kullanıcı gerekirse)*.
 
-### Sabit Kategori Listesi (MVP)
+### Sabit Kategori Listesi (MVP) + Kullanıcı Tanımlı Kategoriler (Aşama 3)
 
-MVP'de kullanıcı tanımlı kategori yok; aşağıdaki sabit liste kullanılacak
-(kullanıcı tanımlı kategori ekleme Aşama 3'te değerlendirilecek):
+MVP'de aşağıdaki sabit liste kullanılıyor. Aşama 3 ile birlikte kullanıcı bu
+listeye ek kategoriler oluşturabiliyor (ekleme/yeniden adlandırma/silme);
+sabit kategoriler değiştirilemiyor/silinemiyor, bir işlemde kullanılan
+kategori de silinemiyor.
 
 - **Gider:** Market/Gıda, Kira/Konut, Faturalar, Ulaşım, Sağlık, Eğitim,
   Giyim, Eğlence/Sosyal, Abonelikler, Borç/Kredi Ödemesi, Diğer
@@ -101,7 +103,8 @@ planlanabilir.
 - [x] Verilerin kalıcı olarak saklanması (seçilen veri saklama yöntemine göre).
 
 ### Aşama 3 — Gelişmiş Özellikler
-- [ ] Kullanıcı tanımlı kategori ekleme/düzenleme.
+- [x] Kullanıcı tanımlı kategori ekleme/düzenleme (silme dahil; kullanımda olan
+      kategoriler silinemiyor).
 - [ ] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı.
 - [ ] Tekrarlayan işlemler (ör. her ay otomatik kira gideri).
 - [ ] Veri dışa aktarma (CSV/Excel).

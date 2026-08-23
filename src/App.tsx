@@ -2,10 +2,12 @@ import { useMemo, useState } from 'react'
 import './App.css'
 import { Balance } from './components/Balance'
 import { CategoryBreakdownChart } from './components/CategoryBreakdownChart'
+import { CategoryManager } from './components/CategoryManager'
 import { Filters } from './components/Filters'
 import { MonthlyTrendChart } from './components/MonthlyTrendChart'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
+import { useCategories } from './hooks/useCategories'
 import { useTransactions } from './hooks/useTransactions'
 import type { Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
@@ -14,6 +16,8 @@ import { filterTransactions } from './utils/filterTransactions'
 function App() {
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
     useTransactions()
+  const { categories, customCategories, addCategory, renameCategory, deleteCategory } =
+    useCategories()
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
@@ -45,6 +49,15 @@ function App() {
     deleteTransaction(id)
   }
 
+  function handleDeleteCategory(id: string) {
+    const isInUse = transactions.some((transaction) => transaction.categoryId === id)
+    if (isInUse) return
+    if (filters.categoryId === id) {
+      setFilters((prev) => ({ ...prev, categoryId: 'all' }))
+    }
+    deleteCategory(id)
+  }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -55,21 +68,37 @@ function App() {
       <main>
         <TransactionForm
           key={editingTransaction?.id ?? 'new'}
+          categories={categories}
           editingTransaction={editingTransaction}
           onSubmit={handleSubmit}
           onCancelEdit={() => setEditingTransaction(null)}
         />
 
         <section className="panel">
+          <h2>Kategoriler</h2>
+          <CategoryManager
+            categories={categories}
+            customCategories={customCategories}
+            transactions={transactions}
+            onAdd={addCategory}
+            onRename={renameCategory}
+            onDelete={handleDeleteCategory}
+          />
+        </section>
+
+        <section className="panel">
           <h2>Filtreler</h2>
-          <Filters filters={filters} onChange={setFilters} />
+          <Filters categories={categories} filters={filters} onChange={setFilters} />
         </section>
 
         <Balance transactions={filteredTransactions} />
 
         <section className="panel">
           <h2>Kategori Bazlı Harcama Özeti</h2>
-          <CategoryBreakdownChart transactions={filteredTransactions} />
+          <CategoryBreakdownChart
+            categories={categories}
+            transactions={filteredTransactions}
+          />
         </section>
 
         <section className="panel">
@@ -78,6 +107,7 @@ function App() {
         </section>
 
         <TransactionList
+          categories={categories}
           transactions={filteredTransactions}
           onEdit={setEditingTransaction}
           onDelete={handleDelete}

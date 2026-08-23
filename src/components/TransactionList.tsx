@@ -1,14 +1,16 @@
-import type { Transaction } from '../types'
-import { getCategoryById } from '../constants/categories'
+import type { Category, Transaction } from '../types'
+import { getCategoryById } from '../utils/categoryHelpers'
 import { formatCurrency, formatDate } from '../utils/format'
 
 interface TransactionListProps {
+  categories: Category[]
   transactions: Transaction[]
   onEdit: (transaction: Transaction) => void
   onDelete: (id: string) => void
 }
 
 export function TransactionList({
+  categories,
   transactions,
   onEdit,
   onDelete,
@@ -24,7 +26,7 @@ export function TransactionList({
   return (
     <ul className="transaction-list">
       {sorted.map((transaction) => {
-        const category = getCategoryById(transaction.categoryId)
+        const category = getCategoryById(categories, transaction.categoryId)
         return (
           <li key={transaction.id} className="transaction-item">
             <div className="transaction-info">

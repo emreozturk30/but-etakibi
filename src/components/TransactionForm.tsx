@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import type { Transaction, TransactionType } from '../types'
-import { getCategoriesByType } from '../constants/categories'
+import type { Category, Transaction, TransactionType } from '../types'
+import { getCategoriesByType } from '../utils/categoryHelpers'
 
 interface TransactionFormProps {
+  categories: Category[]
   editingTransaction: Transaction | null
   onSubmit: (transaction: Omit<Transaction, 'id'>) => void
   onCancelEdit: () => void
@@ -11,10 +12,10 @@ interface TransactionFormProps {
 
 const today = () => new Date().toISOString().slice(0, 10)
 
-function emptyFormState(type: TransactionType) {
+function emptyFormState(categories: Category[], type: TransactionType) {
   return {
     type,
-    categoryId: getCategoriesByType(type)[0]?.id ?? '',
+    categoryId: getCategoriesByType(categories, type)[0]?.id ?? '',
     amount: '',
     date: today(),
     note: '',
@@ -22,6 +23,7 @@ function emptyFormState(type: TransactionType) {
 }
 
 export function TransactionForm({
+  categories,
   editingTransaction,
   onSubmit,
   onCancelEdit,
@@ -35,7 +37,7 @@ export function TransactionForm({
           date: editingTransaction.date,
           note: editingTransaction.note ?? '',
         }
-      : emptyFormState('expense'),
+      : emptyFormState(categories, 'expense'),
   )
   const [error, setError] = useState('')
 
@@ -43,7 +45,7 @@ export function TransactionForm({
     setForm((prev) => ({
       ...prev,
       type,
-      categoryId: getCategoriesByType(type)[0]?.id ?? '',
+      categoryId: getCategoriesByType(categories, type)[0]?.id ?? '',
     }))
   }
 
@@ -73,16 +75,16 @@ export function TransactionForm({
     })
 
     setError('')
-    setForm(emptyFormState(form.type))
+    setForm(emptyFormState(categories, form.type))
   }
 
   function handleCancel() {
-    setForm(emptyFormState('expense'))
+    setForm(emptyFormState(categories, 'expense'))
     setError('')
     onCancelEdit()
   }
 
-  const categories = getCategoriesByType(form.type)
+  const categoryOptions = getCategoriesByType(categories, form.type)
 
   return (
     <form className="transaction-form" onSubmit={handleSubmit}>
@@ -124,7 +126,7 @@ export function TransactionForm({
               setForm((prev) => ({ ...prev, categoryId: e.target.value }))
             }
           >
-            {categories.map((category) => (
+            {categoryOptions.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
               </option>

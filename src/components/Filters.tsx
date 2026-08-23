@@ -1,15 +1,18 @@
-import type { TransactionType } from '../types'
+import type { Category, TransactionType } from '../types'
 import type { DateRangePreset, TransactionFilters } from '../types/filters'
-import { DEFAULT_CATEGORIES, getCategoriesByType } from '../constants/categories'
+import { getCategoriesByType } from '../utils/categoryHelpers'
 
 interface FiltersProps {
+  categories: Category[]
   filters: TransactionFilters
   onChange: (filters: TransactionFilters) => void
 }
 
-export function Filters({ filters, onChange }: FiltersProps) {
-  const categories =
-    filters.type === 'all' ? DEFAULT_CATEGORIES : getCategoriesByType(filters.type)
+export function Filters({ categories, filters, onChange }: FiltersProps) {
+  const categoryOptions =
+    filters.type === 'all'
+      ? categories
+      : getCategoriesByType(categories, filters.type)
 
   function handleTypeChange(type: TransactionType | 'all') {
     onChange({ ...filters, type, categoryId: 'all' })
@@ -42,7 +45,7 @@ export function Filters({ filters, onChange }: FiltersProps) {
           onChange={(e) => onChange({ ...filters, categoryId: e.target.value })}
         >
           <option value="all">Tümü</option>
-          {categories.map((category) => (
+          {categoryOptions.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}
             </option>
