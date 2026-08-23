@@ -94,11 +94,11 @@ planlanabilir.
 - [x] Basit kategori listesi (sabit/önceden tanımlı kategoriler).
 
 ### Aşama 2 — Kullanılabilirlik ve Raporlama
-- [ ] Kategoriye göre filtreleme.
-- [ ] Tarih aralığına göre filtreleme (bu ay, geçen ay, özel aralık).
-- [ ] Kategori bazlı harcama özeti (ör. pasta/çubuk grafik).
-- [ ] Aylık gelir/gider trend grafiği.
-- [ ] Verilerin kalıcı olarak saklanması (seçilen veri saklama yöntemine göre).
+- [x] Kategoriye göre filtreleme.
+- [x] Tarih aralığına göre filtreleme (bu ay, geçen ay, özel aralık).
+- [x] Kategori bazlı harcama özeti (çubuk grafik).
+- [x] Aylık gelir/gider trend grafiği.
+- [x] Verilerin kalıcı olarak saklanması (seçilen veri saklama yöntemine göre).
 
 ### Aşama 3 — Gelişmiş Özellikler
 - [ ] Kullanıcı tanımlı kategori ekleme/düzenleme.
