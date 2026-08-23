@@ -13,8 +13,9 @@ kod geliştirmeye bu doküman onaylandıktan sonra başlanacak.
 - İleride: bütçe hedefleri, tekrarlayan işlemler, grafiklerle görselleştirme.
 
 **Kapsam dışı (ilk sürüm için):** çoklu kullanıcı/banka entegrasyonu, otomatik
-banka senkronizasyonu, yatırım takibi. Bunlar "gelecek fikirler" bölümünde
-ayrıca not edilecek.
+banka senkronizasyonu, yatırım takibi (altın için başlandı, bkz. "Canlıya
+Alma Sonrası Ek Özellik"). Bunlar "gelecek fikirler" bölümünde ayrıca not
+edilecek.
 
 ## 2. Temel Kavramlar (Veri Modeli Taslağı)
 
@@ -150,11 +151,20 @@ gözlenmedi.
   aya aya toplanarak (kümülatif) gösterildiği yeni bir bölüm eklendi;
   birikim negatife düştüğü aylarda da sıfır referans çizgisiyle net şekilde
   görülüyor.
+- **Yatırım takibi — Adım 1 (Altın):** yeni bir "Yatırımlar" paneli eklendi;
+  miktar/alış fiyatı/alış tarihi girilerek altın yatırımı kaydedilebiliyor
+  (sabit bir altın türü listesinden seçim yapılıyor, serbest metin yok).
+  Güncel fiyat truncgil.com'un ücretsiz JSON kaynağından tek tıkla
+  çekilebiliyor (10 saniyelik zaman aşımı korumalı) veya elle girilebiliyor;
+  kâr/zarar otomatik hesaplanıp gösteriliyor. Diğer varlık türleri
+  (kripto, döviz, vb.) kasıtlı olarak bu adıma dahil edilmedi, sonraki
+  adımlarda ayrı ayrı ele alınacak.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- Yatırım/portföy takibi.
+- Yatırım/portföy takibi (altın dışındaki varlık türleri — kripto, döviz,
+  hisse, vb. — hâlâ bekliyor; altın için ilk adım atıldı).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
 

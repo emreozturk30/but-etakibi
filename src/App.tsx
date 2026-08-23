@@ -5,17 +5,21 @@ import { BudgetGoals } from './components/BudgetGoals'
 import { CategoryManager } from './components/CategoryManager'
 import { ExportButton } from './components/ExportButton'
 import { Filters } from './components/Filters'
+import { InvestmentForm } from './components/InvestmentForm'
+import { InvestmentList } from './components/InvestmentList'
 import { RecurringTransactions } from './components/RecurringTransactions'
 import { ThemeToggle } from './components/ThemeToggle'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
 import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
+import { useInvestments } from './hooks/useInvestments'
 import { useRecurringTransactions } from './hooks/useRecurringTransactions'
 import { useTheme } from './hooks/useTheme'
 import { useTransactions } from './hooks/useTransactions'
-import type { Transaction } from './types'
+import type { Investment, Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
+import { toLocalISODate } from './utils/dateRanges'
 import { filterTransactions } from './utils/filterTransactions'
 import { computeMissingRecurringTransactions } from './utils/recurring'
 
@@ -51,6 +55,15 @@ function App() {
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
+  const {
+    investments,
+    addInvestment,
+    updateInvestment,
+    deleteInvestment,
+    updateInvestmentPrice,
+  } = useInvestments()
+  const [editingInvestment, setEditingInvestment] =
+    useState<Investment | null>(null)
 
   useEffect(() => {
     const missing = computeMissingRecurringTransactions(
@@ -92,6 +105,28 @@ function App() {
       skipRecurringMonth(transaction.recurringId, transaction.date.slice(0, 7))
     }
     deleteTransaction(id)
+  }
+
+  function handleInvestmentSubmit(
+    investment: Omit<Investment, 'id' | 'priceUpdatedAt'>,
+  ) {
+    const withTimestamp = {
+      ...investment,
+      priceUpdatedAt: toLocalISODate(new Date()),
+    }
+    if (editingInvestment) {
+      updateInvestment(editingInvestment.id, withTimestamp)
+      setEditingInvestment(null)
+    } else {
+      addInvestment(withTimestamp)
+    }
+  }
+
+  function handleInvestmentDelete(id: string) {
+    if (editingInvestment?.id === id) {
+      setEditingInvestment(null)
+    }
+    deleteInvestment(id)
   }
 
   function handleDeleteCategory(id: string) {
@@ -199,6 +234,22 @@ function App() {
           onEdit={setEditingTransaction}
           onDelete={handleDelete}
         />
+
+        <section className="panel">
+          <h2>Yatırımlar</h2>
+          <InvestmentForm
+            key={editingInvestment?.id ?? 'new'}
+            editingInvestment={editingInvestment}
+            onSubmit={handleInvestmentSubmit}
+            onCancelEdit={() => setEditingInvestment(null)}
+          />
+          <InvestmentList
+            investments={investments}
+            onEdit={setEditingInvestment}
+            onDelete={handleInvestmentDelete}
+            onUpdatePrice={updateInvestmentPrice}
+          />
+        </section>
       </main>
     </div>
   )

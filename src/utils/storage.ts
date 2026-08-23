@@ -1,6 +1,7 @@
 import type {
   BudgetGoal,
   Category,
+  Investment,
   RecurringTransaction,
   Transaction,
 } from '../types'
@@ -9,6 +10,7 @@ const TRANSACTIONS_KEY = 'but-etakibi:transactions'
 const CUSTOM_CATEGORIES_KEY = 'but-etakibi:custom-categories'
 const BUDGET_GOALS_KEY = 'but-etakibi:budget-goals'
 const RECURRING_TRANSACTIONS_KEY = 'but-etakibi:recurring-transactions'
+const INVESTMENTS_KEY = 'but-etakibi:investments'
 
 export function loadTransactions(): Transaction[] {
   try {
@@ -69,4 +71,18 @@ export function saveRecurringTransactions(
     RECURRING_TRANSACTIONS_KEY,
     JSON.stringify(recurringTransactions),
   )
+}
+
+export function loadInvestments(): Investment[] {
+  try {
+    const raw = localStorage.getItem(INVESTMENTS_KEY)
+    if (!raw) return []
+    return JSON.parse(raw) as Investment[]
+  } catch {
+    return []
+  }
+}
+
+export function saveInvestments(investments: Investment[]): void {
+  localStorage.setItem(INVESTMENTS_KEY, JSON.stringify(investments))
 }
