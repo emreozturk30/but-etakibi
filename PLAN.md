@@ -87,11 +87,11 @@ planlanabilir.
 - [x] Platform ve teknoloji yığını kararının netleştirilmesi.
 
 ### Aşama 1 — MVP (Temel İşlevsellik)
-- [ ] Gelir/gider işlemi ekleme (tutar, kategori, tarih, açıklama).
-- [ ] İşlemleri listeleme (tarihe göre sıralı).
-- [ ] İşlem silme/düzenleme.
-- [ ] Toplam bakiye (gelir - gider) gösterimi.
-- [ ] Basit kategori listesi (sabit/önceden tanımlı kategoriler).
+- [x] Gelir/gider işlemi ekleme (tutar, kategori, tarih, açıklama).
+- [x] İşlemleri listeleme (tarihe göre sıralı).
+- [x] İşlem silme/düzenleme.
+- [x] Toplam bakiye (gelir - gider) gösterimi.
+- [x] Basit kategori listesi (sabit/önceden tanımlı kategoriler).
 
 ### Aşama 2 — Kullanılabilirlik ve Raporlama
 - [ ] Kategoriye göre filtreleme.
