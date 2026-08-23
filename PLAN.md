@@ -23,6 +23,17 @@ ayrıca not edilecek.
 - **Bütçe/Hedef (Budget)** *(ileri aşama)*: kategori bazlı aylık limit.
 - **Kullanıcı (User)** *(ileri aşama, çoklu kullanıcı gerekirse)*.
 
+### Sabit Kategori Listesi (MVP)
+
+MVP'de kullanıcı tanımlı kategori yok; aşağıdaki sabit liste kullanılacak
+(kullanıcı tanımlı kategori ekleme Aşama 3'te değerlendirilecek):
+
+- **Gider:** Market/Gıda, Kira/Konut, Faturalar, Ulaşım, Sağlık, Eğitim,
+  Giyim, Eğlence/Sosyal, Abonelikler, Borç/Kredi Ödemesi, Diğer
+- **Gelir:** Maaş, Ek Gelir/Serbest Çalışma, Yatırım Geliri, Hediye/Diğer
+
+(Kod tarafında `src/constants/categories.ts` içinde tanımlıdır.)
+
 ## 3. Alınan Kararlar
 
 - **Platform:** Web uygulaması.
