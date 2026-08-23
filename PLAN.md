@@ -108,9 +108,13 @@ planlanabilir.
 - [x] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı (kategori
       başına aylık limit, harcama ilerleme çubuğu, iyi/yaklaşıyor/aşıldı
       durum uyarısı).
-- [ ] Tekrarlayan işlemler (ör. her ay otomatik kira gideri).
+- [x] Tekrarlayan işlemler (ör. her ay otomatik kira gideri; kural silinse
+      bile daha önce oluşturulan işlemler korunur).
 - [x] Veri dışa aktarma (CSV) — uygulanan filtrelere göre indirme.
-- [ ] (Varsa) çoklu kullanıcı desteği / giriş sistemi.
+- [x] ~~(Varsa) çoklu kullanıcı desteği / giriş sistemi~~ — kapsam dışı
+      bırakıldı (tek kullanıcılık kişisel araç kararı, bkz. Bölüm 3).
+
+Aşama 3 tamamlandı.
 
 ### Aşama 4 — Cilalama
 - [ ] Mobil uyumlu/duyarlı tasarım.

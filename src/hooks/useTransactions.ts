@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import type { Transaction } from '../types'
 import { loadTransactions, saveTransactions } from '../utils/storage'
 
@@ -11,12 +11,12 @@ export function useTransactions() {
     saveTransactions(transactions)
   }, [transactions])
 
-  function addTransaction(transaction: Omit<Transaction, 'id'>) {
+  const addTransaction = useCallback((transaction: Omit<Transaction, 'id'>) => {
     setTransactions((prev) => [
       ...prev,
       { ...transaction, id: crypto.randomUUID() },
     ])
-  }
+  }, [])
 
   function updateTransaction(id: string, updates: Omit<Transaction, 'id'>) {
     setTransactions((prev) =>

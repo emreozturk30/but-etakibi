@@ -1,11 +1,17 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import type { Category, Transaction, TransactionType } from '../types'
+import type {
+  Category,
+  RecurringTransaction,
+  Transaction,
+  TransactionType,
+} from '../types'
 
 interface CategoryManagerProps {
   categories: Category[]
   customCategories: Category[]
   transactions: Transaction[]
+  recurringTransactions: RecurringTransaction[]
   onAdd: (name: string, type: TransactionType) => void
   onRename: (id: string, name: string) => void
   onDelete: (id: string) => void
@@ -15,6 +21,7 @@ export function CategoryManager({
   categories,
   customCategories,
   transactions,
+  recurringTransactions,
   onAdd,
   onRename,
   onDelete,
@@ -51,7 +58,10 @@ export function CategoryManager({
   }
 
   function isInUse(id: string) {
-    return transactions.some((transaction) => transaction.categoryId === id)
+    return (
+      transactions.some((transaction) => transaction.categoryId === id) ||
+      recurringTransactions.some((rule) => rule.categoryId === id)
+    )
   }
 
   function startEditing(category: Category) {

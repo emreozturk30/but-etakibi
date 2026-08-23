@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { Balance } from './components/Balance'
 import { BudgetGoals } from './components/BudgetGoals'
@@ -7,14 +7,17 @@ import { CategoryManager } from './components/CategoryManager'
 import { ExportButton } from './components/ExportButton'
 import { Filters } from './components/Filters'
 import { MonthlyTrendChart } from './components/MonthlyTrendChart'
+import { RecurringTransactions } from './components/RecurringTransactions'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
 import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
+import { useRecurringTransactions } from './hooks/useRecurringTransactions'
 import { useTransactions } from './hooks/useTransactions'
 import type { Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
 import { filterTransactions } from './utils/filterTransactions'
+import { computeMissingRecurringTransactions } from './utils/recurring'
 
 function App() {
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
@@ -22,9 +25,22 @@ function App() {
   const { categories, customCategories, addCategory, renameCategory, deleteCategory } =
     useCategories()
   const { budgetGoals, setBudgetGoal, deleteBudgetGoal } = useBudgetGoals()
+  const {
+    recurringTransactions,
+    addRecurringTransaction,
+    deleteRecurringTransaction,
+  } = useRecurringTransactions()
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
+
+  useEffect(() => {
+    const missing = computeMissingRecurringTransactions(
+      recurringTransactions,
+      transactions,
+    )
+    missing.forEach(addTransaction)
+  }, [recurringTransactions, transactions, addTransaction])
 
   const filteredTransactions = useMemo(
     () => filterTransactions(transactions, filters),
@@ -54,7 +70,9 @@ function App() {
   }
 
   function handleDeleteCategory(id: string) {
-    const isInUse = transactions.some((transaction) => transaction.categoryId === id)
+    const isInUse =
+      transactions.some((transaction) => transaction.categoryId === id) ||
+      recurringTransactions.some((rule) => rule.categoryId === id)
     if (isInUse) return
     if (filters.categoryId === id) {
       setFilters((prev) => ({ ...prev, categoryId: 'all' }))
@@ -85,9 +103,20 @@ function App() {
             categories={categories}
             customCategories={customCategories}
             transactions={transactions}
+            recurringTransactions={recurringTransactions}
             onAdd={addCategory}
             onRename={renameCategory}
             onDelete={handleDeleteCategory}
+          />
+        </section>
+
+        <section className="panel">
+          <h2>Tekrarlayan İşlemler</h2>
+          <RecurringTransactions
+            categories={categories}
+            recurringTransactions={recurringTransactions}
+            onAdd={addRecurringTransaction}
+            onDelete={deleteRecurringTransaction}
           />
         </section>
 
