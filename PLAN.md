@@ -144,6 +144,13 @@ Bu düzeltmelerden sonra tüm özellikler İstanbul saat dilimi simüle edilerek
 uçtan uca yeniden test edildi; konsol hatası veya davranış bozukluğu
 gözlenmedi.
 
+### Canlıya Alma Sonrası Ek Özellik
+
+- **Net Birikim (Kümülatif) grafiği:** geçmiş ayların gelir/gider farkının
+  aya aya toplanarak (kümülatif) gösterildiği yeni bir bölüm eklendi;
+  birikim negatife düştüğü aylarda da sıfır referans çizgisiyle net şekilde
+  görülüyor.
+
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.

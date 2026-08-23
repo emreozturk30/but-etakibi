@@ -29,6 +29,11 @@ const MonthlyTrendChart = lazy(() =>
     default: m.MonthlyTrendChart,
   })),
 )
+const CumulativeBalanceChart = lazy(() =>
+  import('./components/CumulativeBalanceChart').then((m) => ({
+    default: m.CumulativeBalanceChart,
+  })),
+)
 
 function App() {
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
@@ -178,6 +183,13 @@ function App() {
           <h2>Aylık Gelir/Gider Trendi</h2>
           <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
             <MonthlyTrendChart transactions={trendTransactions} />
+          </Suspense>
+        </section>
+
+        <section className="panel">
+          <h2>Net Birikim (Kümülatif)</h2>
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <CumulativeBalanceChart transactions={trendTransactions} />
           </Suspense>
         </section>
 
