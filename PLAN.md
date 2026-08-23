@@ -23,22 +23,46 @@ ayrıca not edilecek.
 - **Bütçe/Hedef (Budget)** *(ileri aşama)*: kategori bazlı aylık limit.
 - **Kullanıcı (User)** *(ileri aşama, çoklu kullanıcı gerekirse)*.
 
-## 3. Karar Bekleyen Noktalar
+### Sabit Kategori Listesi (MVP) + Kullanıcı Tanımlı Kategoriler (Aşama 3)
 
-Aşağıdaki kararlar henüz netleşmedi, geliştirmeye başlamadan önce birlikte
-netleştirilmeli:
+MVP'de aşağıdaki sabit liste kullanılıyor. Aşama 3 ile birlikte kullanıcı bu
+listeye ek kategoriler oluşturabiliyor (ekleme/yeniden adlandırma/silme);
+sabit kategoriler değiştirilemiyor/silinemiyor, bir işlemde kullanılan
+kategori de silinemiyor.
 
-- **Platform:** Web mi, mobil mi, masaüstü mü, yoksa hepsi mi?
-- **Teknoloji yığını:** Örn. web için React/Next.js + bir backend (Node/Express,
-  Python/FastAPI vb.) ya da tamamen frontend + local storage ile basit bir
-  MVP mi?
-- **Veri saklama:** Yerel (tarayıcı/localStorage, SQLite) mi, uzak bir
-  veritabanı (Postgres, MongoDB vb.) mı?
-- **Kullanıcı yönetimi:** Tek kullanıcılık kişisel bir araç mı, yoksa
-  giriş/kayıt sistemi olan çok kullanıcılı bir uygulama mı?
-- **Çevrimdışı kullanım gerekiyor mu?**
+- **Gider:** Market/Gıda, Kira/Konut, Faturalar, Ulaşım, Sağlık, Eğitim,
+  Giyim, Eğlence/Sosyal, Abonelikler, Borç/Kredi Ödemesi, Diğer
+- **Gelir:** Maaş, Ek Gelir/Serbest Çalışma, Yatırım Geliri, Hediye/Diğer
 
-Bu kararlar netleştikçe bu doküman güncellenecek.
+(Kod tarafında `src/constants/categories.ts` içinde tanımlıdır.)
+
+## 3. Alınan Kararlar
+
+- **Platform:** Web uygulaması.
+- **Kullanıcı:** Tek kullanıcı (kişisel kullanım), giriş/kayıt sistemi yok.
+- **Veri saklama:** Yerel (tarayıcıda, cihazdan bağımsız bir sunucuya
+  gönderilmeden) — backend/veritabanı sunucusu gerekmiyor.
+- **Teknoloji tercihi:** JavaScript/TypeScript ekosistemi.
+
+### Somut Teknoloji Yığını
+
+- **Framework:** React + TypeScript, **Vite** ile (hızlı kurulum, sade yapı,
+  backend gerektirmeyen bir "single-page app").
+- **Veri kalıcılığı:** Tarayıcı **localStorage** ile başlanacak; ileride veri
+  büyürse veya daha karmaşık sorgulama gerekirse **IndexedDB**'ye geçilebilir.
+- **Stil:** Basit bir CSS çözümü (ör. sade CSS veya Tailwind) — ihtiyaca göre
+  ilerleyen aşamada netleştirilecek.
+- **Grafikler (Aşama 2'de):** Recharts veya benzeri hafif bir grafik
+  kütüphanesi.
+- **Barındırma:** Statik bir site olduğu için Vercel/Netlify/GitHub Pages gibi
+  basit statik hosting seçeneklerinden biriyle yayınlanabilir (isteğe bağlı,
+  gerektiğinde konuşulacak).
+
+Bu yığının seçilme nedeni: backend/veritabanı kurulumu gerektirmeden, tek
+kullanıcı için hızlıca çalışan bir MVP üretmeye izin vermesi. İleride çoklu
+cihazdan erişim veya çoklu kullanıcı ihtiyacı doğarsa (bkz. "Gelecek
+Fikirler"), bir backend + gerçek veritabanına geçiş ayrı bir aşama olarak
+planlanabilir.
 
 ## 4. Kurallar / Çalışma Prensipleri
 
@@ -62,33 +86,63 @@ Bu kararlar netleştikçe bu doküman güncellenecek.
 
 ### Aşama 0 — Planlama (şu an buradayız)
 - [x] Proje kapsamının ve kurallarının belirlenmesi (bu doküman).
-- [ ] Platform ve teknoloji yığını kararının netleştirilmesi.
+- [x] Platform ve teknoloji yığını kararının netleştirilmesi.
 
 ### Aşama 1 — MVP (Temel İşlevsellik)
-- [ ] Gelir/gider işlemi ekleme (tutar, kategori, tarih, açıklama).
-- [ ] İşlemleri listeleme (tarihe göre sıralı).
-- [ ] İşlem silme/düzenleme.
-- [ ] Toplam bakiye (gelir - gider) gösterimi.
-- [ ] Basit kategori listesi (sabit/önceden tanımlı kategoriler).
+- [x] Gelir/gider işlemi ekleme (tutar, kategori, tarih, açıklama).
+- [x] İşlemleri listeleme (tarihe göre sıralı).
+- [x] İşlem silme/düzenleme.
+- [x] Toplam bakiye (gelir - gider) gösterimi.
+- [x] Basit kategori listesi (sabit/önceden tanımlı kategoriler).
 
 ### Aşama 2 — Kullanılabilirlik ve Raporlama
-- [ ] Kategoriye göre filtreleme.
-- [ ] Tarih aralığına göre filtreleme (bu ay, geçen ay, özel aralık).
-- [ ] Kategori bazlı harcama özeti (ör. pasta/çubuk grafik).
-- [ ] Aylık gelir/gider trend grafiği.
-- [ ] Verilerin kalıcı olarak saklanması (seçilen veri saklama yöntemine göre).
+- [x] Kategoriye göre filtreleme.
+- [x] Tarih aralığına göre filtreleme (bu ay, geçen ay, özel aralık).
+- [x] Kategori bazlı harcama özeti (çubuk grafik).
+- [x] Aylık gelir/gider trend grafiği.
+- [x] Verilerin kalıcı olarak saklanması (seçilen veri saklama yöntemine göre).
 
 ### Aşama 3 — Gelişmiş Özellikler
-- [ ] Kullanıcı tanımlı kategori ekleme/düzenleme.
-- [ ] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı.
-- [ ] Tekrarlayan işlemler (ör. her ay otomatik kira gideri).
-- [ ] Veri dışa aktarma (CSV/Excel).
-- [ ] (Varsa) çoklu kullanıcı desteği / giriş sistemi.
+- [x] Kullanıcı tanımlı kategori ekleme/düzenleme (silme dahil; kullanımda olan
+      kategoriler silinemiyor).
+- [x] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı (kategori
+      başına aylık limit, harcama ilerleme çubuğu, iyi/yaklaşıyor/aşıldı
+      durum uyarısı).
+- [x] Tekrarlayan işlemler (ör. her ay otomatik kira gideri; kural silinse
+      bile daha önce oluşturulan işlemler korunur).
+- [x] Veri dışa aktarma (CSV) — uygulanan filtrelere göre indirme.
+- [x] ~~(Varsa) çoklu kullanıcı desteği / giriş sistemi~~ — kapsam dışı
+      bırakıldı (tek kullanıcılık kişisel araç kararı, bkz. Bölüm 3).
+
+Aşama 3 tamamlandı.
 
 ### Aşama 4 — Cilalama
-- [ ] Mobil uyumlu/duyarlı tasarım.
-- [ ] Karanlık mod.
-- [ ] Performans ve kullanılabilirlik iyileştirmeleri.
+- [x] Mobil uyumlu/duyarlı tasarım (320px'e kadar test edildi, yatay taşma
+      yok, dar ekranlarda kartlar satır satır düzgün sarıyor).
+- [x] Karanlık mod (sistem tercihine otomatik uyum + Sistem/Açık/Koyu manuel
+      geçiş, tercih kalıcı).
+- [x] Performans ve kullanılabilirlik iyileştirmeleri (grafik kütüphanesi
+      lazy-load edilerek ilk yüklenen JS ~587KB'den ~215KB'ye indirildi;
+      kullanılmayan CSS temizlendi).
+
+Aşama 4 tamamlandı — yol haritasındaki tüm aşamalar bitti.
+
+### Son Gözden Geçirme — Bulunan ve Düzeltilen Hatalar
+
+- **Saat dilimi hatası:** `toISOString()` kullanımı UTC+ saat dilimlerinde
+  (ör. Türkiye/UTC+3) "bu ay/geçen ay" filtresini, aylık bütçe hesaplamasını
+  ve formlardaki varsayılan tarihi yanlış hesaplıyordu; yerel tarih
+  bileşenleriyle (`toLocalISODate`/`parseLocalDate`) düzeltildi.
+- **Tekrarlayan işlem düzenleme hatası:** otomatik oluşturulan bir işlem
+  düzenlendiğinde `recurringId` bağlantısı siliniyor, bu da o ay için ikinci
+  bir kopya işlem oluşturulmasına yol açıyordu; düzeltildi.
+- **Tekrarlayan işlem silme hatası:** otomatik oluşturulan bir ayın işlemi
+  silindiğinde bir sonraki açılışta otomatik olarak geri geliyordu; artık
+  silinen aylar "atlandı" olarak işaretleniyor ve tekrar oluşturulmuyor.
+
+Bu düzeltmelerden sonra tüm özellikler İstanbul saat dilimi simüle edilerek
+uçtan uca yeniden test edildi; konsol hatası veya davranış bozukluğu
+gözlenmedi.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 

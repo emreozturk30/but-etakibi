@@ -1,0 +1,517 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.app-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.theme-toggle button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-toggle button.active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text);
+  padding: 1rem 0;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.panel h2 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+/* Category manager */
+.category-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.category-form input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+.category-name {
+  flex: 1 1 100px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.category-type {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.category-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.category-actions button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.category-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Recurring transactions */
+.recurring-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.recurring-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recurring-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+.recurring-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 140px;
+}
+
+.recurring-category {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.recurring-detail {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.recurring-item button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+/* Export */
+.export-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.export-section p {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.export-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Budget goals */
+.budget-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.budget-form input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.budget-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.budget-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+.budget-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.budget-category {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.budget-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.budget-status-icon.status-good {
+  color: var(--status-good);
+}
+
+.budget-status-icon.status-warning {
+  color: var(--status-warning);
+}
+
+.budget-status-icon.status-critical {
+  color: var(--status-critical);
+}
+
+.budget-progress-track {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.budget-progress-fill.status-good {
+  background: var(--status-good);
+}
+
+.budget-progress-fill.status-warning {
+  background: var(--status-warning);
+}
+
+.budget-progress-fill.status-critical {
+  background: var(--status-critical);
+}
+
+.budget-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.budget-item-footer button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filters label {
+  flex: 1;
+  min-width: 130px;
+}
+
+/* Balance */
+.balance {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.balance-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.balance-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.balance-value.income {
+  color: var(--chart-income);
+}
+
+.balance-value.expense {
+  color: var(--chart-expense);
+}
+
+/* Form */
+.transaction-form {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.type-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.type-toggle button {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.type-toggle button.active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.field-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.field-row label {
+  flex: 1;
+  min-width: 120px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+input,
+select {
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.form-actions button,
+.type-toggle button {
+  font: inherit;
+}
+
+.form-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+/* List */
+.transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 140px;
+}
+
+.transaction-category {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.transaction-date,
+.transaction-note {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.transaction-note {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.transaction-amount.income {
+  color: var(--chart-income);
+}
+
+.transaction-amount.expense {
+  color: var(--chart-expense);
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.transaction-actions button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
