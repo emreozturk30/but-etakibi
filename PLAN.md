@@ -117,9 +117,15 @@ planlanabilir.
 Aşama 3 tamamlandı.
 
 ### Aşama 4 — Cilalama
-- [ ] Mobil uyumlu/duyarlı tasarım.
-- [ ] Karanlık mod.
-- [ ] Performans ve kullanılabilirlik iyileştirmeleri.
+- [x] Mobil uyumlu/duyarlı tasarım (320px'e kadar test edildi, yatay taşma
+      yok, dar ekranlarda kartlar satır satır düzgün sarıyor).
+- [x] Karanlık mod (sistem tercihine otomatik uyum + Sistem/Açık/Koyu manuel
+      geçiş, tercih kalıcı).
+- [x] Performans ve kullanılabilirlik iyileştirmeleri (grafik kütüphanesi
+      lazy-load edilerek ilk yüklenen JS ~587KB'den ~215KB'ye indirildi;
+      kullanılmayan CSS temizlendi).
+
+Aşama 4 tamamlandı — yol haritasındaki tüm aşamalar bitti.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 

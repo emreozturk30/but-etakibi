@@ -1,23 +1,34 @@
-import { useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { Balance } from './components/Balance'
 import { BudgetGoals } from './components/BudgetGoals'
-import { CategoryBreakdownChart } from './components/CategoryBreakdownChart'
 import { CategoryManager } from './components/CategoryManager'
 import { ExportButton } from './components/ExportButton'
 import { Filters } from './components/Filters'
-import { MonthlyTrendChart } from './components/MonthlyTrendChart'
 import { RecurringTransactions } from './components/RecurringTransactions'
+import { ThemeToggle } from './components/ThemeToggle'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
 import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
 import { useRecurringTransactions } from './hooks/useRecurringTransactions'
+import { useTheme } from './hooks/useTheme'
 import { useTransactions } from './hooks/useTransactions'
 import type { Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
 import { filterTransactions } from './utils/filterTransactions'
 import { computeMissingRecurringTransactions } from './utils/recurring'
+
+const CategoryBreakdownChart = lazy(() =>
+  import('./components/CategoryBreakdownChart').then((m) => ({
+    default: m.CategoryBreakdownChart,
+  })),
+)
+const MonthlyTrendChart = lazy(() =>
+  import('./components/MonthlyTrendChart').then((m) => ({
+    default: m.MonthlyTrendChart,
+  })),
+)
 
 function App() {
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
@@ -25,6 +36,7 @@ function App() {
   const { categories, customCategories, addCategory, renameCategory, deleteCategory } =
     useCategories()
   const { budgetGoals, setBudgetGoal, deleteBudgetGoal } = useBudgetGoals()
+  const { theme, setTheme } = useTheme()
   const {
     recurringTransactions,
     addRecurringTransaction,
@@ -84,6 +96,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
+        <ThemeToggle theme={theme} onChange={setTheme} />
         <h1>Bütçe Takip</h1>
         <p>Gelir ve giderlerini takip et.</p>
       </header>
@@ -145,15 +158,19 @@ function App() {
 
         <section className="panel">
           <h2>Kategori Bazlı Harcama Özeti</h2>
-          <CategoryBreakdownChart
-            categories={categories}
-            transactions={filteredTransactions}
-          />
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <CategoryBreakdownChart
+              categories={categories}
+              transactions={filteredTransactions}
+            />
+          </Suspense>
         </section>
 
         <section className="panel">
           <h2>Aylık Gelir/Gider Trendi</h2>
-          <MonthlyTrendChart transactions={trendTransactions} />
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <MonthlyTrendChart transactions={trendTransactions} />
+          </Suspense>
         </section>
 
         <TransactionList
