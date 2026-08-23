@@ -23,22 +23,33 @@ ayrıca not edilecek.
 - **Bütçe/Hedef (Budget)** *(ileri aşama)*: kategori bazlı aylık limit.
 - **Kullanıcı (User)** *(ileri aşama, çoklu kullanıcı gerekirse)*.
 
-## 3. Karar Bekleyen Noktalar
+## 3. Alınan Kararlar
 
-Aşağıdaki kararlar henüz netleşmedi, geliştirmeye başlamadan önce birlikte
-netleştirilmeli:
+- **Platform:** Web uygulaması.
+- **Kullanıcı:** Tek kullanıcı (kişisel kullanım), giriş/kayıt sistemi yok.
+- **Veri saklama:** Yerel (tarayıcıda, cihazdan bağımsız bir sunucuya
+  gönderilmeden) — backend/veritabanı sunucusu gerekmiyor.
+- **Teknoloji tercihi:** JavaScript/TypeScript ekosistemi.
 
-- **Platform:** Web mi, mobil mi, masaüstü mü, yoksa hepsi mi?
-- **Teknoloji yığını:** Örn. web için React/Next.js + bir backend (Node/Express,
-  Python/FastAPI vb.) ya da tamamen frontend + local storage ile basit bir
-  MVP mi?
-- **Veri saklama:** Yerel (tarayıcı/localStorage, SQLite) mi, uzak bir
-  veritabanı (Postgres, MongoDB vb.) mı?
-- **Kullanıcı yönetimi:** Tek kullanıcılık kişisel bir araç mı, yoksa
-  giriş/kayıt sistemi olan çok kullanıcılı bir uygulama mı?
-- **Çevrimdışı kullanım gerekiyor mu?**
+### Somut Teknoloji Yığını
 
-Bu kararlar netleştikçe bu doküman güncellenecek.
+- **Framework:** React + TypeScript, **Vite** ile (hızlı kurulum, sade yapı,
+  backend gerektirmeyen bir "single-page app").
+- **Veri kalıcılığı:** Tarayıcı **localStorage** ile başlanacak; ileride veri
+  büyürse veya daha karmaşık sorgulama gerekirse **IndexedDB**'ye geçilebilir.
+- **Stil:** Basit bir CSS çözümü (ör. sade CSS veya Tailwind) — ihtiyaca göre
+  ilerleyen aşamada netleştirilecek.
+- **Grafikler (Aşama 2'de):** Recharts veya benzeri hafif bir grafik
+  kütüphanesi.
+- **Barındırma:** Statik bir site olduğu için Vercel/Netlify/GitHub Pages gibi
+  basit statik hosting seçeneklerinden biriyle yayınlanabilir (isteğe bağlı,
+  gerektiğinde konuşulacak).
+
+Bu yığının seçilme nedeni: backend/veritabanı kurulumu gerektirmeden, tek
+kullanıcı için hızlıca çalışan bir MVP üretmeye izin vermesi. İleride çoklu
+cihazdan erişim veya çoklu kullanıcı ihtiyacı doğarsa (bkz. "Gelecek
+Fikirler"), bir backend + gerçek veritabanına geçiş ayrı bir aşama olarak
+planlanabilir.
 
 ## 4. Kurallar / Çalışma Prensipleri
 
@@ -62,7 +73,7 @@ Bu kararlar netleştikçe bu doküman güncellenecek.
 
 ### Aşama 0 — Planlama (şu an buradayız)
 - [x] Proje kapsamının ve kurallarının belirlenmesi (bu doküman).
-- [ ] Platform ve teknoloji yığını kararının netleştirilmesi.
+- [x] Platform ve teknoloji yığını kararının netleştirilmesi.
 
 ### Aşama 1 — MVP (Temel İşlevsellik)
 - [ ] Gelir/gider işlemi ekleme (tutar, kategori, tarih, açıklama).
