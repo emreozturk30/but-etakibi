@@ -515,3 +515,259 @@ button.primary {
   color: var(--text-h);
   cursor: pointer;
 }
+
+/* Header menu button */
+.menu-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Nav drawer */
+.nav-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 50;
+}
+
+.nav-drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  max-width: 80vw;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+}
+
+.nav-drawer-overlay.open .nav-drawer {
+  transform: translateX(0);
+}
+
+.nav-drawer button {
+  font: inherit;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-drawer button.active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+/* Investments */
+.investment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.investment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.investment-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.investment-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.investment-name {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.investment-type {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.investment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.investment-pl-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.investment-pl {
+  font-weight: 600;
+}
+
+.investment-pl.positive {
+  color: var(--chart-income);
+}
+
+.investment-pl.negative {
+  color: var(--chart-expense);
+}
+
+.investment-updated-at {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.investment-note {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.investment-purchase-date {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.investment-actions {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.investment-actions button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.investment-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.investment-price-edit {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.investment-price-edit input {
+  flex: 1;
+  min-width: 100px;
+}
+
+/* Price source settings */
+.price-source-caveat {
+  color: var(--text);
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+.price-source-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.price-source-form input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.price-source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.price-source-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.price-source-type {
+  font-weight: 600;
+  color: var(--text-h);
+  flex: 0 0 auto;
+}
+
+.price-source-url,
+.price-source-path {
+  color: var(--text);
+  word-break: break-all;
+  flex: 1 1 140px;
+}
+
+.price-source-item button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
