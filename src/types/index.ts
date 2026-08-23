@@ -14,3 +14,9 @@ export interface Transaction {
   date: string
   note?: string
 }
+
+export interface BudgetGoal {
+  id: string
+  categoryId: string
+  monthlyLimit: number
+}

@@ -105,7 +105,9 @@ planlanabilir.
 ### Aşama 3 — Gelişmiş Özellikler
 - [x] Kullanıcı tanımlı kategori ekleme/düzenleme (silme dahil; kullanımda olan
       kategoriler silinemiyor).
-- [ ] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı.
+- [x] Aylık bütçe hedefleri belirleme ve limit aşımı uyarısı (kategori
+      başına aylık limit, harcama ilerleme çubuğu, iyi/yaklaşıyor/aşıldı
+      durum uyarısı).
 - [ ] Tekrarlayan işlemler (ör. her ay otomatik kira gideri).
 - [ ] Veri dışa aktarma (CSV/Excel).
 - [ ] (Varsa) çoklu kullanıcı desteği / giriş sistemi.

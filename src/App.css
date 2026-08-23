@@ -94,6 +94,109 @@
   cursor: not-allowed;
 }
 
+/* Budget goals */
+.budget-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.budget-form input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.budget-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.budget-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+.budget-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.budget-category {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.budget-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.budget-status-icon.status-good {
+  color: var(--status-good);
+}
+
+.budget-status-icon.status-warning {
+  color: var(--status-warning);
+}
+
+.budget-status-icon.status-critical {
+  color: var(--status-critical);
+}
+
+.budget-progress-track {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.budget-progress-fill.status-good {
+  background: var(--status-good);
+}
+
+.budget-progress-fill.status-warning {
+  background: var(--status-warning);
+}
+
+.budget-progress-fill.status-critical {
+  background: var(--status-critical);
+}
+
+.budget-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.budget-item-footer button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
 /* Filters */
 .filters {
   display: flex;

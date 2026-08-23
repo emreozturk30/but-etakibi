@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react'
 import './App.css'
 import { Balance } from './components/Balance'
+import { BudgetGoals } from './components/BudgetGoals'
 import { CategoryBreakdownChart } from './components/CategoryBreakdownChart'
 import { CategoryManager } from './components/CategoryManager'
 import { Filters } from './components/Filters'
 import { MonthlyTrendChart } from './components/MonthlyTrendChart'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
+import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
 import { useTransactions } from './hooks/useTransactions'
 import type { Transaction } from './types'
@@ -18,6 +20,7 @@ function App() {
     useTransactions()
   const { categories, customCategories, addCategory, renameCategory, deleteCategory } =
     useCategories()
+  const { budgetGoals, setBudgetGoal, deleteBudgetGoal } = useBudgetGoals()
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
@@ -56,6 +59,7 @@ function App() {
       setFilters((prev) => ({ ...prev, categoryId: 'all' }))
     }
     deleteCategory(id)
+    deleteBudgetGoal(id)
   }
 
   return (
@@ -92,6 +96,17 @@ function App() {
         </section>
 
         <Balance transactions={filteredTransactions} />
+
+        <section className="panel">
+          <h2>Aylık Bütçe Hedefleri</h2>
+          <BudgetGoals
+            categories={categories}
+            budgetGoals={budgetGoals}
+            transactions={transactions}
+            onSetGoal={setBudgetGoal}
+            onDeleteGoal={deleteBudgetGoal}
+          />
+        </section>
 
         <section className="panel">
           <h2>Kategori Bazlı Harcama Özeti</h2>
