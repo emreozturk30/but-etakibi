@@ -13,8 +13,7 @@ kod geliştirmeye bu doküman onaylandıktan sonra başlanacak.
 - İleride: bütçe hedefleri, tekrarlayan işlemler, grafiklerle görselleştirme.
 
 **Kapsam dışı (ilk sürüm için):** çoklu kullanıcı/banka entegrasyonu, otomatik
-banka senkronizasyonu, ~~yatırım takibi~~ (Yatırım Takibi ek özelliğiyle
-kapsam içine alındı, bkz. aşağı). Bunlar "gelecek fikirler" bölümünde
+banka senkronizasyonu, yatırım takibi. Bunlar "gelecek fikirler" bölümünde
 ayrıca not edilecek.
 
 ## 2. Temel Kavramlar (Veri Modeli Taslağı)
@@ -152,34 +151,10 @@ gözlenmedi.
   birikim negatife düştüğü aylarda da sıfır referans çizgisiyle net şekilde
   görülüyor.
 
-### Yatırım Takibi (Ek Özellik)
-
-- Header'ın sol üstüne eklenen "⋮" menü butonuyla açılan, soldan kayan bir
-  çekmece (drawer) menüsü üzerinden "Bütçe Takip" ve "Yatırımlar" görünümleri
-  arasında geçiş yapılabiliyor (basit `useState` ile, router eklenmedi;
-  görünüm/çekmece durumu kalıcı değil, sayfa yenilenince "Bütçe Takip"e
-  döner — bilinçli bir tasarım kararı).
-- Yatırımlar sayfasında 6 varlık türüyle (Kripto, Döviz, Altın, Hisse Senedi,
-  Fon, Diğer) yatırım ekle/düzenle/sil; her kayıt için miktar, alış fiyatı,
-  alış tarihi, güncel fiyat ve kâr/zarar (tutar + yüzde) gösteriliyor.
-- **Güncel fiyat:** Kripto (CoinGecko) ve Döviz (Frankfurter.app) için
-  ücretsiz/anahtarsız API'lerden tek tıkla otomatik çekiliyor. Altın, Hisse
-  Senedi, Fon ve Diğer için böyle güvenilir ücretsiz bir API olmadığından,
-  "Fiyat Kaynakları" ayarından kullanıcının kendi API anahtarını/URL'sini
-  (bir `{symbol}` yer tutucusu + JSON yol dizesiyle) tanımlayabildiği genel
-  bir adaptör kullanılıyor. Her durumda güncel fiyat manuel olarak da
-  girilebiliyor/güncellenebiliyor (otomatik çekim başarısız olursa zarif bir
-  hata mesajıyla düşüyor, uygulama çökmüyor).
-- Bu, projeye ilk kez otomatik test (vitest) eklenmesine vesile oldu:
-  `src/utils/priceProviders.ts`'teki fiyat çekme/JSON-yolu çıkarma mantığı
-  ağ gerektirmeden, mock `fetch` ile test ediliyor (`npm run test`, CI'a da
-  eklendi).
-
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- ~~Yatırım/portföy takibi.~~ — Yatırım Takibi ek özelliğiyle kapsam içine
-  alındı, bkz. Bölüm 5.
+- Yatırım/portföy takibi.
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
 

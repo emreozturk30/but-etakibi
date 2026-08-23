@@ -5,23 +5,16 @@ import { BudgetGoals } from './components/BudgetGoals'
 import { CategoryManager } from './components/CategoryManager'
 import { ExportButton } from './components/ExportButton'
 import { Filters } from './components/Filters'
-import { InvestmentForm } from './components/InvestmentForm'
-import { InvestmentList } from './components/InvestmentList'
-import type { AppView } from './components/NavDrawer'
-import { NavDrawer } from './components/NavDrawer'
-import { PriceSourceSettings } from './components/PriceSourceSettings'
 import { RecurringTransactions } from './components/RecurringTransactions'
 import { ThemeToggle } from './components/ThemeToggle'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
 import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
-import { useInvestments } from './hooks/useInvestments'
-import { usePriceSources } from './hooks/usePriceSources'
 import { useRecurringTransactions } from './hooks/useRecurringTransactions'
 import { useTheme } from './hooks/useTheme'
 import { useTransactions } from './hooks/useTransactions'
-import type { Investment, Transaction } from './types'
+import type { Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
 import { filterTransactions } from './utils/filterTransactions'
 import { computeMissingRecurringTransactions } from './utils/recurring'
@@ -58,18 +51,6 @@ function App() {
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
   const [filters, setFilters] = useState(DEFAULT_FILTERS)
-  const [view, setView] = useState<AppView>('dashboard')
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [editingInvestment, setEditingInvestment] =
-    useState<Investment | null>(null)
-  const {
-    investments,
-    addInvestment,
-    updateInvestment,
-    deleteInvestment,
-    updateInvestmentPrice,
-  } = useInvestments()
-  const { priceSources, setPriceSource, deletePriceSource } = usePriceSources()
 
   useEffect(() => {
     const missing = computeMissingRecurringTransactions(
@@ -113,26 +94,6 @@ function App() {
     deleteTransaction(id)
   }
 
-  function handleInvestmentSubmit(investment: Omit<Investment, 'id'>) {
-    if (editingInvestment) {
-      const priceUpdatedAt =
-        investment.currentPrice === editingInvestment.currentPrice
-          ? editingInvestment.priceUpdatedAt
-          : new Date().toISOString()
-      updateInvestment(editingInvestment.id, { ...investment, priceUpdatedAt })
-      setEditingInvestment(null)
-    } else {
-      addInvestment(investment)
-    }
-  }
-
-  function handleInvestmentDelete(id: string) {
-    if (editingInvestment?.id === id) {
-      setEditingInvestment(null)
-    }
-    deleteInvestment(id)
-  }
-
   function handleDeleteCategory(id: string) {
     const isInUse =
       transactions.some((transaction) => transaction.categoryId === id) ||
@@ -148,148 +109,96 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <button
-          type="button"
-          className="menu-button"
-          aria-label="Menü"
-          aria-haspopup="true"
-          aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen(true)}
-        >
-          ⋮
-        </button>
         <ThemeToggle theme={theme} onChange={setTheme} />
         <h1>Bütçe Takip</h1>
         <p>Gelir ve giderlerini takip et.</p>
       </header>
 
-      <NavDrawer
-        open={drawerOpen}
-        view={view}
-        onNavigate={(nextView) => {
-          setView(nextView)
-          setDrawerOpen(false)
-        }}
-        onClose={() => setDrawerOpen(false)}
-      />
-
       <main>
-        {view === 'dashboard' && (
-          <>
-            <TransactionForm
-              key={editingTransaction?.id ?? 'new'}
-              categories={categories}
-              editingTransaction={editingTransaction}
-              onSubmit={handleSubmit}
-              onCancelEdit={() => setEditingTransaction(null)}
-            />
+        <TransactionForm
+          key={editingTransaction?.id ?? 'new'}
+          categories={categories}
+          editingTransaction={editingTransaction}
+          onSubmit={handleSubmit}
+          onCancelEdit={() => setEditingTransaction(null)}
+        />
 
-            <section className="panel">
-              <h2>Kategoriler</h2>
-              <CategoryManager
-                categories={categories}
-                customCategories={customCategories}
-                transactions={transactions}
-                recurringTransactions={recurringTransactions}
-                onAdd={addCategory}
-                onRename={renameCategory}
-                onDelete={handleDeleteCategory}
-              />
-            </section>
+        <section className="panel">
+          <h2>Kategoriler</h2>
+          <CategoryManager
+            categories={categories}
+            customCategories={customCategories}
+            transactions={transactions}
+            recurringTransactions={recurringTransactions}
+            onAdd={addCategory}
+            onRename={renameCategory}
+            onDelete={handleDeleteCategory}
+          />
+        </section>
 
-            <section className="panel">
-              <h2>Tekrarlayan İşlemler</h2>
-              <RecurringTransactions
-                categories={categories}
-                recurringTransactions={recurringTransactions}
-                onAdd={addRecurringTransaction}
-                onDelete={deleteRecurringTransaction}
-              />
-            </section>
+        <section className="panel">
+          <h2>Tekrarlayan İşlemler</h2>
+          <RecurringTransactions
+            categories={categories}
+            recurringTransactions={recurringTransactions}
+            onAdd={addRecurringTransaction}
+            onDelete={deleteRecurringTransaction}
+          />
+        </section>
 
-            <section className="panel">
-              <h2>Filtreler</h2>
-              <Filters categories={categories} filters={filters} onChange={setFilters} />
-            </section>
+        <section className="panel">
+          <h2>Filtreler</h2>
+          <Filters categories={categories} filters={filters} onChange={setFilters} />
+        </section>
 
-            <section className="panel">
-              <h2>Dışa Aktar</h2>
-              <ExportButton categories={categories} transactions={filteredTransactions} />
-            </section>
+        <section className="panel">
+          <h2>Dışa Aktar</h2>
+          <ExportButton categories={categories} transactions={filteredTransactions} />
+        </section>
 
-            <Balance transactions={filteredTransactions} />
+        <Balance transactions={filteredTransactions} />
 
-            <section className="panel">
-              <h2>Aylık Bütçe Hedefleri</h2>
-              <BudgetGoals
-                categories={categories}
-                budgetGoals={budgetGoals}
-                transactions={transactions}
-                onSetGoal={setBudgetGoal}
-                onDeleteGoal={deleteBudgetGoal}
-              />
-            </section>
+        <section className="panel">
+          <h2>Aylık Bütçe Hedefleri</h2>
+          <BudgetGoals
+            categories={categories}
+            budgetGoals={budgetGoals}
+            transactions={transactions}
+            onSetGoal={setBudgetGoal}
+            onDeleteGoal={deleteBudgetGoal}
+          />
+        </section>
 
-            <section className="panel">
-              <h2>Kategori Bazlı Harcama Özeti</h2>
-              <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
-                <CategoryBreakdownChart
-                  categories={categories}
-                  transactions={filteredTransactions}
-                />
-              </Suspense>
-            </section>
-
-            <section className="panel">
-              <h2>Aylık Gelir/Gider Trendi</h2>
-              <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
-                <MonthlyTrendChart transactions={trendTransactions} />
-              </Suspense>
-            </section>
-
-            <section className="panel">
-              <h2>Net Birikim (Kümülatif)</h2>
-              <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
-                <CumulativeBalanceChart transactions={trendTransactions} />
-              </Suspense>
-            </section>
-
-            <TransactionList
+        <section className="panel">
+          <h2>Kategori Bazlı Harcama Özeti</h2>
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <CategoryBreakdownChart
               categories={categories}
               transactions={filteredTransactions}
-              onEdit={setEditingTransaction}
-              onDelete={handleDelete}
             />
-          </>
-        )}
+          </Suspense>
+        </section>
 
-        {view === 'investments' && (
-          <>
-            <InvestmentForm
-              key={editingInvestment?.id ?? 'new'}
-              editingInvestment={editingInvestment}
-              onSubmit={handleInvestmentSubmit}
-              onCancelEdit={() => setEditingInvestment(null)}
-            />
+        <section className="panel">
+          <h2>Aylık Gelir/Gider Trendi</h2>
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <MonthlyTrendChart transactions={trendTransactions} />
+          </Suspense>
+        </section>
 
-            <InvestmentList
-              investments={investments}
-              priceSources={priceSources}
-              onEdit={setEditingInvestment}
-              onDelete={handleInvestmentDelete}
-              onUpdatePrice={updateInvestmentPrice}
-            />
+        <section className="panel">
+          <h2>Net Birikim (Kümülatif)</h2>
+          <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+            <CumulativeBalanceChart transactions={trendTransactions} />
+          </Suspense>
+        </section>
 
-            <section className="panel">
-              <h2>Fiyat Kaynakları</h2>
-              <PriceSourceSettings
-                priceSources={priceSources}
-                onSet={setPriceSource}
-                onDelete={deletePriceSource}
-              />
-            </section>
-          </>
-        )}
+        <TransactionList
+          categories={categories}
+          transactions={filteredTransactions}
+          onEdit={setEditingTransaction}
+          onDelete={handleDelete}
+        />
       </main>
     </div>
   )
