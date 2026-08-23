@@ -1,5 +1,13 @@
-function toISODate(date: Date): string {
-  return date.toISOString().slice(0, 10)
+export function toLocalISODate(date: Date): string {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
+export function parseLocalDate(isoDate: string): Date {
+  const [year, month, day] = isoDate.split('-').map(Number)
+  return new Date(year, month - 1, day)
 }
 
 export function getMonthRange(offsetMonths: number): {
@@ -9,5 +17,5 @@ export function getMonthRange(offsetMonths: number): {
   const now = new Date()
   const start = new Date(now.getFullYear(), now.getMonth() + offsetMonths, 1)
   const end = new Date(now.getFullYear(), now.getMonth() + offsetMonths + 1, 0)
-  return { start: toISODate(start), end: toISODate(end) }
+  return { start: toLocalISODate(start), end: toLocalISODate(end) }
 }

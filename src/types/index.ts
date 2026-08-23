@@ -30,4 +30,5 @@ export interface RecurringTransaction {
   note?: string
   dayOfMonth: number
   startDate: string
+  skippedMonths?: string[]
 }

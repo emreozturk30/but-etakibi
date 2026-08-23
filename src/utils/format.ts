@@ -1,3 +1,5 @@
+import { parseLocalDate } from './dateRanges'
+
 const currencyFormatter = new Intl.NumberFormat('tr-TR', {
   style: 'currency',
   currency: 'TRY',
@@ -19,7 +21,7 @@ export function formatCompactCurrency(amount: number): string {
 }
 
 export function formatDate(isoDate: string): string {
-  const date = new Date(isoDate)
+  const date = parseLocalDate(isoDate)
   if (Number.isNaN(date.getTime())) return isoDate
   return new Intl.DateTimeFormat('tr-TR').format(date)
 }

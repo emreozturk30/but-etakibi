@@ -1,5 +1,6 @@
 import type { Category, Transaction } from '../types'
 import { downloadCsv, transactionsToCsv } from '../utils/csv'
+import { toLocalISODate } from '../utils/dateRanges'
 
 interface ExportButtonProps {
   categories: Category[]
@@ -7,7 +8,7 @@ interface ExportButtonProps {
 }
 
 function todayForFilename(): string {
-  return new Date().toISOString().slice(0, 10)
+  return toLocalISODate(new Date())
 }
 
 export function ExportButton({ categories, transactions }: ExportButtonProps) {

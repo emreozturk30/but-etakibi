@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Category, RecurringTransaction, TransactionType } from '../types'
 import { getCategoriesByType, getCategoryById } from '../utils/categoryHelpers'
+import { toLocalISODate } from '../utils/dateRanges'
 import { formatCurrency } from '../utils/format'
 
 interface RecurringTransactionsProps {
@@ -11,7 +12,7 @@ interface RecurringTransactionsProps {
   onDelete: (id: string) => void
 }
 
-const today = () => new Date().toISOString().slice(0, 10)
+const today = () => toLocalISODate(new Date())
 
 export function RecurringTransactions({
   categories,

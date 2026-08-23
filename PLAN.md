@@ -127,6 +127,23 @@ Aşama 3 tamamlandı.
 
 Aşama 4 tamamlandı — yol haritasındaki tüm aşamalar bitti.
 
+### Son Gözden Geçirme — Bulunan ve Düzeltilen Hatalar
+
+- **Saat dilimi hatası:** `toISOString()` kullanımı UTC+ saat dilimlerinde
+  (ör. Türkiye/UTC+3) "bu ay/geçen ay" filtresini, aylık bütçe hesaplamasını
+  ve formlardaki varsayılan tarihi yanlış hesaplıyordu; yerel tarih
+  bileşenleriyle (`toLocalISODate`/`parseLocalDate`) düzeltildi.
+- **Tekrarlayan işlem düzenleme hatası:** otomatik oluşturulan bir işlem
+  düzenlendiğinde `recurringId` bağlantısı siliniyor, bu da o ay için ikinci
+  bir kopya işlem oluşturulmasına yol açıyordu; düzeltildi.
+- **Tekrarlayan işlem silme hatası:** otomatik oluşturulan bir ayın işlemi
+  silindiğinde bir sonraki açılışta otomatik olarak geri geliyordu; artık
+  silinen aylar "atlandı" olarak işaretleniyor ve tekrar oluşturulmuyor.
+
+Bu düzeltmelerden sonra tüm özellikler İstanbul saat dilimi simüle edilerek
+uçtan uca yeniden test edildi; konsol hatası veya davranış bozukluğu
+gözlenmedi.
+
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.

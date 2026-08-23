@@ -41,6 +41,7 @@ function App() {
     recurringTransactions,
     addRecurringTransaction,
     deleteRecurringTransaction,
+    skipRecurringMonth,
   } = useRecurringTransactions()
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null)
@@ -67,7 +68,10 @@ function App() {
 
   function handleSubmit(transaction: Omit<Transaction, 'id'>) {
     if (editingTransaction) {
-      updateTransaction(editingTransaction.id, transaction)
+      updateTransaction(editingTransaction.id, {
+        ...transaction,
+        recurringId: editingTransaction.recurringId,
+      })
       setEditingTransaction(null)
     } else {
       addTransaction(transaction)
@@ -77,6 +81,10 @@ function App() {
   function handleDelete(id: string) {
     if (editingTransaction?.id === id) {
       setEditingTransaction(null)
+    }
+    const transaction = transactions.find((t) => t.id === id)
+    if (transaction?.recurringId) {
+      skipRecurringMonth(transaction.recurringId, transaction.date.slice(0, 7))
     }
     deleteTransaction(id)
   }

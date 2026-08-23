@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Category, Transaction, TransactionType } from '../types'
 import { getCategoriesByType } from '../utils/categoryHelpers'
+import { toLocalISODate } from '../utils/dateRanges'
 
 interface TransactionFormProps {
   categories: Category[]
@@ -10,7 +11,7 @@ interface TransactionFormProps {
   onCancelEdit: () => void
 }
 
-const today = () => new Date().toISOString().slice(0, 10)
+const today = () => toLocalISODate(new Date())
 
 function emptyFormState(categories: Category[], type: TransactionType) {
   return {

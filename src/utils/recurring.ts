@@ -1,4 +1,5 @@
 import type { RecurringTransaction, Transaction } from '../types'
+import { parseLocalDate } from './dateRanges'
 
 function daysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate()
@@ -17,15 +18,16 @@ export function computeMissingRecurringTransactions(
   const currentMonth = new Date(today.getFullYear(), today.getMonth(), 1)
 
   for (const rule of rules) {
-    const start = new Date(rule.startDate)
+    const start = parseLocalDate(rule.startDate)
     const startMonth = new Date(start.getFullYear(), start.getMonth(), 1)
     if (startMonth > currentMonth) continue
 
-    const existingMonths = new Set(
-      transactions
+    const existingMonths = new Set([
+      ...transactions
         .filter((transaction) => transaction.recurringId === rule.id)
         .map((transaction) => transaction.date.slice(0, 7)),
-    )
+      ...(rule.skippedMonths ?? []),
+    ])
 
     const cursor = new Date(startMonth)
     while (cursor <= currentMonth) {

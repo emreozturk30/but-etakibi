@@ -25,9 +25,23 @@ export function useRecurringTransactions() {
     setRecurringTransactions((prev) => prev.filter((rule) => rule.id !== id))
   }
 
+  function skipRecurringMonth(ruleId: string, monthKey: string) {
+    setRecurringTransactions((prev) =>
+      prev.map((rule) =>
+        rule.id === ruleId
+          ? {
+              ...rule,
+              skippedMonths: [...(rule.skippedMonths ?? []), monthKey],
+            }
+          : rule,
+      ),
+    )
+  }
+
   return {
     recurringTransactions,
     addRecurringTransaction,
     deleteRecurringTransaction,
+    skipRecurringMonth,
   }
 }
