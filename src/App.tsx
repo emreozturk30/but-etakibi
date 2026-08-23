@@ -4,6 +4,7 @@ import { Balance } from './components/Balance'
 import { BudgetGoals } from './components/BudgetGoals'
 import { CategoryBreakdownChart } from './components/CategoryBreakdownChart'
 import { CategoryManager } from './components/CategoryManager'
+import { ExportButton } from './components/ExportButton'
 import { Filters } from './components/Filters'
 import { MonthlyTrendChart } from './components/MonthlyTrendChart'
 import { TransactionForm } from './components/TransactionForm'
@@ -93,6 +94,11 @@ function App() {
         <section className="panel">
           <h2>Filtreler</h2>
           <Filters categories={categories} filters={filters} onChange={setFilters} />
+        </section>
+
+        <section className="panel">
+          <h2>Dışa Aktar</h2>
+          <ExportButton categories={categories} transactions={filteredTransactions} />
         </section>
 
         <Balance transactions={filteredTransactions} />

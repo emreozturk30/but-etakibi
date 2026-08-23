@@ -109,7 +109,7 @@ planlanabilir.
       başına aylık limit, harcama ilerleme çubuğu, iyi/yaklaşıyor/aşıldı
       durum uyarısı).
 - [ ] Tekrarlayan işlemler (ör. her ay otomatik kira gideri).
-- [ ] Veri dışa aktarma (CSV/Excel).
+- [x] Veri dışa aktarma (CSV) — uygulanan filtrelere göre indirme.
 - [ ] (Varsa) çoklu kullanıcı desteği / giriş sistemi.
 
 ### Aşama 4 — Cilalama

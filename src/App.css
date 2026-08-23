@@ -94,6 +94,25 @@
   cursor: not-allowed;
 }
 
+/* Export */
+.export-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.export-section p {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.export-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Budget goals */
 .budget-form {
   display: flex;
