@@ -6,16 +6,33 @@ const BIGPARA_LIST_URL = 'https://bigpara.hurriyet.com.tr/api/v1/hisse/list'
 const BIGPARA_DETAIL_URL =
   'https://bigpara.hurriyet.com.tr/api/v1/borsa/hisseyuzeysel/'
 const REQUEST_TIMEOUT_MS = 8_000
-const CONCURRENCY = 20
+// Bigpara, çok kısa sürede gelen çok sayıda isteği (ör. yüksek eşzamanlılıkla
+// saniyeler içinde 600+ istek) 401 ile reddediyor gibi görünüyor. Düşük
+// eşzamanlılık + tarayıcı benzeri bir User-Agent + başarısız isteklerde
+// kısa bir bekleme sonrası yeniden deneme bu oranı büyük ölçüde düşürüyor.
+const CONCURRENCY = 6
+const RETRY_DELAYS_MS = [500, 1500]
+const USER_AGENT =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = path.join(__dirname, '..', 'public', 'stock-data.json')
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 
 async function fetchWithTimeout(url) {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
   try {
-    const response = await fetch(url, { signal: controller.signal })
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        'User-Agent': USER_AGENT,
+        Referer: 'https://bigpara.hurriyet.com.tr/',
+      },
+    })
     if (!response.ok) {
       throw new Error(`sunucu hatası: ${response.status}`)
     }
@@ -25,8 +42,23 @@ async function fetchWithTimeout(url) {
   }
 }
 
+async function fetchWithRetry(url) {
+  let lastError
+  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt += 1) {
+    try {
+      return await fetchWithTimeout(url)
+    } catch (error) {
+      lastError = error
+      if (attempt < RETRY_DELAYS_MS.length) {
+        await sleep(RETRY_DELAYS_MS[attempt])
+      }
+    }
+  }
+  throw lastError
+}
+
 async function fetchStockList() {
-  const data = await fetchWithTimeout(BIGPARA_LIST_URL)
+  const data = await fetchWithRetry(BIGPARA_LIST_URL)
   const raw = data?.data
   if (!Array.isArray(raw)) {
     throw new Error('Hisse listesi beklenmeyen bir formatta döndü.')
@@ -45,7 +77,7 @@ async function fetchStockList() {
 }
 
 async function fetchStockPrice(code) {
-  const data = await fetchWithTimeout(
+  const data = await fetchWithRetry(
     `${BIGPARA_DETAIL_URL}${encodeURIComponent(code)}`,
   )
   const price = data?.data?.hisseYuzeysel?.kapanis
