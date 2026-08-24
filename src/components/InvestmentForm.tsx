@@ -4,11 +4,13 @@ import type {
   AssetType,
   CryptoTypeId,
   DistributiveOmit,
+  ForexTypeId,
   GoldTypeId,
   Investment,
 } from '../types'
 import { GOLD_TYPES } from '../constants/goldTypes'
 import { CRYPTO_TYPES } from '../constants/cryptoTypes'
+import { FOREX_TYPES } from '../constants/forexTypes'
 import { toLocalISODate } from '../utils/dateRanges'
 
 interface InvestmentFormProps {
@@ -24,6 +26,7 @@ function emptyFormState(assetType: AssetType) {
     assetType,
     goldType: GOLD_TYPES[0].id,
     cryptoType: CRYPTO_TYPES[0].id,
+    forexType: FOREX_TYPES[0].id,
     quantity: '',
     purchasePrice: '',
     purchaseDate: today(),
@@ -46,19 +49,31 @@ export function InvestmentForm({
       currentPrice: String(editingInvestment.currentPrice),
       note: editingInvestment.note ?? '',
     }
-    return editingInvestment.assetType === 'gold'
-      ? {
-          assetType: 'gold' as const,
-          goldType: editingInvestment.goldType,
-          cryptoType: CRYPTO_TYPES[0].id,
-          ...shared,
-        }
-      : {
-          assetType: 'crypto' as const,
-          cryptoType: editingInvestment.cryptoType,
-          goldType: GOLD_TYPES[0].id,
-          ...shared,
-        }
+    if (editingInvestment.assetType === 'gold') {
+      return {
+        assetType: 'gold' as const,
+        goldType: editingInvestment.goldType,
+        cryptoType: CRYPTO_TYPES[0].id,
+        forexType: FOREX_TYPES[0].id,
+        ...shared,
+      }
+    }
+    if (editingInvestment.assetType === 'crypto') {
+      return {
+        assetType: 'crypto' as const,
+        cryptoType: editingInvestment.cryptoType,
+        goldType: GOLD_TYPES[0].id,
+        forexType: FOREX_TYPES[0].id,
+        ...shared,
+      }
+    }
+    return {
+      assetType: 'forex' as const,
+      forexType: editingInvestment.forexType,
+      goldType: GOLD_TYPES[0].id,
+      cryptoType: CRYPTO_TYPES[0].id,
+      ...shared,
+    }
   })
   const [error, setError] = useState('')
 
@@ -88,26 +103,22 @@ export function InvestmentForm({
       return
     }
 
-    const payload: DistributiveOmit<Investment, 'id' | 'priceUpdatedAt'> =
-      form.assetType === 'gold'
-        ? {
-            assetType: 'gold',
-            goldType: form.goldType,
-            quantity,
-            purchasePrice,
-            purchaseDate: form.purchaseDate,
-            currentPrice,
-            note: form.note.trim() || undefined,
-          }
-        : {
-            assetType: 'crypto',
-            cryptoType: form.cryptoType,
-            quantity,
-            purchasePrice,
-            purchaseDate: form.purchaseDate,
-            currentPrice,
-            note: form.note.trim() || undefined,
-          }
+    const shared = {
+      quantity,
+      purchasePrice,
+      purchaseDate: form.purchaseDate,
+      currentPrice,
+      note: form.note.trim() || undefined,
+    }
+
+    let payload: DistributiveOmit<Investment, 'id' | 'priceUpdatedAt'>
+    if (form.assetType === 'gold') {
+      payload = { assetType: 'gold', goldType: form.goldType, ...shared }
+    } else if (form.assetType === 'crypto') {
+      payload = { assetType: 'crypto', cryptoType: form.cryptoType, ...shared }
+    } else {
+      payload = { assetType: 'forex', forexType: form.forexType, ...shared }
+    }
 
     onSubmit(payload)
 
@@ -132,10 +143,11 @@ export function InvestmentForm({
           >
             <option value="gold">Altın</option>
             <option value="crypto">Kripto</option>
+            <option value="forex">Döviz</option>
           </select>
         </label>
 
-        {form.assetType === 'gold' ? (
+        {form.assetType === 'gold' && (
           <label>
             Altın Türü
             <select
@@ -154,7 +166,9 @@ export function InvestmentForm({
               ))}
             </select>
           </label>
-        ) : (
+        )}
+
+        {form.assetType === 'crypto' && (
           <label>
             Kripto Para
             <select
@@ -167,6 +181,27 @@ export function InvestmentForm({
               }
             >
               {CRYPTO_TYPES.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+
+        {form.assetType === 'forex' && (
+          <label>
+            Para Birimi
+            <select
+              value={form.forexType}
+              onChange={(e) =>
+                setForm((prev) => ({
+                  ...prev,
+                  forexType: e.target.value as ForexTypeId,
+                }))
+              }
+            >
+              {FOREX_TYPES.map((option) => (
                 <option key={option.id} value={option.id}>
                   {option.label}
                 </option>

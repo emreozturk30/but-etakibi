@@ -171,11 +171,20 @@ gözlenmedi.
   yeniden düzenlendi; mevcut altın kayıtları herhangi bir taşıma
   (migration) gerekmeden geçerli kalıyor. Diğer varlık türleri (döviz,
   hisse, fon vb.) kasıtlı olarak bu adıma dahil edilmedi.
+- **Yatırım takibi — Adım 3 (Döviz):** üçüncü varlık türü olarak döviz
+  eklendi; "Varlık Türü" listesine "Döviz" seçeneği katıldı. Sabit bir
+  para birimi listesinden (USD, EUR, GBP, CHF, CAD, AUD, JPY vb. 15
+  para birimi) seçim yapılıyor, serbest metin yok. Güncel kur, altın
+  için zaten kullanılan truncgil.com kaynağından tek tıkla çekiliyor
+  (aynı kaynak döviz kurlarını da içeriyor — yeni bir API'ye gerek
+  kalmadı), aynı 10 saniyelik zaman aşımı ve hata mesajı deseniyle.
+  Hisse senedi, fon gibi diğer varlık türleri kasıtlı olarak bu adıma
+  dahil edilmedi.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- Yatırım/portföy takibi (altın ve kripto için adımlar atıldı; döviz,
+- Yatırım/portföy takibi (altın, kripto ve döviz için adımlar atıldı;
   hisse, fon gibi diğer varlık türleri hâlâ bekliyor).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
