@@ -566,6 +566,51 @@ select:focus-visible {
   border-color: var(--accent-border);
 }
 
+.searchable-select {
+  position: relative;
+}
+
+.searchable-select input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.searchable-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: 0.25rem 0 0;
+  padding: 0.25rem;
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.searchable-select-options li {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.searchable-select-options li.highlighted,
+.searchable-select-options li:hover {
+  background: var(--accent-bg);
+}
+
+.searchable-select-empty {
+  padding: 0.4rem 0.6rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: default;
+}
+
 .form-error {
   color: #dc2626;
   font-size: 0.85rem;
