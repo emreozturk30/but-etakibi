@@ -19,7 +19,7 @@ import { useInvestments } from './hooks/useInvestments'
 import { useRecurringTransactions } from './hooks/useRecurringTransactions'
 import { useTheme } from './hooks/useTheme'
 import { useTransactions } from './hooks/useTransactions'
-import type { Investment, Transaction } from './types'
+import type { DistributiveOmit, Investment, Transaction } from './types'
 import { DEFAULT_FILTERS } from './types/filters'
 import { toLocalISODate } from './utils/dateRanges'
 import { filterTransactions } from './utils/filterTransactions'
@@ -112,7 +112,7 @@ function App() {
   }
 
   function handleInvestmentSubmit(
-    investment: Omit<Investment, 'id' | 'priceUpdatedAt'>,
+    investment: DistributiveOmit<Investment, 'id' | 'priceUpdatedAt'>,
   ) {
     const withTimestamp = {
       ...investment,

@@ -33,7 +33,7 @@ export interface RecurringTransaction {
   skippedMonths?: string[]
 }
 
-export type AssetType = 'gold'
+export type AssetType = 'gold' | 'crypto'
 
 export type GoldTypeId =
   | 'GRA'
@@ -47,10 +47,30 @@ export type GoldTypeId =
   | '18AYARALTIN'
   | 'YIA'
 
-export interface Investment {
+export type CryptoTypeId =
+  | 'bitcoin'
+  | 'ethereum'
+  | 'binancecoin'
+  | 'solana'
+  | 'ripple'
+  | 'cardano'
+  | 'dogecoin'
+  | 'tron'
+  | 'polkadot'
+  | 'avalanche-2'
+  | 'chainlink'
+  | 'litecoin'
+  | 'shiba-inu'
+  | 'uniswap'
+  | 'cosmos'
+  | 'stellar'
+  | 'monero'
+  | 'near'
+  | 'aptos'
+  | 'the-open-network'
+
+interface InvestmentBase {
   id: string
-  assetType: AssetType
-  goldType: GoldTypeId
   quantity: number
   purchasePrice: number
   purchaseDate: string
@@ -58,3 +78,22 @@ export interface Investment {
   priceUpdatedAt: string
   note?: string
 }
+
+export interface GoldInvestment extends InvestmentBase {
+  assetType: 'gold'
+  goldType: GoldTypeId
+}
+
+export interface CryptoInvestment extends InvestmentBase {
+  assetType: 'crypto'
+  cryptoType: CryptoTypeId
+}
+
+export type Investment = GoldInvestment | CryptoInvestment
+
+// Standard `Omit` doesn't distribute over unions (it collapses to only the
+// shared keys), which would silently drop `goldType`/`cryptoType`. This
+// distributes `Omit` across each union member individually.
+export type DistributiveOmit<T, K extends keyof never> = T extends unknown
+  ? Omit<T, K>
+  : never

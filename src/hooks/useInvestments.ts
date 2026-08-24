@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { Investment } from '../types'
+import type { DistributiveOmit, Investment } from '../types'
 import { loadInvestments, saveInvestments } from '../utils/storage'
 import { toLocalISODate } from '../utils/dateRanges'
 
@@ -12,14 +12,17 @@ export function useInvestments() {
     saveInvestments(investments)
   }, [investments])
 
-  function addInvestment(investment: Omit<Investment, 'id'>) {
+  function addInvestment(investment: DistributiveOmit<Investment, 'id'>) {
     setInvestments((prev) => [
       ...prev,
       { ...investment, id: crypto.randomUUID() },
     ])
   }
 
-  function updateInvestment(id: string, updates: Omit<Investment, 'id'>) {
+  function updateInvestment(
+    id: string,
+    updates: DistributiveOmit<Investment, 'id'>,
+  ) {
     setInvestments((prev) =>
       prev.map((investment) =>
         investment.id === id ? { ...updates, id } : investment,
