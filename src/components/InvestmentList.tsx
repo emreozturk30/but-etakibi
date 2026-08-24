@@ -7,6 +7,7 @@ import { fetchGoldPrice } from '../utils/goldPrice'
 import { fetchCryptoPrice } from '../utils/cryptoPrice'
 import { fetchForexPrice } from '../utils/forexPrice'
 import { fetchStockPrice } from '../utils/stockPrice'
+import { fetchFundPrice } from '../utils/fundPrice'
 import { formatCurrency, formatDate } from '../utils/format'
 
 interface InvestmentListProps {
@@ -35,7 +36,10 @@ function investmentLabel(investment: Investment): string {
         ?.label ?? investment.forexType
     )
   }
-  return `${investment.stockName} (${investment.stockCode})`
+  if (investment.assetType === 'stock') {
+    return `${investment.stockName} (${investment.stockCode})`
+  }
+  return `${investment.fundName} (${investment.fundCode})`
 }
 
 export function InvestmentList({
@@ -62,8 +66,10 @@ export function InvestmentList({
         price = await fetchCryptoPrice(investment.cryptoType)
       } else if (investment.assetType === 'forex') {
         price = await fetchForexPrice(investment.forexType)
-      } else {
+      } else if (investment.assetType === 'stock') {
         price = await fetchStockPrice(investment.stockCode)
+      } else {
+        price = await fetchFundPrice(investment.fundCode)
       }
       onUpdatePrice(investment.id, price)
       setRowState((prev) => ({ ...prev, [investment.id]: { loading: false } }))

@@ -201,12 +201,29 @@ gözlenmedi.
   güncellenemese bile önceden eklenmiş kayıtlar görüntülenmeye devam
   ediyor. Fon, varant gibi diğer menkul kıymet türleri kasıtlı olarak
   bu adıma dahil edilmedi.
+- **Yatırım takibi — Adım 5 (Fon):** beşinci varlık türü olarak TEFAS
+  fonları eklendi (Yatırım, Emeklilik/BES, Borsa Yatırım, Gayrimenkul
+  Yatırım, Girişim Sermayesi Yatırım Fonları — tüm kategoriler dahil);
+  "Varlık Türü" listesine "Fon" seçeneği katıldı. Hisse senedindeki
+  aynı mimari kullanıldı: TEFAS'ın resmi API'si (`fonGnlBlgSiraliGetir`)
+  hem CORS'a tabi hem de dakikada 6 istekle sınırlı olduğu için,
+  zamanlanmış bir GitHub Action (`.github/workflows/update-fund-data.yml`,
+  hafta içi günde bir kez — fon fiyatları hisse gibi gün içi
+  değişmiyor) `scripts/fetch-fund-data.mjs` betiğini çalıştırıp tüm
+  fon kategorilerinin güncel fiyatlarını (kategori başına tek istekle,
+  Bigpara'nın aksine fon başına ayrı istek gerekmiyor) sunucu
+  tarafında çekip `public/fund-data.json` olarak repoya commit'liyor;
+  bu dosya sitenin kendisiyle aynı origin'den servis ediliyor. Hafta
+  sonu/tatil günlerinde güncel veri yayınlanmamış olabileceğinden son
+  7 günlük bir aralık istenip her fon için en güncel tarihli fiyat
+  seçiliyor. Serbest metin girişi yok, dropdown'dan seçim deseni ve
+  isim-kayıt-anında-kopyalama deseni (`fundName`) korundu.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- Yatırım/portföy takibi (altın, kripto, döviz ve hisse senedi için
-  adımlar atıldı; fon gibi diğer varlık türleri hâlâ bekliyor).
+- Yatırım/portföy takibi (altın, kripto, döviz, hisse senedi ve fon
+  için adımlar atıldı).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
 
