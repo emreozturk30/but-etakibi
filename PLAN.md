@@ -218,6 +218,16 @@ gözlenmedi.
   7 günlük bir aralık istenip her fon için en güncel tarihli fiyat
   seçiliyor. Serbest metin girişi yok, dropdown'dan seçim deseni ve
   isim-kayıt-anında-kopyalama deseni (`fundName`) korundu.
+- **Portföy sekmesi (pasta grafiği):** sol üstteki menüye üçüncü bir
+  görünüm olarak "Portföy" eklendi. Pasta grafiği, sahip olunan her
+  yatırım ürününü (aynı ürünün birden fazla alımı tek dilimde
+  toplanıyor) ve bütçenin tüm zamanlar net bakiyesinden (gelir - gider,
+  aktif filtreden bağımsız) hesaplanan bir "Nakit" dilimini gösteriyor;
+  net negatifse Nakit dilimi 0 sayılıyor. Renk ataması değere/sıraya
+  göre değil kimliğe göre (Nakit her zaman aynı renk, ürünler alfabetik
+  sırayla sabit renklere atanıyor) — fiyatlar dalgalandıkça dilim
+  renkleri karışmıyor. 7 dilimden fazla ürün olursa en küçük değerliler
+  tek bir "Diğer" dilimine katlanıyor.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 

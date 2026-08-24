@@ -40,6 +40,11 @@ const CumulativeBalanceChart = lazy(() =>
     default: m.CumulativeBalanceChart,
   })),
 )
+const PortfolioChart = lazy(() =>
+  import('./components/PortfolioChart').then((m) => ({
+    default: m.PortfolioChart,
+  })),
+)
 
 function App() {
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
@@ -278,6 +283,15 @@ function App() {
               onDelete={handleInvestmentDelete}
               onUpdatePrice={updateInvestmentPrice}
             />
+          </section>
+        )}
+
+        {view === 'portfolio' && (
+          <section className="panel">
+            <h2>Portföy</h2>
+            <Suspense fallback={<p className="empty-state">Grafik yükleniyor…</p>}>
+              <PortfolioChart investments={investments} transactions={transactions} />
+            </Suspense>
           </section>
         )}
       </main>

@@ -1,45 +1,18 @@
 import { useState } from 'react'
 import type { Investment } from '../types'
-import { GOLD_TYPES } from '../constants/goldTypes'
-import { CRYPTO_TYPES } from '../constants/cryptoTypes'
-import { FOREX_TYPES } from '../constants/forexTypes'
 import { fetchGoldPrice } from '../utils/goldPrice'
 import { fetchCryptoPrice } from '../utils/cryptoPrice'
 import { fetchForexPrice } from '../utils/forexPrice'
 import { fetchStockPrice } from '../utils/stockPrice'
 import { fetchFundPrice } from '../utils/fundPrice'
 import { formatCurrency, formatDate } from '../utils/format'
+import { investmentLabel } from '../utils/investmentLabel'
 
 interface InvestmentListProps {
   investments: Investment[]
   onEdit: (investment: Investment) => void
   onDelete: (id: string) => void
   onUpdatePrice: (id: string, price: number) => void
-}
-
-function investmentLabel(investment: Investment): string {
-  if (investment.assetType === 'gold') {
-    return (
-      GOLD_TYPES.find((option) => option.id === investment.goldType)?.label ??
-      investment.goldType
-    )
-  }
-  if (investment.assetType === 'crypto') {
-    return (
-      CRYPTO_TYPES.find((option) => option.id === investment.cryptoType)
-        ?.label ?? investment.cryptoType
-    )
-  }
-  if (investment.assetType === 'forex') {
-    return (
-      FOREX_TYPES.find((option) => option.id === investment.forexType)
-        ?.label ?? investment.forexType
-    )
-  }
-  if (investment.assetType === 'stock') {
-    return `${investment.stockName} (${investment.stockCode})`
-  }
-  return `${investment.fundName} (${investment.fundCode})`
 }
 
 export function InvestmentList({
