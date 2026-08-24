@@ -13,6 +13,7 @@ import { CRYPTO_TYPES } from '../constants/cryptoTypes'
 import { FOREX_TYPES } from '../constants/forexTypes'
 import { useFundList } from '../hooks/useFundList'
 import { useStockList } from '../hooks/useStockList'
+import { SearchableSelect } from './SearchableSelect'
 import { toLocalISODate } from '../utils/dateRanges'
 
 interface InvestmentFormProps {
@@ -220,63 +221,54 @@ export function InvestmentForm({
         {form.assetType === 'gold' && (
           <label>
             Altın Türü
-            <select
+            <SearchableSelect
+              options={GOLD_TYPES.map((option) => ({
+                id: option.id,
+                label: option.label,
+              }))}
               value={form.goldType}
-              onChange={(e) =>
-                setForm((prev) => ({
-                  ...prev,
-                  goldType: e.target.value as GoldTypeId,
-                }))
+              onChange={(id) =>
+                setForm((prev) => ({ ...prev, goldType: id as GoldTypeId }))
               }
-            >
-              {GOLD_TYPES.map((option) => (
-                <option key={option.id} value={option.id}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+              placeholder="Altın türü ara…"
+            />
           </label>
         )}
 
         {form.assetType === 'crypto' && (
           <label>
             Kripto Para
-            <select
+            <SearchableSelect
+              options={CRYPTO_TYPES.map((option) => ({
+                id: option.id,
+                label: option.label,
+              }))}
               value={form.cryptoType}
-              onChange={(e) =>
+              onChange={(id) =>
                 setForm((prev) => ({
                   ...prev,
-                  cryptoType: e.target.value as CryptoTypeId,
+                  cryptoType: id as CryptoTypeId,
                 }))
               }
-            >
-              {CRYPTO_TYPES.map((option) => (
-                <option key={option.id} value={option.id}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+              placeholder="Kripto para ara…"
+            />
           </label>
         )}
 
         {form.assetType === 'forex' && (
           <label>
             Para Birimi
-            <select
+            <SearchableSelect
+              options={FOREX_TYPES.map((option) => ({
+                id: option.id,
+                label: option.label,
+              }))}
               value={form.forexType}
-              onChange={(e) =>
-                setForm((prev) => ({
-                  ...prev,
-                  forexType: e.target.value as ForexTypeId,
-                }))
+              onChange={(id) =>
+                setForm((prev) => ({ ...prev, forexType: id as ForexTypeId }))
               }
-            >
-              {FOREX_TYPES.map((option) => (
-                <option key={option.id} value={option.id}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+              placeholder="Para birimi ara…"
+            />
           </label>
         )}
 
@@ -305,10 +297,13 @@ export function InvestmentForm({
         {form.assetType === 'stock' && stockList.status === 'ready' && (
           <label>
             Hisse
-            <select
+            <SearchableSelect
+              options={stockList.list.map((option) => ({
+                id: option.code,
+                label: `${option.name} (${option.code})`,
+              }))}
               value={form.stockCode}
-              onChange={(e) => {
-                const code = e.target.value
+              onChange={(code) => {
                 const match = stockList.list.find(
                   (option) => option.code === code,
                 )
@@ -318,16 +313,8 @@ export function InvestmentForm({
                   stockName: match?.name ?? '',
                 }))
               }}
-            >
-              <option value="" disabled>
-                Seçiniz
-              </option>
-              {stockList.list.map((option) => (
-                <option key={option.code} value={option.code}>
-                  {option.name} ({option.code})
-                </option>
-              ))}
-            </select>
+              placeholder="Hisse ara…"
+            />
           </label>
         )}
 
@@ -356,10 +343,13 @@ export function InvestmentForm({
         {form.assetType === 'fund' && fundList.status === 'ready' && (
           <label>
             Fon
-            <select
+            <SearchableSelect
+              options={fundList.list.map((option) => ({
+                id: option.code,
+                label: `${option.name} (${option.code})`,
+              }))}
               value={form.fundCode}
-              onChange={(e) => {
-                const code = e.target.value
+              onChange={(code) => {
                 const match = fundList.list.find(
                   (option) => option.code === code,
                 )
@@ -369,16 +359,8 @@ export function InvestmentForm({
                   fundName: match?.name ?? '',
                 }))
               }}
-            >
-              <option value="" disabled>
-                Seçiniz
-              </option>
-              {fundList.list.map((option) => (
-                <option key={option.code} value={option.code}>
-                  {option.name} ({option.code})
-                </option>
-              ))}
-            </select>
+              placeholder="Fon ara…"
+            />
           </label>
         )}
 
