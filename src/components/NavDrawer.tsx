@@ -7,9 +7,10 @@ interface NavDrawerProps {
   view: AppView
   onNavigate: (view: AppView) => void
   onClose: () => void
+  onSignOut: () => void
 }
 
-export function NavDrawer({ open, view, onNavigate, onClose }: NavDrawerProps) {
+export function NavDrawer({ open, view, onNavigate, onClose, onSignOut }: NavDrawerProps) {
   useEffect(() => {
     if (!open) return
     function handleKeyDown(event: KeyboardEvent) {
@@ -50,6 +51,13 @@ export function NavDrawer({ open, view, onNavigate, onClose }: NavDrawerProps) {
           onClick={() => onNavigate('portfolio')}
         >
           Portföy
+        </button>
+        <button
+          type="button"
+          className="nav-drawer-signout"
+          onClick={onSignOut}
+        >
+          Çıkış Yap
         </button>
       </nav>
     </div>

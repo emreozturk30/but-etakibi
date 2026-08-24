@@ -40,7 +40,9 @@ kategori de silinemiyor.
 ## 3. Alınan Kararlar
 
 - **Platform:** Web uygulaması.
-- **Kullanıcı:** Tek kullanıcı (kişisel kullanım), giriş/kayıt sistemi yok.
+- **Kullanıcı:** Başlangıçta tek kullanıcı (kişisel kullanım) olarak
+  tasarlandı; artık gerçek çoklu kullanıcı hesap sistemi var (bkz.
+  "Canlıya Alma Sonrası Ek Özellik" — Kullanıcı Hesabı).
 - **Veri saklama:** Yerel (tarayıcıda, cihazdan bağımsız bir sunucuya
   gönderilmeden) — backend/veritabanı sunucusu gerekmiyor.
 - **Teknoloji tercihi:** JavaScript/TypeScript ekosistemi.
@@ -228,6 +230,16 @@ gözlenmedi.
   sırayla sabit renklere atanıyor) — fiyatlar dalgalandıkça dilim
   renkleri karışmıyor. 7 dilimden fazla ürün olursa en küçük değerliler
   tek bir "Diğer" dilimine katlanıyor.
+- **Kullanıcı Hesabı — Adım 1 (Kimlik Doğrulama):** Supabase Auth ile
+  gerçek kayıt ol/giriş yap/çıkış yap eklendi; uygulama artık bir
+  hesapla korunuyor (oturum yokken sadece giriş/kayıt ekranı
+  görünüyor). E-posta doğrulama Supabase panelinden yönetiliyor. Bu
+  adımda veriler **hâlâ sadece cihazın localStorage'ında** kalıyor —
+  yani aynı hesapla farklı bir cihazdan girildiğinde veriler
+  görünmüyor (senkron yok). Tüm uygulama verisinin (işlemler,
+  kategoriler, bütçe hedefleri, tekrarlayan işlemler, yatırımlar)
+  Supabase'e taşınıp gerçek cihazlar arası senkronizasyon sağlanması
+  kasıtlı olarak bu adıma dahil edilmedi, ayrı bir gelecek adımı.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
@@ -236,6 +248,9 @@ gözlenmedi.
   için adımlar atıldı).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
+- Kullanıcı hesabı — Adım 2: tüm verilerin Supabase'e taşınması
+  (cihazlar arası senkronizasyon), şifremi unuttum akışı, sosyal
+  giriş.
 
 ---
 

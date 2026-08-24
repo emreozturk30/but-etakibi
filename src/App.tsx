@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { AuthPage } from './components/AuthPage'
 import { Balance } from './components/Balance'
 import { BudgetGoals } from './components/BudgetGoals'
 import { CategoryManager } from './components/CategoryManager'
@@ -13,6 +14,7 @@ import { RecurringTransactions } from './components/RecurringTransactions'
 import { ThemeToggle } from './components/ThemeToggle'
 import { TransactionForm } from './components/TransactionForm'
 import { TransactionList } from './components/TransactionList'
+import { useAuth } from './hooks/useAuth'
 import { useBudgetGoals } from './hooks/useBudgetGoals'
 import { useCategories } from './hooks/useCategories'
 import { useInvestments } from './hooks/useInvestments'
@@ -47,6 +49,7 @@ const PortfolioChart = lazy(() =>
 )
 
 function App() {
+  const { session, loading, signIn, signUp, signOut } = useAuth()
   const { transactions, addTransaction, updateTransaction, deleteTransaction } =
     useTransactions()
   const { categories, customCategories, addCategory, renameCategory, deleteCategory } =
@@ -150,6 +153,14 @@ function App() {
     deleteBudgetGoal(id)
   }
 
+  if (loading) {
+    return <p className="empty-state">Yükleniyor…</p>
+  }
+
+  if (!session) {
+    return <AuthPage onSignIn={signIn} onSignUp={signUp} />
+  }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -176,6 +187,7 @@ function App() {
           setDrawerOpen(false)
         }}
         onClose={() => setDrawerOpen(false)}
+        onSignOut={signOut}
       />
 
       <main>
