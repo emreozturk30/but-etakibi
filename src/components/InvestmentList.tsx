@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import type { Investment } from '../types'
 import { GOLD_TYPES } from '../constants/goldTypes'
+import { CRYPTO_TYPES } from '../constants/cryptoTypes'
 import { fetchGoldPrice } from '../utils/goldPrice'
+import { fetchCryptoPrice } from '../utils/cryptoPrice'
 import { formatCurrency, formatDate } from '../utils/format'
 
 interface InvestmentListProps {
@@ -11,8 +13,17 @@ interface InvestmentListProps {
   onUpdatePrice: (id: string, price: number) => void
 }
 
-function goldTypeLabel(id: Investment['goldType']): string {
-  return GOLD_TYPES.find((option) => option.id === id)?.label ?? id
+function investmentLabel(investment: Investment): string {
+  if (investment.assetType === 'gold') {
+    return (
+      GOLD_TYPES.find((option) => option.id === investment.goldType)?.label ??
+      investment.goldType
+    )
+  }
+  return (
+    CRYPTO_TYPES.find((option) => option.id === investment.cryptoType)
+      ?.label ?? investment.cryptoType
+  )
 }
 
 export function InvestmentList({
@@ -32,7 +43,10 @@ export function InvestmentList({
       [investment.id]: { loading: true },
     }))
     try {
-      const price = await fetchGoldPrice(investment.goldType)
+      const price =
+        investment.assetType === 'gold'
+          ? await fetchGoldPrice(investment.goldType)
+          : await fetchCryptoPrice(investment.cryptoType)
       onUpdatePrice(investment.id, price)
       setRowState((prev) => ({ ...prev, [investment.id]: { loading: false } }))
     } catch (err) {
@@ -72,7 +86,7 @@ export function InvestmentList({
           <li key={investment.id} className="investment-item">
             <div className="investment-item-header">
               <span className="investment-name">
-                {goldTypeLabel(investment.goldType)}
+                {investmentLabel(investment)}
               </span>
               <span className={`investment-pl ${plClass}`}>
                 {pl > 0 ? '+' : ''}

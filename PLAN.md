@@ -159,12 +159,24 @@ gözlenmedi.
   kâr/zarar otomatik hesaplanıp gösteriliyor. Diğer varlık türleri
   (kripto, döviz, vb.) kasıtlı olarak bu adıma dahil edilmedi, sonraki
   adımlarda ayrı ayrı ele alınacak.
+- **Yatırım takibi — Adım 2 (Kripto):** "Yatırımlar" paneline ikinci bir
+  varlık türü olarak kripto para eklendi; "Varlık Türü" seçimi artık
+  Altın/Kripto arasında gerçek bir seçim sunuyor (önceden sabit ve
+  devre dışıydı). Sabit bir kripto listesinden (Bitcoin, Ethereum, BNB,
+  Solana, XRP vb. ~20 popüler coin) seçim yapılıyor, serbest metin yok
+  — altınla aynı UX. Güncel fiyat CoinGecko'nun ücretsiz JSON
+  kaynağından tek tıkla çekilebiliyor (10 saniyelik zaman aşımı
+  korumalı, aynı hata mesajı deseni) veya elle girilebiliyor. Bu adımda
+  `Investment` tipi ayrık birleşim (discriminated union) olacak şekilde
+  yeniden düzenlendi; mevcut altın kayıtları herhangi bir taşıma
+  (migration) gerekmeden geçerli kalıyor. Diğer varlık türleri (döviz,
+  hisse, fon vb.) kasıtlı olarak bu adıma dahil edilmedi.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- Yatırım/portföy takibi (altın dışındaki varlık türleri — kripto, döviz,
-  hisse, vb. — hâlâ bekliyor; altın için ilk adım atıldı).
+- Yatırım/portföy takibi (altın ve kripto için adımlar atıldı; döviz,
+  hisse, fon gibi diğer varlık türleri hâlâ bekliyor).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
 
