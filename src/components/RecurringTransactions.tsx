@@ -187,7 +187,7 @@ export function RecurringTransactions({
                   {rule.type === 'income' ? '+' : '-'}
                   {formatCurrency(rule.amount)}
                 </span>
-                <button type="button" onClick={() => onDelete(rule.id)}>
+                <button className="danger" type="button" onClick={() => onDelete(rule.id)}>
                   Sil
                 </button>
               </li>

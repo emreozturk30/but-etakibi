@@ -132,6 +132,7 @@ export function CategoryManager({
                       Düzenle
                     </button>
                     <button
+                      className="danger"
                       type="button"
                       disabled={isInUse(category.id)}
                       title={

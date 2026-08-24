@@ -128,7 +128,7 @@ export function BudgetGoals({
                   <span>
                     {formatCurrency(spent)} / {formatCurrency(goal.monthlyLimit)}
                   </span>
-                  <button type="button" onClick={() => onDeleteGoal(goal.categoryId)}>
+                  <button className="danger" type="button" onClick={() => onDeleteGoal(goal.categoryId)}>
                     Sil
                   </button>
                 </div>
