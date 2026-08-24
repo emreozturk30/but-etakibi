@@ -33,7 +33,7 @@ export interface RecurringTransaction {
   skippedMonths?: string[]
 }
 
-export type AssetType = 'gold' | 'crypto' | 'forex'
+export type AssetType = 'gold' | 'crypto' | 'forex' | 'stock'
 
 export type GoldTypeId =
   | 'GRA'
@@ -111,7 +111,17 @@ export interface ForexInvestment extends InvestmentBase {
   forexType: ForexTypeId
 }
 
-export type Investment = GoldInvestment | CryptoInvestment | ForexInvestment
+export interface StockInvestment extends InvestmentBase {
+  assetType: 'stock'
+  stockCode: string
+  stockName: string
+}
+
+export type Investment =
+  | GoldInvestment
+  | CryptoInvestment
+  | ForexInvestment
+  | StockInvestment
 
 // Standard `Omit` doesn't distribute over unions (it collapses to only the
 // shared keys), which would silently drop `goldType`/`cryptoType`. This

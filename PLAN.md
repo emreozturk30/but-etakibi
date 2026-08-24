@@ -180,12 +180,30 @@ gözlenmedi.
   kalmadı), aynı 10 saniyelik zaman aşımı ve hata mesajı deseniyle.
   Hisse senedi, fon gibi diğer varlık türleri kasıtlı olarak bu adıma
   dahil edilmedi.
+- **Yatırım takibi — Adım 4 (Hisse Senedi):** dördüncü varlık türü
+  olarak hisse senedi eklendi; "Varlık Türü" listesine "Hisse Senedi"
+  seçeneği katıldı. Önceki adımlardan farklı olarak sabit bir dosyaya
+  yazılmış liste yerine, BIST'te işlem gören tüm hisseler Bigpara
+  (Hürriyet) API'sinden uygulama içinde canlı olarak çekiliyor
+  (`/api/v1/hisse/list`, "Hisse" tipiyle filtrelenip alfabetik
+  sıralanıyor, oturum boyunca bellekte önbelleğe alınıyor) — 500'den
+  fazla şirketi elle/ezbere yazmak yerine her zaman güncel ve yetkili
+  bir kaynaktan besleniyor. Liste yüklenene kadar seçici devre dışı,
+  yüklenemezse "Tekrar Dene" seçeneğiyle hata gösteriliyor; serbest
+  metin girişi yine yok. Güncel fiyat, aynı API ailesinin hisse detay
+  uç noktasından (`/api/v1/borsa/hisseyuzeysel/<kod>`) tek tıkla
+  çekilebiliyor (aynı 10 saniyelik zaman aşımı ve hata mesajı deseni)
+  veya elle girilebiliyor. Eklenen her hisse kaydı, şirket adını da
+  (`stockName`) kayıt anında kopyalıyor; böylece liste API'si daha
+  sonra erişilemez olsa bile önceden eklenmiş kayıtlar görüntülenmeye
+  devam ediyor. Fon, varant gibi diğer menkul kıymet türleri kasıtlı
+  olarak bu adıma dahil edilmedi.
 
 ## 6. Gelecek Fikirler (Şimdilik Kapsam Dışı)
 
 - Banka hesabı otomatik senkronizasyonu.
-- Yatırım/portföy takibi (altın, kripto ve döviz için adımlar atıldı;
-  hisse, fon gibi diğer varlık türleri hâlâ bekliyor).
+- Yatırım/portföy takibi (altın, kripto, döviz ve hisse senedi için
+  adımlar atıldı; fon gibi diğer varlık türleri hâlâ bekliyor).
 - Çoklu para birimi desteği.
 - Ortak bütçe / aile hesabı paylaşımı.
 
