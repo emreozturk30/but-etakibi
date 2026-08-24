@@ -2,8 +2,10 @@ import { useState } from 'react'
 import type { Investment } from '../types'
 import { GOLD_TYPES } from '../constants/goldTypes'
 import { CRYPTO_TYPES } from '../constants/cryptoTypes'
+import { FOREX_TYPES } from '../constants/forexTypes'
 import { fetchGoldPrice } from '../utils/goldPrice'
 import { fetchCryptoPrice } from '../utils/cryptoPrice'
+import { fetchForexPrice } from '../utils/forexPrice'
 import { formatCurrency, formatDate } from '../utils/format'
 
 interface InvestmentListProps {
@@ -20,9 +22,15 @@ function investmentLabel(investment: Investment): string {
       investment.goldType
     )
   }
+  if (investment.assetType === 'crypto') {
+    return (
+      CRYPTO_TYPES.find((option) => option.id === investment.cryptoType)
+        ?.label ?? investment.cryptoType
+    )
+  }
   return (
-    CRYPTO_TYPES.find((option) => option.id === investment.cryptoType)
-      ?.label ?? investment.cryptoType
+    FOREX_TYPES.find((option) => option.id === investment.forexType)?.label ??
+    investment.forexType
   )
 }
 
@@ -43,10 +51,14 @@ export function InvestmentList({
       [investment.id]: { loading: true },
     }))
     try {
-      const price =
-        investment.assetType === 'gold'
-          ? await fetchGoldPrice(investment.goldType)
-          : await fetchCryptoPrice(investment.cryptoType)
+      let price: number
+      if (investment.assetType === 'gold') {
+        price = await fetchGoldPrice(investment.goldType)
+      } else if (investment.assetType === 'crypto') {
+        price = await fetchCryptoPrice(investment.cryptoType)
+      } else {
+        price = await fetchForexPrice(investment.forexType)
+      }
       onUpdatePrice(investment.id, price)
       setRowState((prev) => ({ ...prev, [investment.id]: { loading: false } }))
     } catch (err) {

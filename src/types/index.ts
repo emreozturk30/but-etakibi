@@ -33,7 +33,7 @@ export interface RecurringTransaction {
   skippedMonths?: string[]
 }
 
-export type AssetType = 'gold' | 'crypto'
+export type AssetType = 'gold' | 'crypto' | 'forex'
 
 export type GoldTypeId =
   | 'GRA'
@@ -69,6 +69,23 @@ export type CryptoTypeId =
   | 'aptos'
   | 'the-open-network'
 
+export type ForexTypeId =
+  | 'USD'
+  | 'EUR'
+  | 'GBP'
+  | 'CHF'
+  | 'CAD'
+  | 'AUD'
+  | 'JPY'
+  | 'SAR'
+  | 'AED'
+  | 'RUB'
+  | 'CNY'
+  | 'DKK'
+  | 'SEK'
+  | 'NOK'
+  | 'NZD'
+
 interface InvestmentBase {
   id: string
   quantity: number
@@ -89,7 +106,12 @@ export interface CryptoInvestment extends InvestmentBase {
   cryptoType: CryptoTypeId
 }
 
-export type Investment = GoldInvestment | CryptoInvestment
+export interface ForexInvestment extends InvestmentBase {
+  assetType: 'forex'
+  forexType: ForexTypeId
+}
+
+export type Investment = GoldInvestment | CryptoInvestment | ForexInvestment
 
 // Standard `Omit` doesn't distribute over unions (it collapses to only the
 // shared keys), which would silently drop `goldType`/`cryptoType`. This
