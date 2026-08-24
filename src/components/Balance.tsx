@@ -1,4 +1,5 @@
 import type { Transaction } from '../types'
+import { computeBalanceSummary } from '../utils/balance'
 import { formatCurrency } from '../utils/format'
 
 interface BalanceProps {
@@ -6,15 +7,7 @@ interface BalanceProps {
 }
 
 export function Balance({ transactions }: BalanceProps) {
-  const totalIncome = transactions
-    .filter((t) => t.type === 'income')
-    .reduce((sum, t) => sum + t.amount, 0)
-
-  const totalExpense = transactions
-    .filter((t) => t.type === 'expense')
-    .reduce((sum, t) => sum + t.amount, 0)
-
-  const net = totalIncome - totalExpense
+  const { totalIncome, totalExpense, net } = computeBalanceSummary(transactions)
 
   return (
     <div className="balance">

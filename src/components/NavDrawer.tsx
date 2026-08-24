@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export type AppView = 'dashboard' | 'investments'
+export type AppView = 'dashboard' | 'investments' | 'portfolio'
 
 interface NavDrawerProps {
   open: boolean
@@ -43,6 +43,13 @@ export function NavDrawer({ open, view, onNavigate, onClose }: NavDrawerProps) {
           onClick={() => onNavigate('investments')}
         >
           Yatırımlar
+        </button>
+        <button
+          type="button"
+          className={view === 'portfolio' ? 'active' : ''}
+          onClick={() => onNavigate('portfolio')}
+        >
+          Portföy
         </button>
       </nav>
     </div>
