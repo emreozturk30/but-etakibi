@@ -1,3 +1,5 @@
+import { withCorsProxy } from './corsProxy'
+
 export interface StockOption {
   code: string
   name: string
@@ -16,7 +18,9 @@ export async function fetchStockList(): Promise<StockOption[]> {
 
   let response: Response
   try {
-    response = await fetch(BIGPARA_LIST_URL, { signal: controller.signal })
+    response = await fetch(withCorsProxy(BIGPARA_LIST_URL), {
+      signal: controller.signal,
+    })
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') {
       throw new Error('Fiyat alınamadı, manuel girebilirsiniz. (zaman aşımı)')
