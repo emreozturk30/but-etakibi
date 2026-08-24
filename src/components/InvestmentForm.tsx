@@ -11,6 +11,7 @@ import type {
 import { GOLD_TYPES } from '../constants/goldTypes'
 import { CRYPTO_TYPES } from '../constants/cryptoTypes'
 import { FOREX_TYPES } from '../constants/forexTypes'
+import { useStockList } from '../hooks/useStockList'
 import { toLocalISODate } from '../utils/dateRanges'
 
 interface InvestmentFormProps {
@@ -27,6 +28,8 @@ function emptyFormState(assetType: AssetType) {
     goldType: GOLD_TYPES[0].id,
     cryptoType: CRYPTO_TYPES[0].id,
     forexType: FOREX_TYPES[0].id,
+    stockCode: '',
+    stockName: '',
     quantity: '',
     purchasePrice: '',
     purchaseDate: today(),
@@ -55,6 +58,8 @@ export function InvestmentForm({
         goldType: editingInvestment.goldType,
         cryptoType: CRYPTO_TYPES[0].id,
         forexType: FOREX_TYPES[0].id,
+        stockCode: '',
+        stockName: '',
         ...shared,
       }
     }
@@ -64,17 +69,33 @@ export function InvestmentForm({
         cryptoType: editingInvestment.cryptoType,
         goldType: GOLD_TYPES[0].id,
         forexType: FOREX_TYPES[0].id,
+        stockCode: '',
+        stockName: '',
+        ...shared,
+      }
+    }
+    if (editingInvestment.assetType === 'forex') {
+      return {
+        assetType: 'forex' as const,
+        forexType: editingInvestment.forexType,
+        goldType: GOLD_TYPES[0].id,
+        cryptoType: CRYPTO_TYPES[0].id,
+        stockCode: '',
+        stockName: '',
         ...shared,
       }
     }
     return {
-      assetType: 'forex' as const,
-      forexType: editingInvestment.forexType,
+      assetType: 'stock' as const,
+      stockCode: editingInvestment.stockCode,
+      stockName: editingInvestment.stockName,
       goldType: GOLD_TYPES[0].id,
       cryptoType: CRYPTO_TYPES[0].id,
+      forexType: FOREX_TYPES[0].id,
       ...shared,
     }
   })
+  const stockList = useStockList()
   const [error, setError] = useState('')
 
   function handleSubmit(event: FormEvent) {
@@ -102,6 +123,10 @@ export function InvestmentForm({
       setError('Lütfen bir tarih seçin.')
       return
     }
+    if (form.assetType === 'stock' && !form.stockCode) {
+      setError('Lütfen bir hisse seçin.')
+      return
+    }
 
     const shared = {
       quantity,
@@ -116,8 +141,15 @@ export function InvestmentForm({
       payload = { assetType: 'gold', goldType: form.goldType, ...shared }
     } else if (form.assetType === 'crypto') {
       payload = { assetType: 'crypto', cryptoType: form.cryptoType, ...shared }
-    } else {
+    } else if (form.assetType === 'forex') {
       payload = { assetType: 'forex', forexType: form.forexType, ...shared }
+    } else {
+      payload = {
+        assetType: 'stock',
+        stockCode: form.stockCode,
+        stockName: form.stockName,
+        ...shared,
+      }
     }
 
     onSubmit(payload)
@@ -144,6 +176,7 @@ export function InvestmentForm({
             <option value="gold">Altın</option>
             <option value="crypto">Kripto</option>
             <option value="forex">Döviz</option>
+            <option value="stock">Hisse Senedi</option>
           </select>
         </label>
 
@@ -204,6 +237,57 @@ export function InvestmentForm({
               {FOREX_TYPES.map((option) => (
                 <option key={option.id} value={option.id}>
                   {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+
+        {form.assetType === 'stock' && stockList.status === 'loading' && (
+          <label>
+            Hisse
+            <select disabled value="">
+              <option value="">Hisseler yükleniyor…</option>
+            </select>
+          </label>
+        )}
+
+        {form.assetType === 'stock' && stockList.status === 'error' && (
+          <label>
+            Hisse
+            <select disabled value="">
+              <option value="">Liste alınamadı</option>
+            </select>
+            <p className="form-error">{stockList.message}</p>
+            <button type="button" onClick={stockList.retry}>
+              Tekrar Dene
+            </button>
+          </label>
+        )}
+
+        {form.assetType === 'stock' && stockList.status === 'ready' && (
+          <label>
+            Hisse
+            <select
+              value={form.stockCode}
+              onChange={(e) => {
+                const code = e.target.value
+                const match = stockList.list.find(
+                  (option) => option.code === code,
+                )
+                setForm((prev) => ({
+                  ...prev,
+                  stockCode: code,
+                  stockName: match?.name ?? '',
+                }))
+              }}
+            >
+              <option value="" disabled>
+                Seçiniz
+              </option>
+              {stockList.list.map((option) => (
+                <option key={option.code} value={option.code}>
+                  {option.name} ({option.code})
                 </option>
               ))}
             </select>
