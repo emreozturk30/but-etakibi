@@ -164,7 +164,7 @@ export function InvestmentList({
                 <button type="button" onClick={() => onEdit(investment)}>
                   Düzenle
                 </button>
-                <button type="button" onClick={() => onDelete(investment.id)}>
+                <button className="danger" type="button" onClick={() => onDelete(investment.id)}>
                   Sil
                 </button>
               </div>

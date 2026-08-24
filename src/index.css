@@ -17,6 +17,8 @@
   --status-good: #0ca30c;
   --status-warning: #fab219;
   --status-critical: #d03b3b;
+  --danger-bg: rgba(208, 59, 59, 0.1);
+  --danger-border: rgba(208, 59, 59, 0.4);
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;

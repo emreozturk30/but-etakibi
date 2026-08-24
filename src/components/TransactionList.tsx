@@ -56,7 +56,7 @@ export function TransactionList({
               <button type="button" onClick={() => onEdit(transaction)}>
                 Düzenle
               </button>
-              <button type="button" onClick={() => onDelete(transaction.id)}>
+              <button className="danger" type="button" onClick={() => onDelete(transaction.id)}>
                 Sil
               </button>
             </div>
