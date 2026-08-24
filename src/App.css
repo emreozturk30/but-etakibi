@@ -149,6 +149,12 @@ button.danger:hover:not(:disabled) {
   background: var(--accent-bg);
 }
 
+.nav-drawer-signout {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
 .empty-state {
   text-align: center;
   color: var(--text);
