@@ -6,7 +6,9 @@ export interface StockOption {
 }
 
 const BIGPARA_LIST_URL = 'https://bigpara.hurriyet.com.tr/api/v1/hisse/list'
-const TIMEOUT_MS = 10_000
+// CORS proxy üzerinden gittiği ve liste 500+ kayıt içerdiği için diğer
+// varlık türlerinin doğrudan isteklerinden (10sn) daha uzun bir süre tanınıyor.
+const TIMEOUT_MS = 20_000
 
 let cachedList: StockOption[] | null = null
 

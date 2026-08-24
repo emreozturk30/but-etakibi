@@ -2,7 +2,9 @@ import { withCorsProxy } from './corsProxy'
 
 const BIGPARA_DETAIL_URL =
   'https://bigpara.hurriyet.com.tr/api/v1/borsa/hisseyuzeysel/'
-const TIMEOUT_MS = 10_000
+// CORS proxy üzerinden gittiği için diğer varlık türlerinin doğrudan
+// isteklerinden (10sn) daha uzun bir süre tanınıyor.
+const TIMEOUT_MS = 20_000
 
 export async function fetchStockPrice(stockCode: string): Promise<number> {
   const controller = new AbortController()
