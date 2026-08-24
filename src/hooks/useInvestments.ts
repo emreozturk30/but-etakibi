@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { DistributiveOmit, Investment } from '../types'
 import { loadInvestments, saveInvestments } from '../utils/storage'
 import { toLocalISODate } from '../utils/dateRanges'
+import { fetchPriceForInvestment } from '../utils/fetchInvestmentPrice'
+
+const AUTO_REFRESH_INTERVAL_MS = 5 * 60 * 1000
 
 export function useInvestments() {
   const [investments, setInvestments] = useState<Investment[]>(() =>
@@ -11,6 +14,23 @@ export function useInvestments() {
   useEffect(() => {
     saveInvestments(investments)
   }, [investments])
+
+  const investmentsRef = useRef(investments)
+  useEffect(() => {
+    investmentsRef.current = investments
+  })
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (document.visibilityState !== 'visible') return
+      for (const investment of investmentsRef.current) {
+        fetchPriceForInvestment(investment)
+          .then((price) => updateInvestmentPrice(investment.id, price))
+          .catch(() => {})
+      }
+    }, AUTO_REFRESH_INTERVAL_MS)
+    return () => clearInterval(intervalId)
+  }, [])
 
   function addInvestment(investment: DistributiveOmit<Investment, 'id'>) {
     setInvestments((prev) => [

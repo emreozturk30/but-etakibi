@@ -1,10 +1,6 @@
 import { useState } from 'react'
 import type { Investment } from '../types'
-import { fetchGoldPrice } from '../utils/goldPrice'
-import { fetchCryptoPrice } from '../utils/cryptoPrice'
-import { fetchForexPrice } from '../utils/forexPrice'
-import { fetchStockPrice } from '../utils/stockPrice'
-import { fetchFundPrice } from '../utils/fundPrice'
+import { fetchPriceForInvestment } from '../utils/fetchInvestmentPrice'
 import { formatCurrency, formatDate } from '../utils/format'
 import { investmentLabel } from '../utils/investmentLabel'
 
@@ -32,18 +28,7 @@ export function InvestmentList({
       [investment.id]: { loading: true },
     }))
     try {
-      let price: number
-      if (investment.assetType === 'gold') {
-        price = await fetchGoldPrice(investment.goldType)
-      } else if (investment.assetType === 'crypto') {
-        price = await fetchCryptoPrice(investment.cryptoType)
-      } else if (investment.assetType === 'forex') {
-        price = await fetchForexPrice(investment.forexType)
-      } else if (investment.assetType === 'stock') {
-        price = await fetchStockPrice(investment.stockCode)
-      } else {
-        price = await fetchFundPrice(investment.fundCode)
-      }
+      const price = await fetchPriceForInvestment(investment)
       onUpdatePrice(investment.id, price)
       setRowState((prev) => ({ ...prev, [investment.id]: { loading: false } }))
     } catch (err) {
