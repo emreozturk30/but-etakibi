@@ -1,75 +1,75 @@
 {
-  "generatedAt": "2026-08-25T09:05:28.649Z",
+  "generatedAt": "2026-08-25T09:49:45.065Z",
   "stocks": [
     {
       "code": "BINHO",
       "name": "1000 YATIRIMLAR HOL.",
-      "price": 11.04
+      "price": 10.88
     },
     {
       "code": "AVOD",
       "name": "A.V.O.D GIDA VE TARIM",
-      "price": 4.05
+      "price": 4.03
     },
     {
       "code": "A1CAP",
       "name": "A1 CAPITAL YATIRIM",
-      "price": 8.25
+      "price": 8.27
     },
     {
       "code": "A1YEN",
       "name": "A1 YENILENEBILIR ENERJI",
-      "price": 2.78
+      "price": 2.77
     },
     {
       "code": "ACSEL",
       "name": "ACIPAYAM SELULOZ",
-      "price": 123.2
+      "price": 121.1
     },
     {
       "code": "ADEL",
       "name": "ADEL KALEMCILIK",
-      "price": 37.78
+      "price": 37.8
     },
     {
       "code": "ADESE",
       "name": "ADESE GAYRIMENKUL",
-      "price": 0.86
+      "price": 0.87
     },
     {
       "code": "ADGYO",
       "name": "ADRA GMYO",
-      "price": 64.8
+      "price": 64.25
     },
     {
       "code": "AFYON",
       "name": "AFYON CIMENTO",
-      "price": 13.07
+      "price": 13.06
     },
     {
       "code": "AAGYO",
       "name": "AGAOGLU GMYO",
-      "price": 13
+      "price": 12.93
     },
     {
       "code": "AGESA",
       "name": "AGESA HAYAT EMEKLILIK",
-      "price": 246.1
+      "price": 247
     },
     {
       "code": "AGROT",
       "name": "AGROTECH TEKNOLOJI",
-      "price": 2.32
+      "price": 2.3
     },
     {
       "code": "AHSGY",
       "name": "AHES GMYO",
-      "price": 19.26
+      "price": 19.21
     },
     {
       "code": "AHGAZ",
       "name": "AHLATCI DOGALGAZ",
-      "price": 34.44
+      "price": 34.54
     },
     {
       "code": "APGLD",
@@ -79,32 +79,32 @@
     {
       "code": "APMDL",
       "name": "AK PORTFOY BIST 100 ENDEKSI MODEL HSY BYF",
-      "price": 27.38
+      "price": 27.1
     },
     {
       "code": "APX30",
       "name": "AK PORTFOY BIST 30 ENDEKSI HSY BYF",
-      "price": 40.55
+      "price": 40.37
     },
     {
       "code": "APBDL",
       "name": "AK PORTFOY BIST BANKA DISI LIKIT 10 HSY BYF",
-      "price": 41.16
+      "price": 40.83
     },
     {
       "code": "APLIB",
       "name": "AK PORTFOY BIST LIKIT BANKA HSY BYF",
-      "price": 45.03
+      "price": 45.17
     },
     {
       "code": "AKBNK",
       "name": "AKBANK",
-      "price": 72.1
+      "price": 72.45
     },
     {
       "code": "AKCNS",
       "name": "AKCANSA",
-      "price": 238.7
+      "price": 240
     },
     {
       "code": "AKYHO",
@@ -114,17 +114,17 @@
     {
       "code": "AKENR",
       "name": "AKENERJI",
-      "price": 10.46
+      "price": 10.4
     },
     {
       "code": "AKFGY",
       "name": "AKFEN GMYO",
-      "price": 2.78
+      "price": 2.76
     },
     {
       "code": "AKFIS",
       "name": "AKFEN INSAAT",
-      "price": 18.07
+      "price": 18.11
     },
     {
       "code": "AKFYE",
@@ -134,7 +134,7 @@
     {
       "code": "AKHAN",
       "name": "AKHAN UN",
-      "price": 41.2
+      "price": 40.52
     },
     {
       "code": "ATEKS",
@@ -144,17 +144,17 @@
     {
       "code": "AKSGY",
       "name": "AKIS GMYO",
-      "price": 10.07
+      "price": 10.05
     },
     {
       "code": "AKMGY",
       "name": "AKMERKEZ GMYO",
-      "price": 264
+      "price": 263.25
     },
     {
       "code": "AKSA",
       "name": "AKSA",
-      "price": 11.13
+      "price": 11.1
     },
     {
       "code": "AKSEN",
@@ -164,62 +164,62 @@
     {
       "code": "AKGRT",
       "name": "AKSIGORTA",
-      "price": 6.2
+      "price": 6.21
     },
     {
       "code": "AKSUE",
       "name": "AKSU ENERJI",
-      "price": 43.7
+      "price": 43.8
     },
     {
       "code": "ALCAR",
       "name": "ALARKO CARRIER",
-      "price": 699
+      "price": 697
     },
     {
       "code": "ALGYO",
       "name": "ALARKO GMYO",
-      "price": 3.73
+      "price": 3.71
     },
     {
       "code": "ALARK",
       "name": "ALARKO HOLDING",
-      "price": 104
+      "price": 103
     },
     {
       "code": "ALBRK",
       "name": "ALBARAKA TURK",
-      "price": 9
+      "price": 8.94
     },
     {
       "code": "ALBTN",
       "name": "ALBAYRAK BETON SANAYI",
-      "price": 33.9
+      "price": 33.68
     },
     {
       "code": "ALCTL",
       "name": "ALCATEL LUCENT TELETAS",
-      "price": 125
+      "price": 127.5
     },
     {
       "code": "ALFAS",
       "name": "ALFA SOLAR ENERJI",
-      "price": 42.1
+      "price": 41.78
     },
     {
       "code": "ALKA",
       "name": "ALKIM KAGIT",
-      "price": 8.42
+      "price": 8.38
     },
     {
       "code": "ALKIM",
       "name": "ALKIM KIMYA",
-      "price": 15.83
+      "price": 15.78
     },
     {
       "code": "ALTNY",
       "name": "ALTINAY SAVUNMA",
-      "price": 18.93
+      "price": 18.94
     },
     {
       "code": "ALKLC",
@@ -229,7 +229,7 @@
     {
       "code": "AYCES",
       "name": "ALTINYUNUS CESME",
-      "price": 433.25
+      "price": 435.75
     },
     {
       "code": "ALVES",
@@ -239,177 +239,177 @@
     {
       "code": "AEFES",
       "name": "ANADOLU EFES",
-      "price": 19.05
+      "price": 18.88
     },
     {
       "code": "AGHOL",
       "name": "ANADOLU GRUBU HOLDING",
-      "price": 30.96
+      "price": 30.9
     },
     {
       "code": "ANHYT",
       "name": "ANADOLU HAYAT EMEK.",
-      "price": 104.5
+      "price": 105.3
     },
     {
       "code": "ASUZU",
       "name": "ANADOLU ISUZU",
-      "price": 49.62
+      "price": 49.56
     },
     {
       "code": "ANSGR",
       "name": "ANADOLU SIGORTA",
-      "price": 28.28
+      "price": 28.14
     },
     {
       "code": "ANGEN",
       "name": "ANATOLIA TANI VE BIYOTEKNOLOJI",
-      "price": 9.34
+      "price": 9.37
     },
     {
       "code": "ANELE",
       "name": "ANEL ELEKTRIK",
-      "price": 147.9
+      "price": 148.6
     },
     {
       "code": "ARCLK",
       "name": "ARCELIK",
-      "price": 92.9
+      "price": 92.6
     },
     {
       "code": "ARDYZ",
       "name": "ARD BILISIM TEKNOLOJILERI",
-      "price": 89.25
+      "price": 89.95
     },
     {
       "code": "ARENA",
       "name": "ARENA BILGISAYAR",
-      "price": 21.32
+      "price": 21.54
     },
     {
       "code": "ARFYE",
       "name": "ARF BIO YENILENEBILIR ENERJI",
-      "price": 21.46
+      "price": 21.4
     },
     {
       "code": "ARMGD",
       "name": "ARMADA GIDA",
-      "price": 197.3
+      "price": 197.4
     },
     {
       "code": "ARSAN",
       "name": "ARSAN HOLDING",
-      "price": 4.15
+      "price": 4.16
     },
     {
       "code": "ARTMS",
       "name": "ARTEMIS HALI",
-      "price": 38.6
+      "price": 38.66
     },
     {
       "code": "ARZUM",
       "name": "ARZUM EV ALETLERI",
-      "price": 1.7
+      "price": 1.71
     },
     {
       "code": "ASGYO",
       "name": "ASCE GMYO",
-      "price": 11.31
+      "price": 11.29
     },
     {
       "code": "ASELS",
       "name": "ASELSAN",
-      "price": 408
+      "price": 403.5
     },
     {
       "code": "ASTOR",
       "name": "ASTOR ENERJI",
-      "price": 340
+      "price": 339.25
     },
     {
       "code": "ATAGY",
       "name": "ATA GMYO",
-      "price": 10.43
+      "price": 10.35
     },
     {
       "code": "ATATR",
       "name": "ATA TURIZM",
-      "price": 15.04
+      "price": 15.17
     },
     {
       "code": "ATAKP",
       "name": "ATAKEY PATATES",
-      "price": 45.18
+      "price": 45.32
     },
     {
       "code": "AGYO",
       "name": "ATAKULE GMYO",
-      "price": 7.3
+      "price": 7.28
     },
     {
       "code": "ATSYH",
       "name": "ATLANTIS YATIRIM HOLDING",
-      "price": 120.5
+      "price": 122
     },
     {
       "code": "ATLAS",
       "name": "ATLAS YAT. ORT.",
-      "price": 6.64
+      "price": 6.57
     },
     {
       "code": "ATATP",
       "name": "ATP YAZILIM",
-      "price": 330.25
+      "price": 329.75
     },
     {
       "code": "AVGYO",
       "name": "AVRASYA GMYO",
-      "price": 18.27
+      "price": 17.53
     },
     {
       "code": "AVTUR",
       "name": "AVRASYA PETROL VE TUR.",
-      "price": 12.21
+      "price": 12.15
     },
     {
       "code": "AVHOL",
       "name": "AVRUPA YATIRIM HOLDING",
-      "price": 35.9
+      "price": 35.58
     },
     {
       "code": "AVPGY",
       "name": "AVRUPAKENT GMYO",
-      "price": 53
+      "price": 53.15
     },
     {
       "code": "AYDEM",
       "name": "AYDEM ENERJI",
-      "price": 27.94
+      "price": 27.92
     },
     {
       "code": "AYEN",
       "name": "AYEN ENERJI",
-      "price": 33.4
+      "price": 33.1
     },
     {
       "code": "AYES",
       "name": "AYES CELIK HASIR VE CIT",
-      "price": 30.5
+      "price": 31
     },
     {
       "code": "AYGAZ",
       "name": "AYGAZ",
-      "price": 329.75
+      "price": 325.75
     },
     {
       "code": "AZTEK",
       "name": "AZTEK TEKNOLOJI",
-      "price": 4.04
+      "price": 3.98
     },
     {
       "code": "BAGFS",
       "name": "BAGFAS",
-      "price": 26.54
+      "price": 26.28
     },
     {
       "code": "BAHKM",
@@ -419,7 +419,7 @@
     {
       "code": "BAKAB",
       "name": "BAK AMBALAJ",
-      "price": 42.04
+      "price": 41.44
     },
     {
       "code": "BALAT",
@@ -434,12 +434,12 @@
     {
       "code": "BNTAS",
       "name": "BANTAS AMBALAJ",
-      "price": 6.42
+      "price": 6.41
     },
     {
       "code": "BANVT",
       "name": "BANVIT",
-      "price": 158.9
+      "price": 157.6
     },
     {
       "code": "BARMA",
@@ -449,7 +449,7 @@
     {
       "code": "BASGZ",
       "name": "BASKENT DOGALGAZ GMYO",
-      "price": 44.62
+      "price": 44.96
     },
     {
       "code": "BASCM",
@@ -459,7 +459,7 @@
     {
       "code": "BEGYO",
       "name": "BATI EGE GMYO",
-      "price": 3.7
+      "price": 3.69
     },
     {
       "code": "BTCIM",
@@ -469,27 +469,27 @@
     {
       "code": "BSOKE",
       "name": "BATICIM CIMENTO",
-      "price": 32.88
+      "price": 32.9
     },
     {
       "code": "BYDNR",
       "name": "BAYDONER RESTORANLARI",
-      "price": 39.46
+      "price": 39.5
     },
     {
       "code": "BAYRK",
       "name": "BAYRAK TABAN SANAYI",
-      "price": 4.33
+      "price": 4.34
     },
     {
       "code": "BERA",
       "name": "BERA HOLDING",
-      "price": 13.61
+      "price": 13.58
     },
     {
       "code": "BRKSN",
       "name": "BERKOSAN YALITIM",
-      "price": 8.18
+      "price": 8.1
     },
     {
       "code": "BJKAS",
@@ -499,47 +499,47 @@
     {
       "code": "BESLR",
       "name": "BESLER GIDA",
-      "price": 13.19
+      "price": 12.94
     },
     {
       "code": "BESTE",
       "name": "BEST BRANDS ENERJI",
-      "price": 34.14
+      "price": 34.58
     },
     {
       "code": "BETAE",
       "name": "BETA ENERJI VE TEKNOLOJI",
-      "price": 100.9
+      "price": 99.6
     },
     {
       "code": "BEYAZ",
       "name": "BEYAZ FILO",
-      "price": 23.54
+      "price": 23.36
     },
     {
       "code": "BIENY",
       "name": "BIEN YAPI URUNLERI",
-      "price": 22.22
+      "price": 22.08
     },
     {
       "code": "BIGTK",
       "name": "BIG MEDYA TEKNOLOJI",
-      "price": 361.5
+      "price": 369.75
     },
     {
       "code": "BLCYT",
       "name": "BILICI YATIRIM",
-      "price": 21.76
+      "price": 21.82
     },
     {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
-      "price": 413.25
+      "price": 414
     },
     {
       "code": "BINBN",
       "name": "BIN ULASIM TEKNOLOJILERI",
-      "price": 189.5
+      "price": 189.2
     },
     {
       "code": "BIOEN",
@@ -559,7 +559,7 @@
     {
       "code": "BIGEN",
       "name": "BIRLESIM GRUP ENERJI",
-      "price": 149.8
+      "price": 149.9
     },
     {
       "code": "BRLSM",
@@ -574,147 +574,147 @@
     {
       "code": "BIZIM",
       "name": "BIZIM MAGAZALARI",
-      "price": 25.12
+      "price": 25.18
     },
     {
       "code": "BLUME",
       "name": "BLUME METAL KIMYA",
-      "price": 44.88
+      "price": 43.6
     },
     {
       "code": "BMSTL",
       "name": "BMS BIRLESIK METAL",
-      "price": 44.46
+      "price": 44.2
     },
     {
       "code": "BMSCH",
       "name": "BMS CELIK HASIR",
-      "price": 11.88
+      "price": 11.86
     },
     {
       "code": "BOBET",
       "name": "BOGAZICI BETON SANAYI",
-      "price": 20
+      "price": 20.76
     },
     {
       "code": "BORSK",
       "name": "BOR SEKER",
-      "price": 6.35
+      "price": 6.37
     },
     {
       "code": "BORLS",
       "name": "BORLEASE OTOMOTIV",
-      "price": 4.68
+      "price": 4.64
     },
     {
       "code": "BRSAN",
       "name": "BORUSAN BORU SANAYI",
-      "price": 734
+      "price": 732
     },
     {
       "code": "BRYAT",
       "name": "BORUSAN YAT. PAZ.",
-      "price": 1792
+      "price": 1740
     },
     {
       "code": "BFREN",
       "name": "BOSCH FREN SISTEMLERI",
-      "price": 130.3
+      "price": 129.9
     },
     {
       "code": "BOSSA",
       "name": "BOSSA",
-      "price": 6.67
+      "price": 6.74
     },
     {
       "code": "BRISA",
       "name": "BRISA",
-      "price": 79.8
+      "price": 79.15
     },
     {
       "code": "BVSAN",
       "name": "BULBULOGLU VINC",
-      "price": 103.8
+      "price": 103.3
     },
     {
       "code": "BULGS",
       "name": "BULLS GSYO",
-      "price": 33.08
+      "price": 33.14
     },
     {
       "code": "BURCE",
       "name": "BURCELIK",
-      "price": 35.94
+      "price": 35.84
     },
     {
       "code": "BURVA",
       "name": "BURCELIK VANA",
-      "price": 753
+      "price": 744
     },
     {
       "code": "BUCIM",
       "name": "BURSA CIMENTO",
-      "price": 5.59
+      "price": 5.53
     },
     {
       "code": "BIGCH",
       "name": "BUYUK SEFLER BIGCHEFS",
-      "price": 6.12
+      "price": 6.15
     },
     {
       "code": "CGCAM",
       "name": "CAGDAS CAM",
-      "price": 37.34
+      "price": 37.48
     },
     {
       "code": "CANTE",
       "name": "CAN2 TERMIK",
-      "price": 1.24
+      "price": 1.23
     },
     {
       "code": "CRFSA",
       "name": "CARREFOURSA",
-      "price": 269
+      "price": 270.25
     },
     {
       "code": "CATES",
       "name": "CATES ELEKTRIK",
-      "price": 64.6
+      "price": 64
     },
     {
       "code": "CLEBI",
       "name": "CELEBI",
-      "price": 1487
+      "price": 1482
     },
     {
       "code": "CELHA",
       "name": "CELIK HALAT",
-      "price": 26.74
+      "price": 26.12
     },
     {
       "code": "CEMZY",
       "name": "CEM ZEYTIN",
-      "price": 16.34
+      "price": 16.42
     },
     {
       "code": "CEMAS",
       "name": "CEMAS DOKUM",
-      "price": 4.29
+      "price": 4.51
     },
     {
       "code": "CEMTS",
       "name": "CEMTAS",
-      "price": 9.13
+      "price": 9
     },
     {
       "code": "CEOEM",
       "name": "CEO EVENT MEDYA",
-      "price": 25.36
+      "price": 25.16
     },
     {
       "code": "CMBTN",
       "name": "CIMBETON",
-      "price": 1599
+      "price": 1579
     },
     {
       "code": "CMENT",
@@ -724,22 +724,22 @@
     {
       "code": "CIMSA",
       "name": "CIMSA",
-      "price": 45.92
+      "price": 46.02
     },
     {
       "code": "CITAS",
       "name": "CITLEKCI MAGAZACILIK GIDA",
-      "price": 118.5
+      "price": 114.9
     },
     {
       "code": "CCOLA",
       "name": "COCA COLA ICECEK",
-      "price": 78.15
+      "price": 78.05
     },
     {
       "code": "CONSE",
       "name": "CONSUS ENERJI",
-      "price": 2.3
+      "price": 2.28
     },
     {
       "code": "COSMO",
@@ -749,7 +749,7 @@
     {
       "code": "CRDFA",
       "name": "CREDITWEST FAKTORING",
-      "price": 26.8
+      "price": 26.72
     },
     {
       "code": "CUSAN",
@@ -759,12 +759,12 @@
     {
       "code": "CVKMD",
       "name": "CVK MADEN",
-      "price": 16.32
+      "price": 16.15
     },
     {
       "code": "CWENE",
       "name": "CW ENERJI",
-      "price": 36.94
+      "price": 36.08
     },
     {
       "code": "DAGI",
@@ -774,52 +774,52 @@
     {
       "code": "DAPGM",
       "name": "DAP GAYRIMENKUL",
-      "price": 8.6
+      "price": 8.58
     },
     {
       "code": "DARDL",
       "name": "DARDANEL",
-      "price": 1.67
+      "price": 1.66
     },
     {
       "code": "DGATE",
       "name": "DATAGATE BILGISAYAR",
-      "price": 103.1
+      "price": 102.3
     },
     {
       "code": "DCTTR",
       "name": "DCT TRADING DIS TICARET",
-      "price": 7.24
+      "price": 7.15
     },
     {
       "code": "DMSAS",
       "name": "DEMISAS DOKUM",
-      "price": 9.06
+      "price": 8.86
     },
     {
       "code": "DENGE",
       "name": "DENGE HOLDING",
-      "price": 2.51
+      "price": 2.46
     },
     {
       "code": "DZGYO",
       "name": "DENIZ GMYO",
-      "price": 7.15
+      "price": 7.1
     },
     {
       "code": "DERIM",
       "name": "DERIMOD",
-      "price": 41
+      "price": 41.06
     },
     {
       "code": "DERHL",
       "name": "DERLUKS YATIRIM HOLDING",
-      "price": 2.28
+      "price": 2.27
     },
     {
       "code": "DESA",
       "name": "DESA DERI",
-      "price": 10.16
+      "price": 10.11
     },
     {
       "code": "DESPC",
@@ -829,17 +829,17 @@
     {
       "code": "DSTKF",
       "name": "DESTEK FINANS FAKTORING",
-      "price": 2268
+      "price": 2302
     },
     {
       "code": "DEVA",
       "name": "DEVA HOLDING",
-      "price": 85.3
+      "price": 84.8
     },
     {
       "code": "DNISI",
       "name": "DINAMIK ISI MAKINA YALITIM",
-      "price": 4.93
+      "price": 4.87
     },
     {
       "code": "DIRIT",
@@ -849,67 +849,72 @@
     {
       "code": "DITAS",
       "name": "DITAS BDY",
-      "price": 24.84
+      "price": 24.98
     },
     {
       "code": "DMRGD",
       "name": "DMR UNLU MAMULLER",
-      "price": 11.25
+      "price": 11.38
     },
     {
       "code": "DOCO",
       "name": "DO-CO",
-      "price": 11560
+      "price": 11690
     },
     {
       "code": "DOFRB",
       "name": "DOF ROBOTIK",
-      "price": 132.4
+      "price": 131.1
     },
     {
       "code": "DOFER",
       "name": "DOFER YAPI MALZEMELERI",
-      "price": 29.12
+      "price": 28.88
     },
     {
       "code": "DOHOL",
       "name": "DOGAN HOLDING",
-      "price": 21.66
+      "price": 21.16
     },
     {
       "code": "DGNMO",
       "name": "DOGANLAR MOBILYA",
-      "price": 8.59
+      "price": 8.62
     },
     {
       "code": "ARASE",
       "name": "DOGU ARAS ENERJI",
-      "price": 126.7
+      "price": 123.8
     },
     {
       "code": "DGGYO",
       "name": "DOGUS GMYO",
-      "price": 34.04
+      "price": 34
     },
     {
       "code": "DOAS",
       "name": "DOGUS OTOMOTIV",
-      "price": 167.9
+      "price": 167.6
     },
     {
       "code": "DOGUB",
       "name": "DOGUSAN",
-      "price": 71.65
+      "price": 71.2
     },
     {
       "code": "DOKTA",
       "name": "DOKTAS DOKUMCULUK",
-      "price": 23.9
+      "price": 23.62
+    },
+    {
+      "code": "DUNYH",
+      "name": "DUNYA HOLDING",
+      "price": 155.8
     },
     {
       "code": "DURDO",
       "name": "DURAN DOGAN BASIM",
-      "price": 5.02
+      "price": 5.03
     },
     {
       "code": "DURKN",
@@ -919,7 +924,7 @@
     {
       "code": "DYOBY",
       "name": "DYO BOYA",
-      "price": 13.81
+      "price": 13.69
     },
     {
       "code": "EDATA",
@@ -934,92 +939,92 @@
     {
       "code": "ECOGR",
       "name": "ECOGREEN ENERJI",
-      "price": 36.68
+      "price": 36.04
     },
     {
       "code": "ECILC",
       "name": "ECZACIBASI ILAC",
-      "price": 77.35
+      "price": 78.3
     },
     {
       "code": "ECZYT",
       "name": "ECZACIBASI YATIRIM",
-      "price": 323.5
+      "price": 323.75
     },
     {
       "code": "EDIP",
       "name": "EDIP GAYRIMENKUL",
-      "price": 36
+      "price": 36.4
     },
     {
       "code": "EFOR",
       "name": "EFOR YATIRIM",
-      "price": 19.09
+      "price": 18.21
     },
     {
       "code": "EGEEN",
       "name": "EGE ENDUSTRI",
-      "price": 5190
+      "price": 5167.5
     },
     {
       "code": "EGGUB",
       "name": "EGE GUBRE",
-      "price": 107.8
+      "price": 107.9
     },
     {
       "code": "EGPRO",
       "name": "EGE PROFIL",
-      "price": 37.86
+      "price": 37.76
     },
     {
       "code": "EGSER",
       "name": "EGE SERAMIK",
-      "price": 3.03
+      "price": 3.04
     },
     {
       "code": "EPLAS",
       "name": "EGEPLAST",
-      "price": 5.84
+      "price": 5.85
     },
     {
       "code": "EGEGY",
       "name": "EGEYAPI AVRUPA GMYO",
-      "price": 31.36
+      "price": 31.64
     },
     {
       "code": "EKIM",
       "name": "EKIM TURIZM",
-      "price": 19.65
+      "price": 19.78
     },
     {
       "code": "EKDMR",
       "name": "EKINCILER DEMIR CELIK",
-      "price": 47.9
+      "price": 47.74
     },
     {
       "code": "EKIZ",
       "name": "EKIZ KIMYA",
-      "price": 59.45
+      "price": 58.9
     },
     {
       "code": "EKOS",
       "name": "EKOS TEKNOLOJI",
-      "price": 5.59
+      "price": 5.53
     },
     {
       "code": "EKSUN",
       "name": "EKSUN GIDA",
-      "price": 6.36
+      "price": 6.33
     },
     {
       "code": "ELITE",
       "name": "ELITE NATUREL ORGANIK GIDA",
-      "price": 27.4
+      "price": 27.46
     },
     {
       "code": "EMKEL",
       "name": "EMEK ELEKTRIK",
-      "price": 15.57
+      "price": 15.62
     },
     {
       "code": "EMNIS",
@@ -1029,32 +1034,32 @@
     {
       "code": "EKGYO",
       "name": "EMLAK KONUT GMYO",
-      "price": 20.08
+      "price": 20.12
     },
     {
       "code": "EMPAE",
       "name": "EMPA ELEKTRONIK",
-      "price": 70.8
+      "price": 70.05
     },
     {
       "code": "ENDAE",
       "name": "ENDA ENERJI HOLDING",
-      "price": 20.3
+      "price": 20.4
     },
     {
       "code": "ENJSA",
       "name": "ENERJISA ENERJI",
-      "price": 110
+      "price": 110.4
     },
     {
       "code": "ENERY",
       "name": "ENERYA ENERJI",
-      "price": 9.04
+      "price": 9.03
     },
     {
       "code": "ENKAI",
       "name": "ENKA INSAAT",
-      "price": 82.65
+      "price": 82.8
     },
     {
       "code": "ENPRA",
@@ -1064,42 +1069,42 @@
     {
       "code": "ENSRI",
       "name": "ENSARI SINAI YATIRIMLAR",
-      "price": 5.13
+      "price": 5.1
     },
     {
       "code": "ERBOS",
       "name": "ERBOSAN",
-      "price": 154.7
+      "price": 155.6
     },
     {
       "code": "ERCB",
       "name": "ERCIYAS CELIK BORU",
-      "price": 47.4
+      "price": 47.34
     },
     {
       "code": "EREGL",
       "name": "EREGLI DEMIR CELIK",
-      "price": 38.04
+      "price": 38.18
     },
     {
       "code": "ERSU",
       "name": "ERSU GIDA",
-      "price": 25.88
+      "price": 26
     },
     {
       "code": "ESCAR",
       "name": "ESCAR FILO",
-      "price": 48.02
+      "price": 47.8
     },
     {
       "code": "ESCOM",
       "name": "ESCORT TEKNOLOJI",
-      "price": 5.72
+      "price": 5.67
     },
     {
       "code": "ESEN",
       "name": "ESENBOGA ELEKTRIK",
-      "price": 3.59
+      "price": 3.58
     },
     {
       "code": "ETILR",
@@ -1109,17 +1114,17 @@
     {
       "code": "EUKYO",
       "name": "EURO KAPITAL YAT. ORT.",
-      "price": 13.87
+      "price": 13.77
     },
     {
       "code": "ETYAT",
       "name": "EURO TREND YAT. ORT.",
-      "price": 14.3
+      "price": 14.49
     },
     {
       "code": "EUYO",
       "name": "EURO YAT. ORT.",
-      "price": 4.98
+      "price": 4.96
     },
     {
       "code": "EUHOL",
@@ -1129,27 +1134,27 @@
     {
       "code": "TEZOL",
       "name": "EUROPAP TEZOL KAGIT",
-      "price": 10.03
+      "price": 9.96
     },
     {
       "code": "EUREN",
       "name": "EUROPEN ENDUSTRI",
-      "price": 3.93
+      "price": 3.94
     },
     {
       "code": "EUPWR",
       "name": "EUROPOWER ENERJI",
-      "price": 94.85
+      "price": 95
     },
     {
       "code": "EYGYO",
       "name": "EYG GMYO",
-      "price": 2.74
+      "price": 2.7
     },
     {
       "code": "FMIZP",
       "name": "F-M IZMIT PISTON",
-      "price": 306.5
+      "price": 301.5
     },
     {
       "code": "FADE",
@@ -1159,67 +1164,67 @@
     {
       "code": "FENER",
       "name": "FENERBAHCE FUTBOL",
-      "price": 3.14
+      "price": 3.13
     },
     {
       "code": "FLAP",
       "name": "FLAP KONGRE TOPLANTI HIZ.",
-      "price": 10.31
+      "price": 10.44
     },
     {
       "code": "FONET",
       "name": "FONET BILGI TEKNOLOJILERI",
-      "price": 5.33
+      "price": 5.29
     },
     {
       "code": "FROTO",
       "name": "FORD OTOSAN",
-      "price": 79.1
+      "price": 79.05
     },
     {
       "code": "FORMT",
       "name": "FORMET METAL VE CAM",
-      "price": 1.69
+      "price": 1.7
     },
     {
       "code": "FRMPL",
       "name": "FORMUL PLASTIK VE METAL",
-      "price": 35.3
+      "price": 35.34
     },
     {
       "code": "FORTE",
       "name": "FORTE BILGI ILETISIM",
-      "price": 122.3
+      "price": 119
     },
     {
       "code": "FRIGO",
       "name": "FRIGO PAK GIDA",
-      "price": 2.29
+      "price": 2.31
     },
     {
       "code": "FZLGY",
       "name": "FUZUL GMYO",
-      "price": 9.87
+      "price": 9.81
     },
     {
       "code": "GWIND",
       "name": "GALATA WIND ENERJI",
-      "price": 23.3
+      "price": 23.4
     },
     {
       "code": "GSRAY",
       "name": "GALATASARAY SPORTIF",
-      "price": 1.13
+      "price": 1.14
     },
     {
       "code": "GARAN",
       "name": "GARANTI BANKASI",
-      "price": 132.9
+      "price": 133.4
     },
     {
       "code": "GARFA",
       "name": "GARANTI FAKTORING",
-      "price": 26.8
+      "price": 26.82
     },
     {
       "code": "GRNYO",
@@ -1234,32 +1239,32 @@
     {
       "code": "GEDIK",
       "name": "GEDIK Y. MEN. DEG.",
-      "price": 6.39
+      "price": 6.42
     },
     {
       "code": "GEDZA",
       "name": "GEDIZ AMBALAJ",
-      "price": 29.78
+      "price": 29.96
     },
     {
       "code": "GLCVY",
       "name": "GELECEK VARLIK YONETIMI",
-      "price": 52.9
+      "price": 53.5
     },
     {
       "code": "GENIL",
       "name": "GEN ILAC",
-      "price": 12.1
+      "price": 12.36
     },
     {
       "code": "GENTS",
       "name": "GENTAS",
-      "price": 5.31
+      "price": 5.28
     },
     {
       "code": "GENKM",
       "name": "GENTAS KIMYA",
-      "price": 10.45
+      "price": 10.4
     },
     {
       "code": "GEREL",
@@ -1269,12 +1274,12 @@
     {
       "code": "GZNMI",
       "name": "GEZINOMI SEYAHAT",
-      "price": 58.6
+      "price": 58.45
     },
     {
       "code": "GMTAS",
       "name": "GIMAT MAGAZACILIK",
-      "price": 44.96
+      "price": 46.64
     },
     {
       "code": "GIPTA",
@@ -1284,27 +1289,27 @@
     {
       "code": "GESAN",
       "name": "GIRISIM ELEKTRIK SANAYI",
-      "price": 89.6
+      "price": 90.85
     },
     {
       "code": "GLBMD",
       "name": "GLOBAL MEN. DEG.",
-      "price": 11.99
+      "price": 11.84
     },
     {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
-      "price": 16.99
+      "price": 16.98
     },
     {
       "code": "GOKNR",
       "name": "GOKNUR GIDA",
-      "price": 18
+      "price": 17.84
     },
     {
       "code": "GOLDA",
       "name": "GOLDA GIDA",
-      "price": 13.05
+      "price": 13.1
     },
     {
       "code": "GOLTS",
@@ -1319,27 +1324,27 @@
     {
       "code": "GOZDE",
       "name": "GOZDE GIRISIM",
-      "price": 22.76
+      "price": 22.54
     },
     {
       "code": "GRTHO",
       "name": "GRAINTURK HOLDING",
-      "price": 223.6
+      "price": 224.2
     },
     {
       "code": "GSDDE",
       "name": "GSD DENIZCILIK",
-      "price": 14.48
+      "price": 14.37
     },
     {
       "code": "GSDHO",
       "name": "GSD HOLDING",
-      "price": 4.85
+      "price": 4.81
     },
     {
       "code": "GUBRF",
       "name": "GUBRE FABRIK.",
-      "price": 486.25
+      "price": 482.5
     },
     {
       "code": "GLRYH",
@@ -1349,42 +1354,42 @@
     {
       "code": "GLRMK",
       "name": "GULERMAK AGIR SANAYI",
-      "price": 180.3
+      "price": 179
     },
     {
       "code": "GUNDG",
       "name": "GUNDOGDU GIDA",
-      "price": 1981
+      "price": 1988
     },
     {
       "code": "GRSEL",
       "name": "GUR-SEL TURIZM TASIMACILIK",
-      "price": 319.75
+      "price": 318.25
     },
     {
       "code": "HLGYO",
       "name": "HALK GMYO",
-      "price": 4.42
+      "price": 4.45
     },
     {
       "code": "HRKET",
       "name": "HAREKET PROJE TASIMACILIGI",
-      "price": 99.8
+      "price": 98.05
     },
     {
       "code": "HATEK",
       "name": "HATAY TEKSTIL",
-      "price": 12.95
+      "price": 13
     },
     {
       "code": "HATSN",
       "name": "HATSAN GEMI",
-      "price": 72.75
+      "price": 72.95
     },
     {
       "code": "HDFGS",
       "name": "HEDEF GIRISIM",
-      "price": 2.56
+      "price": 2.54
     },
     {
       "code": "HEDEF",
@@ -1399,52 +1404,52 @@
     {
       "code": "HKTM",
       "name": "HIDROPAR HAREKET KONTROL",
-      "price": 13.69
+      "price": 13.61
     },
     {
       "code": "HTTBT",
       "name": "HITIT BILGISAYAR",
-      "price": 36.84
+      "price": 36.46
     },
     {
       "code": "HOROZ",
       "name": "HOROZ LOJISTIK",
-      "price": 64.15
+      "price": 64.45
     },
     {
       "code": "HUBVC",
       "name": "HUB GIRISIM",
-      "price": 2.54
+      "price": 2.52
     },
     {
       "code": "HUNER",
       "name": "HUN YENILENEBILIR ENERJI",
-      "price": 3.88
+      "price": 3.86
     },
     {
       "code": "HURGZ",
       "name": "HURRIYET GZT.",
-      "price": 7.67
+      "price": 7.7
     },
     {
       "code": "ENTRA",
       "name": "IC ENTERRA YEN. ENERJI",
-      "price": 4.6
+      "price": 4.54
     },
     {
       "code": "ICBCT",
       "name": "ICBC TURKEY BANK",
-      "price": 19.4
+      "price": 20.32
     },
     {
       "code": "ICUGS",
       "name": "ICU GIRISIM",
-      "price": 5.5
+      "price": 5.48
     },
     {
       "code": "IDGYO",
       "name": "IDEALIST GMYO",
-      "price": 3.07
+      "price": 3.03
     },
     {
       "code": "IHEVA",
@@ -1464,12 +1469,12 @@
     {
       "code": "IHAAS",
       "name": "IHLAS HABER AJANSI",
-      "price": 60.95
+      "price": 60.7
     },
     {
       "code": "IHLAS",
       "name": "IHLAS HOLDING",
-      "price": 1.07
+      "price": 1.06
     },
     {
       "code": "IHYAY",
@@ -1479,22 +1484,22 @@
     {
       "code": "IMASM",
       "name": "IMAS MAKINA",
-      "price": 2.38
+      "price": 2.36
     },
     {
       "code": "INDES",
       "name": "INDEKS BILGISAYAR",
-      "price": 11.63
+      "price": 11.66
     },
     {
       "code": "INFO",
       "name": "INFO YATIRIM",
-      "price": 6.6
+      "price": 6.72
     },
     {
       "code": "INGRM",
       "name": "INGRAM BILISIM",
-      "price": 396.5
+      "price": 391.5
     },
     {
       "code": "INTEK",
@@ -1504,17 +1509,17 @@
     {
       "code": "INTEM",
       "name": "INTEMA",
-      "price": 264.75
+      "price": 263.5
     },
     {
       "code": "INVEO",
       "name": "INVEO YATIRIM HOLDING",
-      "price": 6.99
+      "price": 6.95
     },
     {
       "code": "INVES",
       "name": "INVESTCO HOLDING",
-      "price": 853
+      "price": 855
     },
     {
       "code": "ISCTR",
@@ -1524,7 +1529,7 @@
     {
       "code": "ISFIN",
       "name": "IS FIN.KIR.",
-      "price": 19.89
+      "price": 19.8
     },
     {
       "code": "ISGSY",
@@ -1534,17 +1539,17 @@
     {
       "code": "ISGYO",
       "name": "IS GMYO",
-      "price": 27.66
+      "price": 27.56
     },
     {
       "code": "ISGLK",
       "name": "IS PORTFOY ALTIN KATILIM BYF",
-      "price": 732.5
+      "price": 732.75
     },
     {
       "code": "ISMEN",
       "name": "IS Y. MEN. DEG.",
-      "price": 32.48
+      "price": 32.46
     },
     {
       "code": "ISYAT",
@@ -1564,12 +1569,12 @@
     {
       "code": "ISKPL",
       "name": "ISIK PLASTIK",
-      "price": 8.32
+      "price": 8.29
     },
     {
       "code": "IEYHO",
       "name": "ISIKLAR ENERJI YAPI HOL.",
-      "price": 190.2
+      "price": 190.4
     },
     {
       "code": "ISDMR",
@@ -1579,27 +1584,27 @@
     {
       "code": "ISVEA",
       "name": "ISVEA SERAMIK VE BANYO",
-      "price": 74.8
+      "price": 76.55
     },
     {
       "code": "IZINV",
       "name": "IZ YATIRIM HOLDING",
-      "price": 55
+      "price": 54.6
     },
     {
       "code": "IZENR",
       "name": "IZDEMIR ENERJI",
-      "price": 8.33
+      "price": 8.35
     },
     {
       "code": "IZMDC",
       "name": "IZMIR DEMIR CELIK",
-      "price": 13.65
+      "price": 13.68
     },
     {
       "code": "IZFAS",
       "name": "IZMIR FIRCA",
-      "price": 52.2
+      "price": 48.7
     },
     {
       "code": "JANTS",
@@ -1614,17 +1619,17 @@
     {
       "code": "KLKIM",
       "name": "KALEKIM KIMYEVI MADDELER",
-      "price": 28.74
+      "price": 28.88
     },
     {
       "code": "KLSER",
       "name": "KALESERAMIK",
-      "price": 25
+      "price": 24.82
     },
     {
       "code": "KLYPV",
       "name": "KALYON GUNES TEKNOLOJILERI",
-      "price": 67
+      "price": 67.2
     },
     {
       "code": "KPEKS",
@@ -1639,32 +1644,32 @@
     {
       "code": "KRDMA",
       "name": "KARDEMIR (A)",
-      "price": 56.1
+      "price": 56.3
     },
     {
       "code": "KRDMB",
       "name": "KARDEMIR (B)",
-      "price": 131.5
+      "price": 130.5
     },
     {
       "code": "KRDMD",
       "name": "KARDEMIR (D)",
-      "price": 45.3
+      "price": 44.78
     },
     {
       "code": "KARCL",
       "name": "KARDEMIR CELIK",
-      "price": 97.7
+      "price": 98.7
     },
     {
       "code": "KAREL",
       "name": "KAREL ELEKTRONIK",
-      "price": 8.81
+      "price": 8.79
     },
     {
       "code": "KARSN",
       "name": "KARSAN OTOMOTIV",
-      "price": 9.35
+      "price": 9.38
     },
     {
       "code": "KRTEK",
@@ -1674,22 +1679,22 @@
     {
       "code": "KARTN",
       "name": "KARTONSAN",
-      "price": 168.8
+      "price": 166.6
     },
     {
       "code": "KTLEV",
       "name": "KATILIMEVIM TAS. FIN.",
-      "price": 58.75
+      "price": 57.35
     },
     {
       "code": "KATMR",
       "name": "KATMERCILER EKIPMAN",
-      "price": 2.12
+      "price": 2.11
     },
     {
       "code": "KAYSE",
       "name": "KAYSERI SEKER FABRIKASI",
-      "price": 4.24
+      "price": 4.12
     },
     {
       "code": "KENT",
@@ -1699,7 +1704,7 @@
     {
       "code": "KRVGD",
       "name": "KERVAN GIDA",
-      "price": 2.31
+      "price": 2.28
     },
     {
       "code": "KERVN",
@@ -1709,17 +1714,17 @@
     {
       "code": "KLGYO",
       "name": "KILER GMYO",
-      "price": 4.86
+      "price": 4.82
     },
     {
       "code": "KLRHO",
       "name": "KILER HOLDING",
-      "price": 67.7
+      "price": 67.9
     },
     {
       "code": "KIMMR",
       "name": "KIM MARKET-ERSAN ALISVERIS",
-      "price": 13.94
+      "price": 13.87
     },
     {
       "code": "KMPUR",
@@ -1729,22 +1734,22 @@
     {
       "code": "TCKRC",
       "name": "KIRAC GALVANIZ",
-      "price": 170.8
+      "price": 171.3
     },
     {
       "code": "KZBGY",
       "name": "KIZILBUK GYO",
-      "price": 2.04
+      "price": 2.03
     },
     {
       "code": "KLMSN",
       "name": "KLIMASAN KLIMA",
-      "price": 28.88
+      "price": 28.96
     },
     {
       "code": "KCHOL",
       "name": "KOC HOLDING",
-      "price": 218.8
+      "price": 216.7
     },
     {
       "code": "KOCMT",
@@ -1759,12 +1764,12 @@
     {
       "code": "KLSYN",
       "name": "KOLEKSIYON MOBILYA",
-      "price": 15.73
+      "price": 15.77
     },
     {
       "code": "KNFRT",
       "name": "KONFRUT TARIM",
-      "price": 12.55
+      "price": 12.68
     },
     {
       "code": "KONTR",
@@ -1779,47 +1784,47 @@
     {
       "code": "KONKA",
       "name": "KONYA KAGIT",
-      "price": 11.64
+      "price": 11.52
     },
     {
       "code": "KGYO",
       "name": "KORAY GMYO",
-      "price": 12.72
+      "price": 12.4
     },
     {
       "code": "KORDS",
       "name": "KORDSA TEKNIK TEKSTIL",
-      "price": 88.75
+      "price": 89.6
     },
     {
       "code": "KRGYO",
       "name": "KORFEZ GMYO",
-      "price": 2.98
+      "price": 2.78
     },
     {
       "code": "KRPLS",
       "name": "KOROPLAST TEMIZLIK AMBALAJ",
-      "price": 11.22
+      "price": 11.15
     },
     {
       "code": "KOTON",
       "name": "KOTON MAGAZACILIK",
-      "price": 12.95
+      "price": 13
     },
     {
       "code": "KOPOL",
       "name": "KOZA POLYESTER",
-      "price": 5.8
+      "price": 5.77
     },
     {
       "code": "KRSTL",
       "name": "KRISTAL KOLA",
-      "price": 9.25
+      "price": 9.24
     },
     {
       "code": "KRONT",
       "name": "KRON TEKNOLOJI",
-      "price": 25.94
+      "price": 25.68
     },
     {
       "code": "KSTUR",
@@ -1829,77 +1834,77 @@
     {
       "code": "KUTPO",
       "name": "KUTAHYA PORSELEN",
-      "price": 82.15
+      "price": 81.75
     },
     {
       "code": "KTSKR",
       "name": "KUTAHYA SEKER FABRIKASI",
-      "price": 84.4
+      "price": 84.85
     },
     {
       "code": "KUVVA",
       "name": "KUVVA GIDA",
-      "price": 186.5
+      "price": 187
     },
     {
       "code": "KUYAS",
       "name": "KUYAS YATIRIM",
-      "price": 65.2
+      "price": 64.75
     },
     {
       "code": "KBORU",
       "name": "KUZEY BORU",
-      "price": 22
+      "price": 23.32
     },
     {
       "code": "KZGYO",
       "name": "KUZUGRUP GMYO",
-      "price": 19.46
+      "price": 19.47
     },
     {
       "code": "LIDER",
       "name": "LDR TURIZM",
-      "price": 34.96
+      "price": 33.72
     },
     {
       "code": "LIDFA",
       "name": "LIDER FAKTORING",
-      "price": 2.66
+      "price": 2.65
     },
     {
       "code": "LILAK",
       "name": "LILA KAGIT",
-      "price": 30.52
+      "price": 30.32
     },
     {
       "code": "LMKDC",
       "name": "LIMAK DOGU ANADOLU",
-      "price": 24.34
+      "price": 24.32
     },
     {
       "code": "LINK",
       "name": "LINK BILGISAYAR",
-      "price": 5.59
+      "price": 5.55
     },
     {
       "code": "LOGO",
       "name": "LOGO YAZILIM",
-      "price": 137.6
+      "price": 136.6
     },
     {
       "code": "LKMNH",
       "name": "LOKMAN HEKIM SAGLIK",
-      "price": 13.7
+      "price": 13.62
     },
     {
       "code": "LRSHO",
       "name": "LORAS HOLDING",
-      "price": 2.56
+      "price": 2.58
     },
     {
       "code": "LUKSK",
       "name": "LUKS KADIFE",
-      "price": 86.5
+      "price": 86.1
     },
     {
       "code": "LXGYO",
@@ -1909,12 +1914,12 @@
     {
       "code": "LYDHO",
       "name": "LYDIA HOLDING",
-      "price": 170.8
+      "price": 171.7
     },
     {
       "code": "LYDYE",
       "name": "LYDIA YESIL ENERJI",
-      "price": 12747.5
+      "price": 12855
     },
     {
       "code": "MACKO",
@@ -1924,77 +1929,77 @@
     {
       "code": "MAKIM",
       "name": "MAKIM MAKINE",
-      "price": 16.85
+      "price": 16.79
     },
     {
       "code": "MAKTK",
       "name": "MAKINA TAKIM",
-      "price": 9.99
+      "price": 9.88
     },
     {
       "code": "MANAS",
       "name": "MANAS ENERJI YONETIMI",
-      "price": 33.64
+      "price": 33.78
     },
     {
       "code": "MAGEN",
       "name": "MARGUN ENERJI",
-      "price": 33.82
+      "price": 33.52
     },
     {
       "code": "MARMR",
       "name": "MARMARA HOLDING",
-      "price": 2.46
+      "price": 2.47
     },
     {
       "code": "MAALT",
       "name": "MARMARIS ALTINYUNUS",
-      "price": 1010
+      "price": 1007
     },
     {
       "code": "MRSHL",
       "name": "MARSHALL",
-      "price": 1680
+      "price": 1690
     },
     {
       "code": "MRGYO",
       "name": "MARTI GMYO",
-      "price": 1.36
+      "price": 1.35
     },
     {
       "code": "MARTI",
       "name": "MARTI OTEL",
-      "price": 1.39
+      "price": 1.38
     },
     {
       "code": "MASFN",
       "name": "MASFEN ENERJI",
-      "price": 43.78
+      "price": 43.94
     },
     {
       "code": "MTRKS",
       "name": "MATRIKS FINANSAL TEKNOLOJILER",
-      "price": 34.48
+      "price": 34.24
     },
     {
       "code": "MAVI",
       "name": "MAVI GIYIM",
-      "price": 37.96
+      "price": 38.48
     },
     {
       "code": "MZHLD",
       "name": "MAZHAR ZORLU HOLDING",
-      "price": 5.42
+      "price": 5.4
     },
     {
       "code": "MEDTR",
       "name": "MEDITERA TIBBI MALZEME",
-      "price": 25.54
+      "price": 25.5
     },
     {
       "code": "MEGMT",
       "name": "MEGA METAL",
-      "price": 52.3
+      "price": 52.35
     },
     {
       "code": "MEGAP",
@@ -2004,22 +2009,22 @@
     {
       "code": "MEKAG",
       "name": "MEKA GLOBAL MAKINE",
-      "price": 3.02
+      "price": 3.01
     },
     {
       "code": "MNDRS",
       "name": "MENDERES TEKSTIL",
-      "price": 11.74
+      "price": 11.66
     },
     {
       "code": "MERCN",
       "name": "MERCAN KIMYA",
-      "price": 19.27
+      "price": 19.24
     },
     {
       "code": "MERIT",
       "name": "MERIT TURIZM",
-      "price": 15.86
+      "price": 15.78
     },
     {
       "code": "MERKO",
@@ -2034,52 +2039,52 @@
     {
       "code": "METRO",
       "name": "METRO HOLDING",
-      "price": 8.65
+      "price": 8.57
     },
     {
       "code": "MEPET",
       "name": "METRO PETROL VE TESISLERI",
-      "price": 22
+      "price": 22.2
     },
     {
       "code": "MTRYO",
       "name": "METRO YAT. ORT.",
-      "price": 9.16
+      "price": 9.27
     },
     {
       "code": "MCARD",
       "name": "METROPAL KURUMSAL HIZMETLER",
-      "price": 157.1
+      "price": 158.8
     },
     {
       "code": "MEYSU",
       "name": "MEYSU GIDA",
-      "price": 12.03
+      "price": 12.07
     },
     {
       "code": "MHRGY",
       "name": "MHR GMYO",
-      "price": 3.38
+      "price": 3.39
     },
     {
       "code": "MIATK",
       "name": "MIA TEKNOLOJI",
-      "price": 29.94
+      "price": 29.86
     },
     {
       "code": "MGROS",
       "name": "MIGROS TICARET",
-      "price": 559.5
+      "price": 557.5
     },
     {
       "code": "MSGYO",
       "name": "MISTRAL GMYO",
-      "price": 5.75
+      "price": 5.69
     },
     {
       "code": "MPARK",
       "name": "MLP SAGLIK",
-      "price": 442.75
+      "price": 441.75
     },
     {
       "code": "MMCAS",
@@ -2089,7 +2094,7 @@
     {
       "code": "MOBTL",
       "name": "MOBILTEL ILETISIM",
-      "price": 12.42
+      "price": 12.4
     },
     {
       "code": "MOGAN",
@@ -2099,7 +2104,7 @@
     {
       "code": "MNDTR",
       "name": "MONDI TURKEY",
-      "price": 5.03
+      "price": 5.02
     },
     {
       "code": "MOPAS",
@@ -2109,27 +2114,27 @@
     {
       "code": "EGEPO",
       "name": "NASMED EGEPOL",
-      "price": 16.83
+      "price": 16.89
     },
     {
       "code": "NATEN",
       "name": "NATUREL ENERJI",
-      "price": 5.68
+      "price": 5.6
     },
     {
       "code": "NTGAZ",
       "name": "NATURELGAZ",
-      "price": 11.24
+      "price": 11.11
     },
     {
       "code": "NTHOL",
       "name": "NET HOLDING",
-      "price": 43.92
+      "price": 43.98
     },
     {
       "code": "NETAS",
       "name": "NETAS TELEKOM.",
-      "price": 107.3
+      "price": 104.2
     },
     {
       "code": "NETCD",
@@ -2139,17 +2144,17 @@
     {
       "code": "NIBAS",
       "name": "NIGBAS NIGDE BETON",
-      "price": 3.78
+      "price": 4.12
     },
     {
       "code": "NUHCM",
       "name": "NUH CIMENTO",
-      "price": 220.6
+      "price": 220.7
     },
     {
       "code": "NUGYO",
       "name": "NUROL GMYO",
-      "price": 9.53
+      "price": 9.45
     },
     {
       "code": "NPTLR",
@@ -2159,22 +2164,22 @@
     {
       "code": "OBAMS",
       "name": "OBA MAKARNACILIK",
-      "price": 5.4
+      "price": 5.42
     },
     {
       "code": "OBASE",
       "name": "OBASE BILGISAYAR",
-      "price": 37.32
+      "price": 37.3
     },
     {
       "code": "ODAS",
       "name": "ODAS ELEKTRIK",
-      "price": 7.09
+      "price": 7.1
     },
     {
       "code": "ODINE",
       "name": "ODINE TEKNOLOJI",
-      "price": 1704
+      "price": 1714
     },
     {
       "code": "OFSYM",
@@ -2184,17 +2189,17 @@
     {
       "code": "ONCSM",
       "name": "ONCOSEM ONKOLOJIK SISTEMLER",
-      "price": 247.2
+      "price": 252
     },
     {
       "code": "ONRYT",
       "name": "ONUR TEKNOLOJI",
-      "price": 63.15
+      "price": 62.25
     },
     {
       "code": "ORCAY",
       "name": "ORCAY ORTAKOY CAY SANAYI",
-      "price": 3.74
+      "price": 3.71
     },
     {
       "code": "ORGE",
@@ -2209,77 +2214,82 @@
     {
       "code": "ORZAX",
       "name": "ORZAKS ILAC",
-      "price": 103.7
+      "price": 101.8
     },
     {
       "code": "OSMEN",
       "name": "OSMANLI MENKUL",
-      "price": 7.9
+      "price": 7.94
     },
     {
       "code": "OPTLR",
       "name": "OSMANLI P BIST TLREF(TL) END BYF",
-      "price": 63.58
+      "price": 63.62
+    },
+    {
+      "code": "OPX30",
+      "name": "OSMANLI PORTFOY BIST 30 HSY BYF",
+      "price": 88.78
     },
     {
       "code": "OPT25",
       "name": "OSMANLI PORTFOY BIST TEMETTU 25 ENDEKS HSY BYF",
-      "price": 53.66
+      "price": 53.1
     },
     {
       "code": "OPTGY",
       "name": "OSMANLI PORTFOY KAR PAYI ODEYEN BIST GYO HSY BYF",
-      "price": 163.25
+      "price": 163.35
     },
     {
       "code": "OPK30",
       "name": "OSMANLI PORTFOY KATILIM 30 ENDEKS HSY BYF",
-      "price": 83.7
+      "price": 83
     },
     {
       "code": "OSTIM",
       "name": "OSTIM ENDUSTRIYEL YAT",
-      "price": 1.65
+      "price": 1.64
     },
     {
       "code": "OTKAR",
       "name": "OTOKAR",
-      "price": 333
+      "price": 335.5
     },
     {
       "code": "OTTO",
       "name": "OTTO HOLDING",
-      "price": 168.5
+      "price": 168.3
     },
     {
       "code": "OYAKC",
       "name": "OYAK CIMENTO",
-      "price": 23.06
+      "price": 22.86
     },
     {
       "code": "OYAYO",
       "name": "OYAK YAT. ORT.",
-      "price": 42.6
+      "price": 43.1
     },
     {
       "code": "OYYAT",
       "name": "OYAK YATIRIM MENKUL",
-      "price": 36.42
+      "price": 36.28
     },
     {
       "code": "OYLUM",
       "name": "OYLUM SINAI YATIRIMLAR",
-      "price": 7.32
+      "price": 7.3
     },
     {
       "code": "OZKGY",
       "name": "OZAK GMYO",
-      "price": 13.4
+      "price": 13.5
     },
     {
       "code": "OZATD",
       "name": "OZATA DENIZCILIK",
-      "price": 4222.5
+      "price": 4197.5
     },
     {
       "code": "OZGYO",
@@ -2299,52 +2309,52 @@
     {
       "code": "OZYSR",
       "name": "OZYASAR TEL",
-      "price": 12.84
+      "price": 12.77
     },
     {
       "code": "PAMEL",
       "name": "PAMEL ELEKTRIK",
-      "price": 77.2
+      "price": 77.3
     },
     {
       "code": "PNLSN",
       "name": "PANELSAN CATI CEPHE",
-      "price": 45.44
+      "price": 45.9
     },
     {
       "code": "PAGYO",
       "name": "PANORA GMYO",
-      "price": 155.7
+      "price": 156.1
     },
     {
       "code": "PAPIL",
       "name": "PAPILON SAVUNMA",
-      "price": 13.56
+      "price": 13.45
     },
     {
       "code": "PRDGS",
       "name": "PARDUS GIRISIM",
-      "price": 7.97
+      "price": 8.05
     },
     {
       "code": "PRKME",
       "name": "PARK ELEK.MADENCILIK",
-      "price": 18.06
+      "price": 18
     },
     {
       "code": "PARSN",
       "name": "PARSAN",
-      "price": 72.75
+      "price": 73.1
     },
     {
       "code": "PASEU",
       "name": "PASIFIK EURASIA LOJISTIK",
-      "price": 225.7
+      "price": 227.9
     },
     {
       "code": "PSGYO",
       "name": "PASIFIK GMYO",
-      "price": 3.47
+      "price": 3.42
     },
     {
       "code": "PAHOL",
@@ -2354,12 +2364,12 @@
     {
       "code": "PATEK",
       "name": "PASIFIK TEKNOLOJI",
-      "price": 22.5
+      "price": 22.1
     },
     {
       "code": "PCILT",
       "name": "PC ILETISIM MEDYA",
-      "price": 34.12
+      "price": 34.58
     },
     {
       "code": "PGSUS",
@@ -2369,67 +2379,67 @@
     {
       "code": "PEKGY",
       "name": "PEKER GMYO",
-      "price": 15.14
+      "price": 15.17
     },
     {
       "code": "PENGD",
       "name": "PENGUEN GIDA",
-      "price": 9.45
+      "price": 9.48
     },
     {
       "code": "PENTA",
       "name": "PENTA TEKNOLOJI URUNLERI DAGITIM",
-      "price": 13.28
+      "price": 13.37
     },
     {
       "code": "PSDTC",
       "name": "PERGAMON DIS TICARET",
-      "price": 153
+      "price": 152.7
     },
     {
       "code": "PETKM",
       "name": "PETKIM",
-      "price": 20.4
+      "price": 20.16
     },
     {
       "code": "PKENT",
       "name": "PETROKENT TURIZM",
-      "price": 126.9
+      "price": 126.7
     },
     {
       "code": "PETUN",
       "name": "PINAR ET VE UN",
-      "price": 11.32
+      "price": 11.25
     },
     {
       "code": "PINSU",
       "name": "PINAR SU",
-      "price": 10.28
+      "price": 10.29
     },
     {
       "code": "PNSUT",
       "name": "PINAR SUT",
-      "price": 10.59
+      "price": 10.57
     },
     {
       "code": "PKART",
       "name": "PLASTIKKART",
-      "price": 130.8
+      "price": 130.4
     },
     {
       "code": "PLTUR",
       "name": "PLATFORM TURIZM",
-      "price": 23.82
+      "price": 23.54
     },
     {
       "code": "POLHO",
       "name": "POLISAN HOLDING",
-      "price": 22.72
+      "price": 22.62
     },
     {
       "code": "POLTK",
       "name": "POLITEKNIK METAL",
-      "price": 4535
+      "price": 4500
     },
     {
       "code": "PRZMA",
@@ -2454,42 +2464,42 @@
     {
       "code": "GLDTR",
       "name": "QNB PORTFOY ALTIN KATILIM BYF",
-      "price": 602
+      "price": 602.25
     },
     {
       "code": "GMSTR",
       "name": "QNB PORTFOY GUMUS KATILIM BYF",
-      "price": 644.25
+      "price": 640
     },
     {
       "code": "QTEMZ",
       "name": "QNB PORTFOY TEMIZ ENERJI HSY BYF",
-      "price": 355.4
+      "price": 351.1
     },
     {
       "code": "QUAGR",
       "name": "QUA GRANITE HAYAL YAPI",
-      "price": 3.45
+      "price": 3.46
     },
     {
       "code": "QUICK",
       "name": "QUICK SIGORTA",
-      "price": 71.15
+      "price": 70.65
     },
     {
       "code": "RNPOL",
       "name": "RAINBOW POLIKARBONAT",
-      "price": 2.47
+      "price": 2.54
     },
     {
       "code": "RALYH",
       "name": "RAL YATIRIM HOLDING",
-      "price": 268
+      "price": 265.75
     },
     {
       "code": "RAYSG",
       "name": "RAY SIGORTA",
-      "price": 163.3
+      "price": 162.4
     },
     {
       "code": "REEDR",
@@ -2499,12 +2509,12 @@
     {
       "code": "RYGYO",
       "name": "REYSAS GMYO",
-      "price": 44.08
+      "price": 44.14
     },
     {
       "code": "RYSAS",
       "name": "REYSAS LOJISTIK",
-      "price": 24.38
+      "price": 24.24
     },
     {
       "code": "RODRG",
@@ -2514,7 +2524,7 @@
     {
       "code": "RGYAS",
       "name": "RONESANS GAYRIMENKUL YAT.",
-      "price": 211.4
+      "price": 211.3
     },
     {
       "code": "RTALB",
@@ -2524,17 +2534,17 @@
     {
       "code": "RUBNS",
       "name": "RUBENIS TEKSTIL",
-      "price": 33.4
+      "price": 33.16
     },
     {
       "code": "RUZYE",
       "name": "RUZY MADENCILIK VE ENERJI",
-      "price": 9.46
+      "price": 9.43
     },
     {
       "code": "SARAE",
       "name": "SA-RA ENERJI",
-      "price": 86.9
+      "price": 88.05
     },
     {
       "code": "SSAAT",
@@ -2544,22 +2554,22 @@
     {
       "code": "SAHOL",
       "name": "SABANCI HOLDING",
-      "price": 94.1
+      "price": 93.7
     },
     {
       "code": "SAFKR",
       "name": "SAFKAR EGE SOGUTMACILIK",
-      "price": 19.14
+      "price": 19.1
     },
     {
       "code": "SANEL",
       "name": "SANEL MUHENDISLIK",
-      "price": 58.55
+      "price": 58.5
     },
     {
       "code": "SNICA",
       "name": "SANICA ISI SANAYI",
-      "price": 3.28
+      "price": 3.29
     },
     {
       "code": "SANFM",
@@ -2569,7 +2579,7 @@
     {
       "code": "SANKO",
       "name": "SANKO PAZARLAMA",
-      "price": 18.92
+      "price": 18.86
     },
     {
       "code": "SAMAT",
@@ -2579,27 +2589,27 @@
     {
       "code": "SARKY",
       "name": "SARKUYSAN",
-      "price": 25.86
+      "price": 25.8
     },
     {
       "code": "SASA",
       "name": "SASA POLYESTER",
-      "price": 2.32
+      "price": 2.33
     },
     {
       "code": "SVGYO",
       "name": "SAVUR GMYO",
-      "price": 17.54
+      "price": 17.66
     },
     {
       "code": "SAYAS",
       "name": "SAY YENILENEBILIR ENERJI",
-      "price": 62.35
+      "price": 61.9
     },
     {
       "code": "SDTTR",
       "name": "SDT UZAY VE SAVUNMA",
-      "price": 276
+      "price": 266.75
     },
     {
       "code": "SEGMN",
@@ -2609,17 +2619,17 @@
     {
       "code": "SEKFK",
       "name": "SEKER FIN. KIR.",
-      "price": 4.47
+      "price": 4.5
     },
     {
       "code": "SEGYO",
       "name": "SEKER GMYO",
-      "price": 3.79
+      "price": 3.77
     },
     {
       "code": "SKYMD",
       "name": "SEKER YATIRIM",
-      "price": 15.32
+      "price": 14.97
     },
     {
       "code": "SKBNK",
@@ -2629,17 +2639,17 @@
     {
       "code": "SEKUR",
       "name": "SEKURO PLASTIK",
-      "price": 10.32
+      "price": 10.28
     },
     {
       "code": "SELEC",
       "name": "SELCUK ECZA DEPOSU",
-      "price": 285.75
+      "price": 286
     },
     {
       "code": "SELVA",
       "name": "SELVA GIDA",
-      "price": 1.72
+      "price": 1.73
     },
     {
       "code": "SERNT",
@@ -2654,37 +2664,37 @@
     {
       "code": "SEYKM",
       "name": "SEYITLER KIMYA",
-      "price": 4.64
+      "price": 4.65
     },
     {
       "code": "SILVR",
       "name": "SILVERLINE ENDUSTRI",
-      "price": 2.3
+      "price": 2.28
     },
     {
       "code": "SNGYO",
       "name": "SINPAS GMYO",
-      "price": 3.36
+      "price": 3.38
     },
     {
       "code": "SISE",
       "name": "SISE CAM",
-      "price": 39.76
+      "price": 39.92
     },
     {
       "code": "SKYLP",
       "name": "SKYALP FINANSAL TEKNOLOJILER",
-      "price": 256
+      "price": 258.5
     },
     {
       "code": "SMRTG",
       "name": "SMART GUNES ENERJISI TEK.",
-      "price": 10.22
+      "price": 10.19
     },
     {
       "code": "SMART",
       "name": "SMARTIKS YAZILIM",
-      "price": 25
+      "price": 24.72
     },
     {
       "code": "SODSN",
@@ -2694,27 +2704,27 @@
     {
       "code": "SOHOE",
       "name": "SOHO GIYIM VE ENERJI",
-      "price": 10.94
+      "price": 10.81
     },
     {
       "code": "SOKM",
       "name": "SOK MARKETLER TICARET",
-      "price": 58.25
+      "price": 58.35
     },
     {
       "code": "SOKE",
       "name": "SOKE DEGIRMENCILIK",
-      "price": 14.18
+      "price": 14.06
     },
     {
       "code": "SKTAS",
       "name": "SOKTAS",
-      "price": 3.3
+      "price": 3.27
     },
     {
       "code": "SONME",
       "name": "SONMEZ FILAMENT",
-      "price": 145.5
+      "price": 143.2
     },
     {
       "code": "SNPAM",
@@ -2734,22 +2744,22 @@
     {
       "code": "SUNTK",
       "name": "SUN TEKSTIL",
-      "price": 37
+      "price": 37.06
     },
     {
       "code": "SURGY",
       "name": "SUR TATIL EVLERI GMYO",
-      "price": 34.84
+      "price": 33.5
     },
     {
       "code": "SUWEN",
       "name": "SUWEN TEKSTIL",
-      "price": 6.49
+      "price": 6.46
     },
     {
       "code": "HALKB",
       "name": "T. HALK BANKASI",
-      "price": 34.98
+      "price": 34.86
     },
     {
       "code": "KLNMA",
@@ -2759,32 +2769,32 @@
     {
       "code": "TSKB",
       "name": "T.S.K.B.",
-      "price": 11.1
+      "price": 11.12
     },
     {
       "code": "TBORG",
       "name": "T.TUBORG",
-      "price": 164
+      "price": 164.2
     },
     {
       "code": "TABGD",
       "name": "TAB GIDA",
-      "price": 259.5
+      "price": 259
     },
     {
       "code": "TNZTP",
       "name": "TAPDI TINAZTEPE",
-      "price": 29
+      "price": 29.02
     },
     {
       "code": "TARKM",
       "name": "TARKIM BITKI KORUMA",
-      "price": 516
+      "price": 514
     },
     {
       "code": "TATGD",
       "name": "TAT GIDA",
-      "price": 17.49
+      "price": 17.43
     },
     {
       "code": "TATEN",
@@ -2794,17 +2804,17 @@
     {
       "code": "TAVHL",
       "name": "TAV HAVALIMANLARI",
-      "price": 278.75
+      "price": 281
     },
     {
       "code": "TEKTU",
       "name": "TEK-ART TURIZM",
-      "price": 7.53
+      "price": 7.5
     },
     {
       "code": "TKFEN",
       "name": "TEKFEN HOLDING",
-      "price": 220.3
+      "price": 221.6
     },
     {
       "code": "TKNKA",
@@ -2824,7 +2834,7 @@
     {
       "code": "TRHOL",
       "name": "TERA FINANSAL YAT. HOL.",
-      "price": 2498
+      "price": 2459
     },
     {
       "code": "TERA",
@@ -2839,42 +2849,42 @@
     {
       "code": "TGSAS",
       "name": "TGS DIS TICARET",
-      "price": 194.7
+      "price": 200.5
     },
     {
       "code": "TOASO",
       "name": "TOFAS OTO. FAB.",
-      "price": 274.75
+      "price": 276.25
     },
     {
       "code": "TRGYO",
       "name": "TORUNLAR GMYO",
-      "price": 96.9
+      "price": 96.55
     },
     {
       "code": "TRMET",
       "name": "TR ANADOLU METAL MADENCILIK",
-      "price": 142.2
+      "price": 140.3
     },
     {
       "code": "TRENJ",
       "name": "TR DOGAL ENERJI",
-      "price": 107
+      "price": 105.9
     },
     {
       "code": "TLMAN",
       "name": "TRABZON LIMAN",
-      "price": 84.35
+      "price": 85.05
     },
     {
       "code": "TSPOR",
       "name": "TRABZONSPOR SPORTIF",
-      "price": 1.24
+      "price": 1.19
     },
     {
       "code": "TDGYO",
       "name": "TREND GMYO",
-      "price": 16.57
+      "price": 16.63
     },
     {
       "code": "TSGYO",
@@ -2884,42 +2894,42 @@
     {
       "code": "TUCLK",
       "name": "TUGCELIK",
-      "price": 4.2
+      "price": 4
     },
     {
       "code": "TUKAS",
       "name": "TUKAS",
-      "price": 2.03
+      "price": 2.02
     },
     {
       "code": "TMSN",
       "name": "TUMOSAN MOTOR VE TRAKTOR",
-      "price": 75.4
+      "price": 75.65
     },
     {
       "code": "TUPRS",
       "name": "TUPRAS",
-      "price": 395.5
+      "price": 395
     },
     {
       "code": "TRCAS",
       "name": "TURCAS HOLDING",
-      "price": 48.1
+      "price": 47.54
     },
     {
       "code": "TUREX",
       "name": "TUREKS TURIZM TASIMACILIK",
-      "price": 6.84
+      "price": 6.77
     },
     {
       "code": "MARBL",
       "name": "TUREKS TURUNC MADENCILIK",
-      "price": 12.53
+      "price": 12.5
     },
     {
       "code": "TRALT",
       "name": "TURK ALTIN ISLETMELERI",
-      "price": 54.15
+      "price": 54.25
     },
     {
       "code": "THYAO",
@@ -2939,77 +2949,77 @@
     {
       "code": "TTKOM",
       "name": "TURK TELEKOM",
-      "price": 53.3
+      "price": 53.5
     },
     {
       "code": "TTRAK",
       "name": "TURK TRAKTOR",
-      "price": 433.75
+      "price": 436.5
     },
     {
       "code": "TCELL",
       "name": "TURKCELL",
-      "price": 103.6
+      "price": 103.2
     },
     {
       "code": "TURGG",
       "name": "TURKER PROJE GAYRIMENKUL",
-      "price": 27.24
+      "price": 27.02
     },
     {
       "code": "VEYAS",
       "name": "TURKER VANGOLU ENERJI",
-      "price": 158.8
+      "price": 155.3
     },
     {
       "code": "TURSG",
       "name": "TURKIYE SIGORTA",
-      "price": 6.13
+      "price": 6.1
     },
     {
       "code": "UCAYM",
       "name": "UCAY MUHENDISLIK",
-      "price": 25.34
+      "price": 25.48
     },
     {
       "code": "UFUK",
       "name": "UFUK YATIRIM",
-      "price": 1792
+      "price": 1797
     },
     {
       "code": "ULAS",
       "name": "ULASLAR TURIZM YAT.",
-      "price": 21.84
+      "price": 21.68
     },
     {
       "code": "ULKER",
       "name": "ULKER BISKUVI",
-      "price": 91.1
+      "price": 91.6
     },
     {
       "code": "ULUFA",
       "name": "ULUSAL FAKTORING",
-      "price": 1.7
+      "price": 1.69
     },
     {
       "code": "ULUSE",
       "name": "ULUSOY ELEKTRIK",
-      "price": 262.75
+      "price": 262.25
     },
     {
       "code": "ULUUN",
       "name": "ULUSOY UN SANAYI",
-      "price": 8.45
+      "price": 8.56
     },
     {
       "code": "UNLU",
       "name": "UNLU YATIRIM HOLDING",
-      "price": 11.25
+      "price": 11.11
     },
     {
       "code": "MARKA",
       "name": "US YATIRIM HOLDING",
-      "price": 86.55
+      "price": 86.95
     },
     {
       "code": "USAK",
@@ -3019,7 +3029,7 @@
     {
       "code": "VAKFA",
       "name": "VAKIF FAKTORING",
-      "price": 11.57
+      "price": 11.59
     },
     {
       "code": "VAKFN",
@@ -3034,37 +3044,37 @@
     {
       "code": "VKFYO",
       "name": "VAKIF YAT. ORT.",
-      "price": 22.84
+      "price": 23.16
     },
     {
       "code": "VAKBN",
       "name": "VAKIFLAR BANKASI",
-      "price": 31.6
+      "price": 31.52
     },
     {
       "code": "VAKKO",
       "name": "VAKKO TEKSTIL",
-      "price": 67.05
+      "price": 66.8
     },
     {
       "code": "VANGD",
       "name": "VANET GIDA",
-      "price": 101.5
+      "price": 102.3
     },
     {
       "code": "VBTYZ",
       "name": "VBT YAZILIM",
-      "price": 38.7
+      "price": 37.24
     },
     {
       "code": "VRGYO",
       "name": "VERA KONSEPT GMYO",
-      "price": 1.81
+      "price": 1.8
     },
     {
       "code": "VERUS",
       "name": "VERUSA HOLDING",
-      "price": 723
+      "price": 719
     },
     {
       "code": "VERTU",
@@ -3074,32 +3084,32 @@
     {
       "code": "VESTL",
       "name": "VESTEL",
-      "price": 22.22
+      "price": 22.1
     },
     {
       "code": "VESBE",
       "name": "VESTEL BEYAZ ESYA",
-      "price": 5.3
+      "price": 5.28
     },
     {
       "code": "VKING",
       "name": "VIKING KAGIT",
-      "price": 22.18
+      "price": 22.04
     },
     {
       "code": "VSNMD",
       "name": "VISNE MADENCILIK",
-      "price": 47.52
+      "price": 47.56
     },
     {
       "code": "YKBNK",
       "name": "YAPI VE KREDI BANK.",
-      "price": 36.48
+      "price": 36.6
     },
     {
       "code": "YAPRK",
       "name": "YAPRAK SUT VE BESI CIFT.",
-      "price": 11.03
+      "price": 10.93
     },
     {
       "code": "YATAS",
@@ -3109,7 +3119,7 @@
     {
       "code": "YAYLA",
       "name": "YAYLA EN. UR. TUR. VE INS",
-      "price": 22.64
+      "price": 22.26
     },
     {
       "code": "YYLGD",
@@ -3119,12 +3129,12 @@
     {
       "code": "YGGYO",
       "name": "YENI GIMAT GMYO",
-      "price": 221.3
+      "price": 222.8
     },
     {
       "code": "YEOTK",
       "name": "YEO TEKNOLOJI ENERJI",
-      "price": 34.5
+      "price": 34.14
     },
     {
       "code": "YYAPI",
@@ -3134,7 +3144,7 @@
     {
       "code": "YESIL",
       "name": "YESIL YATIRIM HOLDING",
-      "price": 1.22
+      "price": 1.21
     },
     {
       "code": "YBTAS",
@@ -3144,7 +3154,7 @@
     {
       "code": "YIGIT",
       "name": "YIGIT AKU",
-      "price": 21.8
+      "price": 21.78
     },
     {
       "code": "YONGA",
@@ -3154,42 +3164,42 @@
     {
       "code": "YKSLN",
       "name": "YUKSELEN CELIK",
-      "price": 2.83
+      "price": 2.82
     },
     {
       "code": "YUNSA",
       "name": "YUNSA",
-      "price": 8.36
+      "price": 8.37
     },
     {
       "code": "ZGYO",
       "name": "Z GMYO",
-      "price": 30.82
+      "price": 30.7
     },
     {
       "code": "ZEDUR",
       "name": "ZEDUR ENERJI",
-      "price": 7.88
+      "price": 7.87
     },
     {
       "code": "ZERGY",
       "name": "ZERAY GMYO",
-      "price": 9.43
+      "price": 9.24
     },
     {
       "code": "ZRGYO",
       "name": "ZIRAAT GMYO",
-      "price": 19.67
+      "price": 19.73
     },
     {
       "code": "ZGOLD",
       "name": "ZIRAAT PORTFOY ALTIN BYF",
-      "price": 732
+      "price": 732.25
     },
     {
       "code": "ZPX30",
       "name": "ZIRAAT PORTFOY BIST 30 HY BYF",
-      "price": 220.9
+      "price": 220
     },
     {
       "code": "ZELOT",
@@ -3199,12 +3209,12 @@
     {
       "code": "ZPBDL",
       "name": "ZIRAAT PORTFOY BIST BANKA DISI LIKIT 10 HY BYF",
-      "price": 281
+      "price": 282
     },
     {
       "code": "ZPLIB",
       "name": "ZIRAAT PORTFOY BIST LIKIT BANKA HY BYF",
-      "price": 190.95
+      "price": 190.7
     },
     {
       "code": "ZSR25",
@@ -3214,12 +3224,12 @@
     {
       "code": "ZTM25",
       "name": "ZIRAAT PORTFOY BIST TEMETTU 25 ENDEKS HSY BYF",
-      "price": 191.05
+      "price": 190.45
     },
     {
       "code": "Z30EA",
       "name": "ZIRAAT PORTFOY BIST30 EA ENDEKSI HSY BYF",
-      "price": 197.8
+      "price": 197.75
     },
     {
       "code": "Z30KE",
@@ -3229,7 +3239,7 @@
     {
       "code": "Z30KP",
       "name": "ZIRAAT PORTFOY KATILIM 30 ENDEKSI HSY BYF",
-      "price": 287
+      "price": 285
     },
     {
       "code": "ZRE20",
@@ -3239,22 +3249,22 @@
     {
       "code": "ZTLRF",
       "name": "ZIRAAT PORTFOY TLREF BYF",
-      "price": 1374
+      "price": 1374.5
     },
     {
       "code": "ZTLRK",
       "name": "ZIRAAT PORTFOY TLREFK KATILIM BYF",
-      "price": 1371.5
+      "price": 1372
     },
     {
       "code": "ZPT10",
       "name": "ZIRAAT PORTFOY YP TEKNOLOJI ILETISIM 10 HY BYF",
-      "price": 116.3
+      "price": 115.65
     },
     {
       "code": "ZOREN",
       "name": "ZORLU ENERJI",
-      "price": 2.29
+      "price": 2.27
     }
   ]
 }
